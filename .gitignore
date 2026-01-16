@@ -1,0 +1,23 @@
+# KiCad temporary and local files
+**/*.kicad_prl
+**/*.bak
+**/*.lck
+**/_autosave*
+**/fp-info-cache
+
+# Backups
+**/raster-bot-backups/
+**/*-backups/
+
+# Production and Fabrication files
+**/production/
+**/fabrication-toolkit-options.json
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
