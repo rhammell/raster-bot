@@ -3,8 +3,8 @@
 	(generator "pcbnew")
 	(generator_version "9.0")
 	(layer "F.Cu")
-	(descr "TE FPC connector, 18 top-side contacts, 0.5mm pitch, SMT, https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1734839%7FC%7Fpdf%7FEnglish%7FENG_CD_1734839_C_C_1734839.pdf%7F4-1734839-0")
-	(tags "te fpc 1734839")
+	(descr "XUNPU FPC connector, 18 top-side contacts, 0.5mm pitch, SMT")
+	(tags "XUNPU fpc FPC-05F-18PH20")
 	(property "Reference" "REF**"
 		(at 0 -3.11 0)
 		(layer "F.SilkS")
@@ -27,7 +27,7 @@
 			)
 		)
 	)
-	(property "Datasheet" ""
+	(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588944897546469376"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
@@ -39,7 +39,7 @@
 			)
 		)
 	)
-	(property "Description" ""
+	(property "Description" "XUNPU 18 pin FPC connector"
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
@@ -124,18 +124,6 @@
 				(thickness 0.15)
 			)
 		)
-	)
-	(pad "" smd rect
-		(at -5.94 1.325)
-		(size 2 2.5)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "9b53311f-eaca-4d00-a36a-934daada87c8")
-	)
-	(pad "" smd rect
-		(at 5.94 1.325)
-		(size 2 2.5)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "2dc8d6e8-d227-4e4d-83d3-49093d8292a9")
 	)
 	(pad "1" smd rect
 		(at 4.25 -1.25)
@@ -244,6 +232,18 @@
 		(size 0.3 1.25)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "aa478048-9005-4e69-9945-1b3f2303ec2f")
+	)
+	(pad "MP" smd rect
+		(at -5.94 1.325)
+		(size 2 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "9b53311f-eaca-4d00-a36a-934daada87c8")
+	)
+	(pad "MP" smd rect
+		(at 5.94 1.325)
+		(size 2 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "2dc8d6e8-d227-4e4d-83d3-49093d8292a9")
 	)
 	(embedded_fonts no)
 	(model "${KICAD9_3DMODEL_DIR}/Connector_FFC-FPC.3dshapes/TE_1-1734839-8_1x18-1MP_P0.5mm_Horizontal.step"
