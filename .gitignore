@@ -6,7 +6,7 @@
 **/fp-info-cache
 
 # Backups
-**/raster-bot-backups/
+**/Raster_Bot-backups/
 **/*-backups/
 
 # Production and Fabrication files

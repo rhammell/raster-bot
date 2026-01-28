@@ -276,7 +276,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/80859256-c013-4404-91b6-a8db4b00e141")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.237258 0.5225)
@@ -515,7 +515,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/e2d57e46-4852-443e-90b3-ac1116be9012")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.261252 -0.735)
@@ -729,7 +729,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/197e4596-da95-461b-bb44-59fe63d1f381")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -1.38 -1.38)
@@ -1024,7 +1024,7 @@
 		(property ki_fp_filters "Choke_* *Coil* Inductor_* L_*")
 		(path "/fc5e4438-f696-4d13-a643-c593c280384d")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 2.154 2.154)
@@ -1265,7 +1265,7 @@
 		(property ki_fp_filters "Arduino*Nano*")
 		(path "/eb40e052-d52e-4862-9213-4df77eec8b73")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start 3.68 42.04)
@@ -2026,7 +2026,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/cba08e2e-cd81-4fb8-9e14-0a8c0a58f4e9")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.261252 -0.735)
@@ -2265,7 +2265,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/eab3cfd6-1f13-4b24-919d-2a4caf94a473")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.261252 0.735)
@@ -2465,7 +2465,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/072d2d4c-6a3e-4ede-b8f5-fb87bcddc105")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -2567,7 +2567,7 @@
 		(property ki_fp_filters "Pin* Test*")
 		(path "/3b346141-4035-4446-b1ac-0525fc590146")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_line
 			(start -0.95 -0.95)
@@ -2753,7 +2753,7 @@
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/b41b6bc0-85eb-4793-adec-6e0d5ef16121")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 0.8 -0.735)
@@ -2978,7 +2978,7 @@
 		(property ki_fp_filters "Pin* Test*")
 		(path "/591f9e92-f6b1-4a38-90cb-76e5902339b1")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_line
 			(start -0.95 -0.95)
@@ -3177,7 +3177,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/4ac718c2-c570-4fee-a559-b527de096601")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.261252 0.735)
@@ -3403,7 +3403,7 @@
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/e27f7666-82a4-448b-9973-6f39a493def5")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 0.8 -0.735)
@@ -3664,7 +3664,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/8c8c2157-0946-4a8f-8694-019320671243")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.727064 -0.91)
@@ -3902,7 +3902,7 @@
 		)
 		(path "/96aa9fdd-d6a2-4c40-b03a-71a95e5f060c")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 0.71 0.935)
@@ -4208,7 +4208,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/a52ec840-5dd2-4f49-9fa3-f4a1773b82c4")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start 1.33 -1.33)
@@ -4490,7 +4490,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/d4825472-d76e-460f-9214-336ae7726933")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -2.36 -2.11)
@@ -4889,7 +4889,7 @@
 			)
 		)
 	)
-	(footprint "raster-bot:SW_SPDT_Shouhan_MSK12C02"
+	(footprint "Raster_Bot:SW_SPDT_Shouhan_MSK12C02"
 		(layer "F.Cu")
 		(uuid "88a53e09-ae37-4005-a1a8-8ec88dcb4441")
 		(at 130.2372 77.3954 180)
@@ -4985,7 +4985,7 @@
 		)
 		(path "/ff139394-385b-4638-84a7-fc1f90f38449")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 3.45 -0.4)
@@ -5353,7 +5353,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/d2397b2f-0be5-42cb-8e16-a07384ed5d1f")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -1.38 -1.38)
@@ -5646,7 +5646,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/01b03e99-a31d-449a-8ab2-c3ce7eec04e4")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.727064 -0.91)
@@ -5859,7 +5859,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/55bc2cb5-878c-4c26-9a74-83387056b67e")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.237258 0.5225)
@@ -6003,7 +6003,7 @@
 			)
 		)
 	)
-	(footprint "raster-bot:XUNPU_FPC-05F-18PH20_1x18-1MP_P0.5mm_Horizontal"
+	(footprint "Raster_Bot:XUNPU_FPC-05F-18PH20_1x18-1MP_P0.5mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "9ce5462f-24d9-4f5b-8606-9a6318adb34e")
 		(at 131.3 105.1)
@@ -6071,7 +6071,7 @@
 		)
 		(path "/f7451465-94c9-4cc5-a729-cd36bc22b2ab")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -6.9 -0.9)
@@ -6407,7 +6407,7 @@
 		)
 		(path "/e5cd359f-6533-4c55-be26-d1c3787fc98e")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -4.11 -0.04)
@@ -6917,7 +6917,7 @@
 		(property ki_fp_filters "Pin* Test*")
 		(path "/14386b18-b208-4eb5-9a46-b6df862270b4")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_line
 			(start -0.95 -0.95)
@@ -7116,7 +7116,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/a0a49c82-dc95-4d00-9d1f-2904a2c706b9")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.261252 -0.735)
@@ -7316,7 +7316,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/d90a35d1-77f9-48a0-bddb-caaddb419fed")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -7429,7 +7429,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/6628664f-7515-49fd-b60e-16c51911614a")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 1.38 1.27)
@@ -7722,7 +7722,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/a3eb3566-03bd-452f-b814-38c1f2476a17")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.261252 0.735)
@@ -7866,7 +7866,7 @@
 			)
 		)
 	)
-	(footprint "raster-bot:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm_ThermalVias"
+	(footprint "Raster_Bot:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm_ThermalVias"
 		(layer "F.Cu")
 		(uuid "ce14d95b-f42d-44fb-ac0b-51504ebdedc4")
 		(at 166.8932 96.2104 90)
@@ -7961,7 +7961,7 @@
 		(property ki_fp_filters "HTSSOP*1EP*4.4x5mm*P0.65mm*EP3.4x5mm*")
 		(path "/bb3b5e76-c3ce-45ef-a397-c3de386df28c")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 1.96 -2.735)
@@ -8573,7 +8573,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/0b13559c-ae14-4d88-bce6-1221353c0b33")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -8686,7 +8686,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/739c52b9-8dd1-42eb-aad9-b6b948b12f7a")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.237258 -0.5225)
@@ -8925,7 +8925,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/350c4952-cfe6-49ea-9c2a-0461c9f4ba10")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.261252 0.735)
@@ -9164,7 +9164,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/05ca05cf-098f-4fd9-bb49-dc473f77a5f2")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.261252 -0.735)
@@ -9365,7 +9365,7 @@
 		(property ki_fp_filters "Pin* Test*")
 		(path "/21178b1a-9008-456d-9b84-8efc0e057b97")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_line
 			(start -0.95 -0.95)
@@ -9525,7 +9525,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/1e775193-878c-482d-9a5a-434ee67e7ef8")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -9637,7 +9637,7 @@
 		)
 		(path "/85dd131d-7056-4014-a13a-461c7ad97c7b")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -4.11 -0.04)
@@ -10184,7 +10184,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/7088b17f-ae98-489f-88f1-80fa5192f96a")
 		(sheetname "/")
-		(sheetfile "raster-bot.kicad_sch")
+		(sheetfile "Raster_Bot.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.237258 -0.5225)

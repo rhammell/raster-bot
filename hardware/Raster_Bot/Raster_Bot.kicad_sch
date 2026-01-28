@@ -2519,7 +2519,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "raster-bot:Conn_EYESPI"
+		(symbol "Raster_Bot:Conn_EYESPI"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2926,7 +2926,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "raster-bot:Conn_Motor_N20_Encoder"
+		(symbol "Raster_Bot:Conn_Motor_N20_Encoder"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3117,7 +3117,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "raster-bot:DRV8833PWPR"
+		(symbol "Raster_Bot:DRV8833PWPR"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3510,7 +3510,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "raster-bot:TPS61023DRLR"
+		(symbol "Raster_Bot:TPS61023DRLR"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -5919,7 +5919,7 @@
 			(uuid "85b1270b-1a37-4b44-851b-f3a26acd3396")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "R2")
 					(unit 1)
@@ -5985,7 +5985,7 @@
 			(uuid "f06cb764-053e-43dd-bc58-a538bc2a0cf6")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR02")
 					(unit 1)
@@ -6050,7 +6050,7 @@
 			(uuid "7adb24c1-3500-4b04-a70b-adcfb07ea744")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR019")
 					(unit 1)
@@ -6116,7 +6116,7 @@
 			(uuid "d1ad884c-3aab-4787-bcad-209bded8b8e4")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR021")
 					(unit 1)
@@ -6212,7 +6212,7 @@
 			(uuid "9af345da-17f2-42c5-bc63-dcf1aeb65346")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "C3")
 					(unit 1)
@@ -6276,7 +6276,7 @@
 			)
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "H2")
 					(unit 1)
@@ -6405,7 +6405,7 @@
 			(uuid "1245b69b-c1ac-4ab5-9967-f9df6907eadb")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR024")
 					(unit 1)
@@ -6472,7 +6472,7 @@
 			(uuid "496e01f6-7c96-4e41-ad91-3ab2563cf24e")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "TP1")
 					(unit 1)
@@ -6548,7 +6548,7 @@
 			(uuid "a49737d0-18dc-4278-a364-704d3d5bf68d")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "J3")
 					(unit 1)
@@ -6678,7 +6678,7 @@
 			)
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "H3")
 					(unit 1)
@@ -6745,7 +6745,7 @@
 			(uuid "10cbbc1a-f479-4f0e-bbe9-f2ef6f3a9ab3")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "TP4")
 					(unit 1)
@@ -6810,7 +6810,7 @@
 			(uuid "a5b5d628-7bb0-4ddb-9a98-359888126e62")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR07")
 					(unit 1)
@@ -6906,7 +6906,7 @@
 			(uuid "ffb21688-bb97-409c-b4bf-c850850fff00")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "C8")
 					(unit 1)
@@ -6971,7 +6971,7 @@
 			(uuid "e583d3a6-771f-419a-b37b-bf333d89baed")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR028")
 					(unit 1)
@@ -7036,7 +7036,7 @@
 			(uuid "41a0aa67-cea8-403d-b43c-d0522ad743ea")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR026")
 					(unit 1)
@@ -7101,7 +7101,7 @@
 			(uuid "fdeeb33b-22c7-4520-a28f-0aaf0f6f4ec2")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR014")
 					(unit 1)
@@ -7233,7 +7233,7 @@
 			(uuid "b8a564c7-d659-4d2c-9051-e0900fe7922b")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR027")
 					(unit 1)
@@ -7329,7 +7329,7 @@
 			(uuid "15e68277-c205-4557-afdb-4ea2284bc3dd")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "C7")
 					(unit 1)
@@ -7395,7 +7395,7 @@
 			(uuid "c7acaa01-b2c6-4e87-ad6f-6862dc4e90d9")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR022")
 					(unit 1)
@@ -7473,7 +7473,7 @@
 			(uuid "1b9412d7-15ed-4139-aec4-a39350cb78be")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "R5")
 					(unit 1)
@@ -7538,7 +7538,7 @@
 			(uuid "97593931-8c8a-4dbf-a291-089b3ba45a35")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR010")
 					(unit 1)
@@ -7605,7 +7605,7 @@
 			(uuid "6369cc69-f09b-430b-b819-e7d1964ab356")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "TP2")
 					(unit 1)
@@ -7670,7 +7670,7 @@
 			(uuid "25452cd7-0e2e-4a4f-9fa8-c1a3dea57448")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR030")
 					(unit 1)
@@ -7735,7 +7735,7 @@
 			(uuid "811c5fdb-fe51-4657-bb6a-9766bc3e5919")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR016")
 					(unit 1)
@@ -7800,7 +7800,7 @@
 			(uuid "ba667d40-0f5b-43ae-97b8-0e29792c5446")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR017")
 					(unit 1)
@@ -7876,7 +7876,7 @@
 			(uuid "3316e93e-0c55-48ee-9210-537b51c5a309")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "J1")
 					(unit 1)
@@ -7941,7 +7941,7 @@
 			(uuid "24b29310-64fd-4825-8de0-2b63ef19d23c")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR029")
 					(unit 1)
@@ -8006,7 +8006,7 @@
 			(uuid "e15f0ae3-514f-4638-b7b3-e85091101eaa")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR020")
 					(unit 1)
@@ -8180,7 +8180,7 @@
 			(uuid "f2b70587-6073-42e8-847f-fe2964897ed6")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "R6")
 					(unit 1)
@@ -8276,7 +8276,7 @@
 			(uuid "001aeb9a-2094-4240-b262-8987c865f104")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "R4")
 					(unit 1)
@@ -8341,7 +8341,7 @@
 			(uuid "04d5db50-46d7-4fd1-adfa-c6742d6f45fb")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR03")
 					(unit 1)
@@ -8350,7 +8350,7 @@
 		)
 	)
 	(symbol
-		(lib_id "raster-bot:Conn_Motor_N20_Encoder")
+		(lib_id "Raster_Bot:Conn_Motor_N20_Encoder")
 		(at 207.01 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8434,7 +8434,7 @@
 			(uuid "6be2ff50-8765-4f64-b762-dc7429a0857b")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "J8")
 					(unit 1)
@@ -8566,7 +8566,7 @@
 			(uuid "1a1c96ac-3249-409f-98fe-35fd6d419b97")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR04")
 					(unit 1)
@@ -8672,7 +8672,7 @@
 		)
 	)
 	(symbol
-		(lib_id "raster-bot:TPS61023DRLR")
+		(lib_id "Raster_Bot:TPS61023DRLR")
 		(at 125.73 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8839,7 +8839,7 @@
 			(uuid "6579d73f-a9fa-4835-9c9d-0c989c076811")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR012")
 					(unit 1)
@@ -8904,7 +8904,7 @@
 			(uuid "0ecc9c7e-89e3-4f30-afb1-1563a604b25a")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR06")
 					(unit 1)
@@ -8970,7 +8970,7 @@
 			(uuid "2a81b029-d333-456b-b988-e26b7c9c4bc4")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR05")
 					(unit 1)
@@ -9067,7 +9067,7 @@
 			(uuid "86d33ee3-9d44-432d-8392-e9f1eaa1bb76")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "C5")
 					(unit 1)
@@ -9164,7 +9164,7 @@
 			(uuid "6ce60027-81f3-40ac-9768-d5a7f4111b6f")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "C1")
 					(unit 1)
@@ -9231,7 +9231,7 @@
 			(uuid "621e895a-4b22-4451-9ada-d1ab118d164a")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#FLG02")
 					(unit 1)
@@ -9301,7 +9301,7 @@
 			(uuid "8d90942c-f6fa-48c8-bd95-2c7b99d8c353")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "J7")
 					(unit 1)
@@ -9388,7 +9388,7 @@
 			(uuid "c08c977e-5e84-409c-bd0d-544a25a1f9a1")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "D2")
 					(unit 1)
@@ -9453,7 +9453,7 @@
 			(uuid "424cbc92-b8fe-4f93-a4f1-4b6a3f0084e0")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR08")
 					(unit 1)
@@ -9462,7 +9462,7 @@
 		)
 	)
 	(symbol
-		(lib_id "raster-bot:DRV8833PWPR")
+		(lib_id "Raster_Bot:DRV8833PWPR")
 		(at 57.15 153.67 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9488,7 +9488,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "raster-bot:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm_ThermalVias"
+		(property "Footprint" "Raster_Bot:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm_ThermalVias"
 			(at 62.23 168.91 0)
 			(effects
 				(font
@@ -9662,7 +9662,7 @@
 			(uuid "3b0aa533-6d98-4882-9152-34364dbb76ad")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR013")
 					(unit 1)
@@ -9759,7 +9759,7 @@
 			(uuid "861d0a4a-6d02-476f-90cd-a252e4a0ae2e")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "C2")
 					(unit 1)
@@ -9824,7 +9824,7 @@
 			(uuid "e7b622bf-c10e-4a9f-b1f6-0badb1163e7d")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR018")
 					(unit 1)
@@ -9900,7 +9900,7 @@
 			(uuid "93a5a699-d5a7-479e-a2f1-10b94637122d")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "J2")
 					(unit 1)
@@ -10061,7 +10061,7 @@
 			)
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "H4")
 					(unit 1)
@@ -10126,7 +10126,7 @@
 			(uuid "c946f0a6-3fab-4678-bdf1-c065591622dd")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR025")
 					(unit 1)
@@ -10191,7 +10191,7 @@
 			(uuid "b801f134-3d80-4431-8142-b0001b5b2744")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR01")
 					(unit 1)
@@ -10256,7 +10256,7 @@
 			(uuid "9659f523-b98e-4538-9eda-ad78d3139f65")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR011")
 					(unit 1)
@@ -10343,7 +10343,7 @@
 			(uuid "de1441ec-36fb-444c-9926-cb24520a8695")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "D1")
 					(unit 1)
@@ -10440,7 +10440,7 @@
 			(uuid "bf908993-f87d-41a9-98c6-31f0f1ea9e00")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "C6")
 					(unit 1)
@@ -10450,7 +10450,7 @@
 	)
 	(symbol
 		(lib_name "Conn_Motor_N20_Encoder_1")
-		(lib_id "raster-bot:Conn_Motor_N20_Encoder")
+		(lib_id "Raster_Bot:Conn_Motor_N20_Encoder")
 		(at 162.56 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10599,7 +10599,7 @@
 			(uuid "c749526c-437e-472d-b151-791db3dc9b69")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "#PWR015")
 					(unit 1)
@@ -10760,7 +10760,7 @@
 			(uuid "c8a7381f-0d75-4519-96d1-9af93677bee9")
 		)
 		(instances
-			(project "raster-bot"
+			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
 					(reference "C4")
 					(unit 1)
@@ -10948,7 +10948,7 @@
 		)
 	)
 	(symbol
-		(lib_id "raster-bot:Conn_EYESPI")
+		(lib_id "Raster_Bot:Conn_EYESPI")
 		(at 116.84 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11197,7 +11197,7 @@
 				)
 			)
 		)
-		(property "Footprint" "raster-bot:SW_SPDT_Shouhan_MSK12C02"
+		(property "Footprint" "Raster_Bot:SW_SPDT_Shouhan_MSK12C02"
 			(at 203.2 41.91 0)
 			(effects
 				(font

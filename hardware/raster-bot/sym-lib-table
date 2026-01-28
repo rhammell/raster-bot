@@ -1,4 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "raster-bot")(type "KiCad")(uri "${KIPRJMOD}/lib/symbols/raster-bot.kicad_sym")(options "")(descr ""))
-)
