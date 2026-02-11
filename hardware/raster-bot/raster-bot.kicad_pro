@@ -476,7 +476,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Raster_Bot.kicad_pro",
+    "filename": "raster-bot.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -574,9 +574,21 @@
           "show": true
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Value",
           "name": "Value",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Voltage",
+          "name": "Voltage",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Dielectric",
+          "name": "Dielectric",
           "show": true
         },
         {
@@ -644,8 +656,8 @@
       "group_symbols": false,
       "include_excluded_from_bom": true,
       "name": "",
-      "sort_asc": false,
-      "sort_field": "Footprint"
+      "sort_asc": true,
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
