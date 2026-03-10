@@ -32,6 +32,7 @@ int ballDX = 2;
 int ballDY = 3;
 
 void setup() {
+  // Bring up serial logging and initialize board hardware.
   Serial.begin(115200);
   Serial.println("Raster_Bot Graphics Test");
 
@@ -43,7 +44,7 @@ void setup() {
 
   Serial.println("Raster_Bot initialized successfully");
 
-  // Draw static graphics
+  // Draw all fixed UI and demo shapes.
   drawTestScreen();
 
   // Initialize ball position to center of arena
@@ -52,12 +53,13 @@ void setup() {
 }
 
 void loop() {
+  // Animate the ball continuously inside the arena.
   bounceBall();
   delay(15);
 }
 
 void drawTestScreen() {
-  // Clear screen
+  // Clear screen and draw the static demo layout.
   bot.display.fillScreen(ILI9341_BLACK);
 
   // Draw title text
@@ -100,14 +102,14 @@ void drawTestScreen() {
 }
 
 void bounceBall() {
-  // Erase the old ball
+  // Erase the old ball before advancing motion.
   bot.display.fillCircle(ballX, ballY, BALL_RADIUS, ILI9341_BLACK);
 
   // Update position
   ballX += ballDX;
   ballY += ballDY;
 
-  // Clamp to inner arena bounds (ball stays fully inside border)
+  // Clamp motion to arena bounds (ball stays fully inside border).
   int minX = ARENA_X + BALL_RADIUS;
   int maxX = ARENA_X + ARENA_W - 1 - BALL_RADIUS;
   int minY = ARENA_Y + BALL_RADIUS;

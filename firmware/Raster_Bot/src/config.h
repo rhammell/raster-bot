@@ -17,6 +17,15 @@
 #define I2C_SDA  13   // I2C SDA for touchscreen
 #define I2C_SCL  14   // I2C SCL for touchscreen
 
+// Battery monitor (BQ24072 charger + voltage divider)
+#define VBAT_DIV  7   // Analog pin for battery voltage divider (ADC1_6)
+#define CHG      17   // BQ24072 CHG pin (active low: LOW = charging)
+#define PGOOD    16   // BQ24072 PGOOD pin (active low: LOW = power good / charger connected)
+
+// Voltage divider: V_battery = V_pin * VBAT_DIV_RATIO
+// Set to (R1 + R2) / R2 where R1 is battery-to-pin, R2 is pin-to-GND
+#define VBAT_DIV_RATIO  2.0f
+
 // Hardware Settings
 // -----------------------------------------------------------------------------
 #define TFT_DEFAULT_ROTATION   0

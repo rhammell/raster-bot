@@ -22,6 +22,17 @@ private:
     Adafruit_FT6206 _ts;
 };
 
+// Battery monitor (voltage, charging status, charger connected)
+class Raster_Battery {
+public:
+    void begin();
+    float voltage();           // Battery voltage in volts
+    bool charging();           // True when actively charging
+    bool chargerConnected();   // True when charging source is plugged in
+
+private:
+};
+
 class Raster_Bot {
 public:
     Raster_Bot();
@@ -30,6 +41,7 @@ public:
     void update();
 
     Raster_Display display;
+    Raster_Battery battery;
 
 private:
 };

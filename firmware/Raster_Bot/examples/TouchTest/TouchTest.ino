@@ -12,6 +12,7 @@
 Raster_Bot bot;
 
 void setup() {
+  // Bring up serial logging and initialize hardware.
   Serial.begin(115200);
   Serial.println("Raster_Bot Touch Test");
 
@@ -26,7 +27,7 @@ void setup() {
 
   Serial.println("Raster_Bot initialized successfully");
 
-  // Draw title text
+  // Draw the fixed header text.
   bot.display.setCursor(10, 10);
   bot.display.setTextColor(ILI9341_WHITE);
   bot.display.setTextSize(2);
@@ -37,7 +38,7 @@ void setup() {
   bot.display.setTextColor(ILI9341_CYAN);
   bot.display.println("Touch Test");
 
-  // Draw instruction centered on screen
+  // Draw centered instruction text.
   // "Touch to draw!" = 14 chars * 12px (size 2) = 168px wide, 16px tall
   int16_t textW = 14 * 12;
   int16_t textH = 16;
@@ -50,6 +51,7 @@ void setup() {
 }
 
 void loop() {
+  // Poll touch and draw where the finger lands.
   if (bot.display.touched()) {
     TS_Point p = bot.display.getTouchPoint();
 
