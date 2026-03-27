@@ -242,7 +242,13 @@
       "mfg": "",
       "mpn": ""
     },
-    "layer_pairs": [],
+    "layer_pairs": [
+      {
+        "bottomLayer": 6,
+        "enabled": true,
+        "topLayer": 4
+      }
+    ],
     "layer_presets": [],
     "viewports": []
   },
@@ -553,6 +559,10 @@
       {
         "netclass": "Power",
         "pattern": "/VSYS_3VIN"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/VSYS_SW"
       }
     ]
   },
@@ -564,7 +574,7 @@
       "plot": "gerbers/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../../Raster_Bot.stl",
       "svg": "",
       "vrml": ""
     },
