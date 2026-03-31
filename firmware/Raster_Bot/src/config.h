@@ -6,16 +6,16 @@
 
 // Pin Definitions
 // -----------------------------------------------------------------------------
-#define TFT_CS    18
-#define TFT_DC    3
-#define TFT_RST   6
-#define TFT_LITE  5
-#define TFT_CLK   2   // SPI SCK for TFT
-#define TFT_MOSI  1   // SPI MOSI for TFT
+#define TFT_CS    14
+#define TFT_DC    12
+#define TFT_RST   13
+#define TFT_LITE  9
+#define TFT_CLK   10   // SPI SCK for TFT
+#define TFT_MOSI  11   // SPI MOSI for TFT
 #define TFT_MISO -1   // SPI MISO (unused by display)
 
-#define I2C_SDA  13   // I2C SDA for touchscreen
-#define I2C_SCL  14   // I2C SCL for touchscreen
+#define I2C_SDA  8   // I2C SDA for touchscreen
+#define I2C_SCL  18   // I2C SCL for touchscreen
 
 // Battery monitor (BQ24072 charger + voltage divider)
 #define VBAT_DIV  7   // Analog pin for battery voltage divider (ADC1_6)
@@ -33,8 +33,6 @@
 #define TFT_DEFAULT_BRIGHTNESS 255
 
 #define TOUCH_THRESHOLD 40
-#define TOUCH_WIDTH     240  // Fixed physical width of touch digitizer
-#define TOUCH_HEIGHT    320  // Fixed physical height of touch digitizer
 
 // Feature Flags
 // -----------------------------------------------------------------------------
