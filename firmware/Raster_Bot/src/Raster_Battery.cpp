@@ -7,7 +7,6 @@
 void Raster_Battery::begin() {
     pinMode(CHG, INPUT);
     pinMode(PGOOD, INPUT);
-    // VBAT_DIV is analog - no pinMode needed on ESP32 (input by default)
 }
 
 float Raster_Battery::voltage() {

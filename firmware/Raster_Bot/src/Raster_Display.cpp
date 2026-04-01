@@ -4,29 +4,26 @@
 // Raster_Display Implementation
 // =============================================================================
 
-// Constructor for Raster_Display
-// Initializes the SPI bus, I2C bus, and passes SPI to the parent class
-// Uses the default SPI bus (configured in begin() via SPI.begin())
 Raster_Display::Raster_Display()
-    : Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_RST) {
+    : Adafruit_ILI9341(&_spiBus, TFT_DC, TFT_CS, TFT_RST) {
 }
 
 bool Raster_Display::begin() {
-    // 1. Start hardware buses with explicit pins
-    SPI.begin(TFT_CLK, TFT_MISO, TFT_MOSI, TFT_CS);
-    Wire.begin(I2C_SDA, I2C_SCL);
+    // Start hardware buses with explicit pins
+    _spiBus.begin(TFT_CLK, TFT_MISO, TFT_MOSI, TFT_CS);
+    _i2cBus.begin(TOUCH_SDA, TOUCH_SCL);
 
-    // 2. Initialize TFT
+    // Initialize TFT
     Adafruit_ILI9341::begin();
     setRotation(TFT_DEFAULT_ROTATION);
     fillScreen(TFT_DEFAULT_BG_COLOR);
 
-    // 3. Initialize Backlight
+    // Initialize backlight
     pinMode(TFT_LITE, OUTPUT);
     setBrightness(TFT_DEFAULT_BRIGHTNESS);
 
-    // 4. Initialize Touch (uses default Wire bus, configured above)
-    if (!_ts.begin(TOUCH_THRESHOLD)) {
+    // Initialize touch
+    if (!_ts.begin(TOUCH_THRESHOLD, &_i2cBus)) {
         return false;
     }
 
@@ -50,10 +47,22 @@ TS_Point Raster_Display::getTouchPoint() {
     int16_t x, y;
 
     switch (getRotation()) {
-        case 0: x = width()  - p.x; y = height() - p.y; break;
-        case 1: x = width()  - p.y; y = p.x;            break;
-        case 2: x = p.x;            y = p.y;            break;
-        case 3: x = p.y;            y = height() - p.x; break;
+        case 0:
+            x = width() - p.x;
+            y = height() - p.y;
+            break;
+        case 1:
+            x = width() - p.y;
+            y = p.x;
+            break;
+        case 2:
+            x = p.x;
+            y = p.y;
+            break;
+        case 3:
+            x = p.y;
+            y = height() - p.x;
+            break;
         default:
             x = p.x;
             y = p.y;
