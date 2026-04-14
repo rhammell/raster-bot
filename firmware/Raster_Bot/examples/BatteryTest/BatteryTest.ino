@@ -14,17 +14,12 @@ Raster_Bot bot;
 // Simple timer for periodic display refresh.
 static uint32_t lastUpdateMs = 0;
 
-// Draw one line of text centered on the display.
-void drawCenteredText(const String &text, int16_t y, uint8_t textSize, uint16_t color) {
-  int16_t x1, y1;
-  uint16_t w, h;
-
-  bot.display.setTextSize(textSize);
-  bot.display.getTextBounds(text, 0, y, &x1, &y1, &w, &h);
-
-  int16_t x = (bot.display.width() - (int16_t)w) / 2;
+// Draw a row of text at a fixed x position.
+// Uses setTextColor(fg, bg) to overwrite old text without needing fillRect.
+void drawRow(int16_t x, int16_t y, const String &text, uint16_t color) {
+  bot.display.setTextSize(1);
   bot.display.setCursor(x, y);
-  bot.display.setTextColor(color);
+  bot.display.setTextColor(color, ILI9341_BLACK);
   bot.display.print(text);
 }
 
@@ -32,27 +27,37 @@ void drawStaticLayout() {
   // Clear screen and draw fixed header elements.
   bot.display.fillScreen(ILI9341_BLACK);
 
-  drawCenteredText("Raster Bot", 12, 2, ILI9341_WHITE);
-  drawCenteredText("Battery Test", 38, 1, ILI9341_CYAN);
+  bot.display.setCursor(10, 10);
+  bot.display.setTextColor(ILI9341_WHITE);
+  bot.display.setTextSize(2);
+  bot.display.println("Raster Bot");
 
-  bot.display.drawLine(20, 58, bot.display.width() - 20, 58, ILI9341_DARKGREY);
+  bot.display.setTextSize(1);
+  bot.display.setCursor(10, 35);
+  bot.display.setTextColor(ILI9341_CYAN);
+  bot.display.println("Battery Test");
 }
 
 void drawBatteryValues() {
-  // Clear the value area, then redraw all rows.
-  bot.display.fillRect(0, 70, bot.display.width(), 80, ILI9341_BLACK);
+  // Text size 1 = 6px per char. Longest line is 25 chars = 150px.
+  // Center block horizontally, center vertically below header.
+  int16_t blockW = 25 * 6;
+  int16_t blockH = 48;
+  int16_t x = (bot.display.width() - blockW) / 2;
+  int16_t startY = (bot.display.height() - blockH) / 2;
 
-  // Build item/value strings from the battery API.
-  String usbConnected = String("USB Connected: ") +
-                        (bot.battery.chargerConnected() ? "Yes" : "No");
-  String batteryCharging = String("Battery Charging: ") +
-                           (bot.battery.charging() ? "Yes" : "No");
-  String batteryVoltage = String("Battery Voltage: ") +
-                          String(bot.battery.voltage(), 2) + " V";
+  // Labels padded so colons align (all 19 chars including trailing space)
+  // "Battery Charging: " is the longest label
+  int16_t valX = x + 19 * 6;
 
-  drawCenteredText(usbConnected, 78, 1, ILI9341_WHITE);
-  drawCenteredText(batteryCharging, 98, 1, ILI9341_WHITE);
-  drawCenteredText(batteryVoltage, 118, 1, ILI9341_YELLOW);
+  drawRow(x, startY,      "   USB Connected: ", ILI9341_WHITE);
+  drawRow(valX, startY,   bot.battery.chargerConnected() ? "Yes    " : "No     ", bot.battery.chargerConnected() ? ILI9341_GREEN : ILI9341_WHITE);
+
+  drawRow(x, startY + 20, "Battery Charging: ", ILI9341_WHITE);
+  drawRow(valX, startY + 20, bot.battery.charging()      ? "Yes    " : "No     ", bot.battery.charging() ? ILI9341_GREEN : ILI9341_WHITE);
+
+  drawRow(x, startY + 40, " Battery Voltage: ", ILI9341_WHITE);
+  drawRow(valX, startY + 40, String(bot.battery.voltage(), 2) + " V ", ILI9341_YELLOW);
 }
 
 void setup() {
