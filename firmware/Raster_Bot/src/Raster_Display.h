@@ -19,7 +19,7 @@ public:
     TS_Point getTouchPoint();
 
 private:
-    SPIClass _spiBus = SPIClass(TFT_SPI_HOST);
-    TwoWire  _i2cBus = TwoWire(TOUCH_I2C_HOST);
+    SPIClass _spiBus = SPIClass(FSPI);
+    TwoWire  _i2cBus = TwoWire(0);
     Adafruit_FT6206 _ts;
 };

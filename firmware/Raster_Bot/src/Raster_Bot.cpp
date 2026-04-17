@@ -4,19 +4,19 @@
 // Raster_Bot Implementation
 // =============================================================================
 
-Raster_Bot::Raster_Bot() {
-}
-
 bool Raster_Bot::begin() {
+    // Initialize TFT display, backlight, and touchscreen
     if (!display.begin()) {
         return false;
     }
 
+    // Initialize battery voltage and charger status monitoring
     battery.begin();
 
-    return true;
-}
+    // Initialize motors, encoders, and drive controller
+    if (!drive.begin()) {
+        return false;
+    }
 
-void Raster_Bot::update() {
-    // TODO: Handle any periodic tasks
+    return true;
 }

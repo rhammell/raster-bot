@@ -1,41 +1,75 @@
 #pragma once
 
-// =============================================================================
-// Raster_Bot Configuration
-// =============================================================================
+#include <math.h>
 
-// Pin Definitions
-// -----------------------------------------------------------------------------
-#define TFT_SPI_HOST FSPI // Hardware SPI peripheral to use
-#define TFT_CS    14
-#define TFT_DC    12
-#define TFT_RST   13
-#define TFT_LITE  9
-#define TFT_CLK   10   // SPI SCK for TFT
-#define TFT_MOSI  11   // SPI MOSI for TFT
-#define TFT_MISO -1   // SPI MISO (unused by display)
+// TFT Pins
+#define TFT_CS    17
+#define TFT_DC    15
+#define TFT_RST   16
+#define TFT_LITE  12
+#define TFT_CLK   13
+#define TFT_MOSI  14
+#define TFT_MISO -1
 
-#define TOUCH_I2C_HOST 0  // Hardware I2C peripheral to use
-#define TOUCH_SDA  8   // I2C SDA for touchscreen
-#define TOUCH_SCL  18   // I2C SCL for touchscreen
+// Touchscreen pins
+#define TOUCH_SDA  21  
+#define TOUCH_SCL  18  
 
-// Battery monitor (BQ24072 charger + voltage divider)
-#define VBAT_DIV  7   // Analog pin for battery voltage divider (ADC1_6)
-#define CHG      17   // BQ24072 CHG pin (active low: LOW = charging)
-#define PGOOD    16   // BQ24072 PGOOD pin (active low: LOW = power good / charger connected)
+// Battery charging  pins (BQ24072 charger)
+#define CHG      36
+#define PGOOD    35
 
-// Voltage divider: V_battery = V_pin * VBAT_DIV_RATIO
-// Set to (R1 + R2) / R2 where R1 is battery-to-pin, R2 is pin-to-GND
+// Battert voltage monitor
+#define VBAT_DIV  10
 #define VBAT_DIV_RATIO  2.0f
 
-// Hardware Settings
-// -----------------------------------------------------------------------------
+// Motor driver (DRV8833)
+#define DRV_SLEEP 40 
+
+// Left motor (DRV8833 channel A + N20 quadrature encoder)
+#define MOT_LEFT_IN1    47//  // PWM A
+#define MOT_LEFT_IN2    33  // PWM B
+#define MOT_LEFT_ENC_A  38  // Encoder channel A
+#define MOT_LEFT_ENC_B  39  // Encoder channel B
+#define MOT_LEFT_FLIP       false  // Swap PWM pins so +PWM = forward
+#define MOT_LEFT_ENC_FLIP   false  // Swap encoder pins so +PWM = +count
+
+// Right motor (DRV8833 channel B + N20 quadrature encoder)
+#define MOT_RIGHT_IN1    33  // PWM A - SWAPPED DUE TO SCHEMATIC ERROR
+#define MOT_RIGHT_IN2    34  // PWM B - SWAPPED DUE TO SCHEMATIC ERROR
+#define MOT_RIGHT_ENC_A   41  // Encoder channel A
+#define MOT_RIGHT_ENC_B   42  // Encoder channel B
+#define MOT_RIGHT_FLIP       true   // Swap PWM pins so +PWM = forward
+#define MOT_RIGHT_ENC_FLIP   true  // Swap encoder pins so +PWM = +count
+
+// Drive settings
+#define WHEEL_DIAMETER_CM       3.0
+#define WHEEL_CIRCUMFERENCE_CM  (M_PI * WHEEL_DIAMETER_CM)
+#define TICKS_PER_CM            (ENCODER_TICKS_PER_REV / WHEEL_CIRCUMFERENCE_CM)
+#define MAX_SPEED_CM_S          10.0f
+#define DECEL_DISTANCE_CM       1.0f
+#define MIN_SPEED_CM_S          1.0f
+
+// Motor gear ratio
+#define MOTOR_GEAR_RATIO 100.0    // Gear ratio of the motor
+
+// Motor encoder settings
+// ENCODER_MODE: 4 for X4 quadrature (both edges, both channels)
+//               2 for X2 quadrature (both edges, channel A only)
+#define ENCODER_MODE 4
+#define ENCODER_PPR 3             // Pulses per revolution (pole pairs on the magnetic disc)
+#define ENCODER_TICKS_PER_REV (ENCODER_PPR * ENCODER_MODE * MOTOR_GEAR_RATIO)
+
+// PID controller settings
+#define PID_KP          6.0f
+#define PID_KI          2.0f
+#define PID_KD          0.0f
+#define PID_OUTPUT_MIN  -255.0f
+#define PID_OUTPUT_MAX   255.0f
+#define PID_UPDATE_INTERVAL_US  20000  // PID loop interval in microseconds (20ms = 50Hz)
+
+// Display and touchscreen settings
 #define TFT_DEFAULT_ROTATION   0
 #define TFT_DEFAULT_BG_COLOR   ILI9341_BLACK
 #define TFT_DEFAULT_BRIGHTNESS 255
-
 #define TOUCH_THRESHOLD 40
-
-// Feature Flags
-// -----------------------------------------------------------------------------
-// TODO: Define feature toggles here
