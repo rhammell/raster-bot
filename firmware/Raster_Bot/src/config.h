@@ -66,7 +66,7 @@
 #define PID_KD          0.0f
 #define PID_OUTPUT_MIN  -255.0f
 #define PID_OUTPUT_MAX   255.0f
-#define PID_UPDATE_INTERVAL_US  20000  // PID loop interval in microseconds (20ms = 50Hz)
+#define DRIVE_UPDATE_INTERVAL_US  20000  // Drive loop interval in microseconds (20ms = 50Hz)
 
 // Display and touchscreen settings
 #define TFT_DEFAULT_ROTATION   0

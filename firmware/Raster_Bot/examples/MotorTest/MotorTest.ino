@@ -27,9 +27,15 @@
  
 void loop() {
 
-  
+  static bool stopped = false;
+  if (!stopped && millis() >= 10000) {
+    bot.drive.stop();
+    stopped = true;
+    Serial.println("--- Stop commanded ---");
+  }
+
   static uint32_t lastRpmPrintMs = 0;
-  if (bot.drive.isMoving() && millis() - lastRpmPrintMs >= 100) {
+  if (millis() - lastRpmPrintMs >= 100) {
     lastRpmPrintMs = millis();
     Serial.print("T: ");
     Serial.print(millis() / 1000.0, 1);

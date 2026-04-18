@@ -72,8 +72,20 @@ void Raster_Drive::stop() {
 }
 
 void Raster_Drive::update() {
-    _leftController.update();
-    _rightController.update();
+    // Get the current time and the elapsed time
+    uint32_t now = micros();
+    uint32_t elapsed = now - _lastUpdateTime;
+
+    // Skip if the minimum interval hasn't passed
+    if (elapsed < DRIVE_UPDATE_INTERVAL_US) return;
+    _lastUpdateTime = now;
+
+    // Convert the elapsed time to seconds
+    float dt = elapsed / 1e6f;
+
+    // Update the left and right motor controllers
+    _leftController.update(dt);
+    _rightController.update(dt);
 
     // if (_moving && _distanceBounded) {
     //     float traveled = _ticksToCm(

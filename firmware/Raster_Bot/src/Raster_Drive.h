@@ -24,8 +24,9 @@ private:
     void _setRPM(float leftRPM, float rightRPM);
     float _ticksToCm(int64_t ticks) const;
 
-    bool  _moving = false;
-    bool  _distanceBounded = false;
-    float _cruiseSpeed = 0;
-    float _targetDistance = 0;
+    bool     _moving = false;
+    bool     _distanceBounded = false;
+    float    _cruiseSpeed = 0;
+    float    _targetDistance = 0;
+    uint32_t _lastUpdateTime = 0;
 };

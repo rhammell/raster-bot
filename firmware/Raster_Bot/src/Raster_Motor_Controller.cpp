@@ -23,31 +23,14 @@ void Raster_Motor_Controller::setRPM(float rpm) {
     pid.setSetpoint(rpm);
 }
 
-void Raster_Motor_Controller::update() {
-    // Get the current time
-    uint32_t now = micros();
-    uint32_t elapsed = now - _lastUpdateTime;
-
-    // Skip if the minimum interval hasn't passed
-    if (elapsed < PID_UPDATE_INTERVAL_US) return;
-
-    // Update the last update time
-    _lastUpdateTime = now;
-
-    // Compute the time delta in seconds
-    float dt = elapsed / 1e6f;
-    
+void Raster_Motor_Controller::update(float dt) {
     // Get the current encoder count and the delta
     int64_t count = encoder.getCount();
     int64_t delta = count - _lastEncoderCount;
-
-    // Update the last encoder count
     _lastEncoderCount = count;
 
-    // Compute the revolutions
-    float revolutions = (float)delta / ENCODER_TICKS_PER_REV;
-
     // Compute the current RPM
+    float revolutions = (float)delta / ENCODER_TICKS_PER_REV;
     currentRPM = (revolutions / dt) * 60.0f;
 
     // Run PID and apply output to motor

@@ -26,7 +26,7 @@ public:
 
     bool begin(const MotorControllerConfig& config);
     void setRPM(float rpm);
-    void update();
+    void update(float dt);
     void stop();
     void reset();
 
@@ -37,6 +37,5 @@ public:
     float          currentPWM = 0.0f;
 
 private:
-    uint32_t _lastUpdateTime = 0;
     int64_t  _lastEncoderCount = 0;
 };
