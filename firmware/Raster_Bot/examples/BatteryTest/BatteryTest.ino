@@ -70,6 +70,8 @@ void setup() {
     while (1);
   }
 
+  bot.display.showSplash(3000);
+
   // Use portrait mode to match other examples.
   bot.display.setRotation(0);
 

@@ -22,10 +22,12 @@ void setup() {
     while (1);
   }
 
+  Serial.println("Raster_Bot initialized successfully");
+
+  bot.display.showSplash(3000);
+
   // Set screen rotation to portrait
   bot.display.setRotation(0);
-
-  Serial.println("Raster_Bot initialized successfully");
 
   // Draw the fixed header text.
   bot.display.setCursor(10, 10);

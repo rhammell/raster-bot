@@ -44,6 +44,8 @@ void setup() {
 
   Serial.println("Raster_Bot initialized successfully");
 
+  bot.display.showSplash(3000);
+
   // Draw all fixed UI and demo shapes.
   drawTestScreen();
 
