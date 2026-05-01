@@ -48,19 +48,25 @@ void Raster_Display::showSplash() {
     int16_t y = (height() - logoHeight) / 2;
     drawBitmap(x, y, logo, logoWidth, logoHeight, ILI9341_WHITE);
 
+    delay(500);
+
     // Fade in
     for (int i = 0; i <= 255; i += 5) {
         setBrightness(i);
         delay(10);
     }
 
-    delay(3000);
+    delay(2000);
 
     // Fade out
     for (int i = 255; i >= 0; i -= 5) {
         setBrightness(i);
         delay(10);
     }
+
+    // Hold on black before returning
+    fillScreen(ILI9341_BLACK);
+    delay(500);
 
     fillScreen(TFT_DEFAULT_BG_COLOR);
     setBrightness(TFT_DEFAULT_BRIGHTNESS);
