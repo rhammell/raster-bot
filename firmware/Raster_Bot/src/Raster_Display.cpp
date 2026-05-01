@@ -41,13 +41,16 @@ bool Raster_Display::begin() {
 }
 
 void Raster_Display::showSplash() {
+    // Turn off backlight
     setBrightness(0);
     fillScreen(ILI9341_BLACK);
 
+    // Draw logo
     int16_t x = (width() - logoWidth) / 2;
     int16_t y = (height() - logoHeight) / 2;
     drawBitmap(x, y, logo, logoWidth, logoHeight, ILI9341_WHITE);
 
+    // Hold on black for 500ms
     delay(500);
 
     // Fade in
@@ -56,6 +59,7 @@ void Raster_Display::showSplash() {
         delay(10);
     }
 
+    // Hold on logo for 2000ms
     delay(2000);
 
     // Fade out
@@ -68,6 +72,7 @@ void Raster_Display::showSplash() {
     fillScreen(ILI9341_BLACK);
     delay(500);
 
+    // Reset backlight to default
     fillScreen(TFT_DEFAULT_BG_COLOR);
     setBrightness(TFT_DEFAULT_BRIGHTNESS);
 }
