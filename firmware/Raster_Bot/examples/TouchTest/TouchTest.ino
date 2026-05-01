@@ -24,7 +24,7 @@ void setup() {
 
   Serial.println("Raster_Bot initialized successfully");
 
-  bot.display.showSplash(3000);
+  bot.display.showSplash();
 
   // Set screen rotation to portrait
   bot.display.setRotation(0);

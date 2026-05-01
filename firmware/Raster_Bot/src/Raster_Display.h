@@ -14,7 +14,7 @@ public:
     Raster_Display();
 
     bool begin();
-    void showSplash(uint32_t duration_ms = 3000);
+    void showSplash();
     void setBrightness(uint8_t brightness);
     bool touched();
     TS_Point getTouchPoint();

@@ -70,10 +70,11 @@ void setup() {
     while (1);
   }
 
-  bot.display.showSplash(3000);
+  bot.display.showSplash();
 
   // Use portrait mode to match other examples.
   bot.display.setRotation(0);
+  bot.display.setBrightness(50);
 
   // Draw static UI once and values immediately.
   drawStaticLayout();

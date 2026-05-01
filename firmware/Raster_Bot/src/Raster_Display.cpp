@@ -1,4 +1,5 @@
 #include "Raster_Display.h"
+#include "splash_logo.h"
 
 // =============================================================================
 // Raster_Display Implementation
@@ -39,31 +40,34 @@ bool Raster_Display::begin() {
     return true;
 }
 
-void Raster_Display::showSplash(uint32_t duration_ms) {
+void Raster_Display::showSplash() {
+    setBrightness(0);
     fillScreen(ILI9341_BLACK);
-    setTextSize(3);
-    setTextColor(ILI9341_WHITE);
 
-    // "Raster" — 6 chars × 18px = 108px wide, 24px tall
-    // "Bot"    — 3 chars × 18px =  54px wide, 24px tall
-    // 8px gap between lines, total block height = 24 + 8 + 24 = 56px
-    int16_t line1X = (width() - 108) / 2;
-    int16_t line2X = (width() - 54) / 2;
-    int16_t topY   = (height() - 56) / 2;
+    int16_t x = (width() - logoWidth) / 2;
+    int16_t y = (height() - logoHeight) / 2;
+    drawBitmap(x, y, logo, logoWidth, logoHeight, ILI9341_WHITE);
 
-    setCursor(line1X, topY);
-    println("Raster");
-    setCursor(line2X, topY + 32);
-    println("Bot");
+    // Fade in
+    for (int i = 0; i <= 255; i += 5) {
+        setBrightness(i);
+        delay(10);
+    }
 
-    delay(duration_ms);
+    delay(3000);
+
+    // Fade out
+    for (int i = 255; i >= 0; i -= 5) {
+        setBrightness(i);
+        delay(10);
+    }
+
     fillScreen(TFT_DEFAULT_BG_COLOR);
+    setBrightness(TFT_DEFAULT_BRIGHTNESS);
 }
 
 void Raster_Display::setBrightness(uint8_t brightness) {
-    // Troubleshooting-friendly backlight control:
-    // use deterministic HIGH/LOW behavior to rule out PWM setup issues.
-    digitalWrite(TFT_LITE, (brightness > 0) ? HIGH : LOW);
+    analogWrite(TFT_LITE, brightness);
 }
 
 // Check if screen is currently being touched
