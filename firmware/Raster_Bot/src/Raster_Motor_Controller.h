@@ -29,6 +29,7 @@ public:
     void update(float dt);
     void stop();
     void reset();
+    int64_t getEncoderCount() const { return encoder.getCount(); }
 
     Raster_Motor   motor;
     Raster_Encoder encoder;
