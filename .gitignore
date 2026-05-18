@@ -1,20 +1,22 @@
-# KiCad temporary and local files
-**/*.kicad_prl
-**/*.bak
-**/*.lck
-**/_autosave*
-**/#auto_saved_files#
-**/fp-info-cache
+# KiCad
+*.kicad_prl
+*.bak
+*.lck
+_autosave*
+#auto_saved_files#
+fp-info-cache
+*-backups/
 
-# Backups
-**/Raster_Bot-backups/
-**/*-backups/
+# KiCad production
+production/
+fabrication-toolkit-options.json
 
-# Production and Fabrication files
-**/production/
-**/fabrication-toolkit-options.json
+# FreeCAD
+*.FCBak
+*.FCStd1
+*.tmp
 
-# OS generated files
+# OS
 .DS_Store
 .DS_Store?
 ._*
