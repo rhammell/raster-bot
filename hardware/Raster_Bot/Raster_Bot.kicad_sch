@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "Raster Bot")
-		(rev "v0.6")
+		(rev "v0.7")
 	)
 	(lib_symbols
 		(symbol "Battery_Management:BQ24072RGT"
@@ -3526,7 +3526,7 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at -4.572 5.334 0)
+				(at -4.572 5.588 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -6494,8 +6494,8 @@
 		(uuid 1ee2b6b2-4e6c-45f4-a57d-453b613c7792)
 	)
 	(rectangle
-		(start 163.83 179.07)
-		(end 251.46 259.08)
+		(start 180.34 179.07)
+		(end 267.97 259.08)
 		(stroke
 			(width 0)
 			(type default)
@@ -6531,7 +6531,7 @@
 	)
 	(rectangle
 		(start 20.32 179.07)
-		(end 97.79 271.78)
+		(end 120.65 271.78)
 		(stroke
 			(width 0)
 			(type default)
@@ -6590,8 +6590,8 @@
 		(uuid 879830e6-5886-430a-ab32-4d835033265b)
 	)
 	(rectangle
-		(start 101.6 179.07)
-		(end 139.7 229.87)
+		(start 139.7 179.07)
+		(end 177.8 229.87)
 		(stroke
 			(width 0)
 			(type default)
@@ -6603,7 +6603,7 @@
 	)
 	(rectangle
 		(start 143.51 104.14)
-		(end 213.36 151.13)
+		(end 219.71 151.13)
 		(stroke
 			(width 0)
 			(type default)
@@ -6661,7 +6661,7 @@
 	)
 	(text "RESET/BOOT Buttons"
 		(exclude_from_sim no)
-		(at 101.6 178.562 0)
+		(at 139.7 178.562 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -6793,7 +6793,7 @@
 	)
 	(text "Motor Driver"
 		(exclude_from_sim no)
-		(at 163.83 178.562 0)
+		(at 180.34 178.562 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -6801,6 +6801,12 @@
 			(justify left bottom)
 		)
 		(uuid "fbae7799-33a5-4b73-adfe-e1dec96abc23")
+	)
+	(junction
+		(at 86.36 189.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "056119f5-42f0-468f-929c-b913728063b7")
 	)
 	(junction
 		(at 69.85 76.2)
@@ -6839,7 +6845,7 @@
 		(uuid "248cd760-d2da-4e4b-9381-56c4b8cab9f9")
 	)
 	(junction
-		(at 125.73 191.77)
+		(at 163.83 191.77)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "28c10e9a-dfc7-427a-8f80-efdb188b702a")
@@ -6863,7 +6869,13 @@
 		(uuid "34d91109-dbd0-47e2-ae2a-360ab14c2e6c")
 	)
 	(junction
-		(at 207.01 189.23)
+		(at 201.93 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "36ebf5b3-89b9-41f7-bcae-3cc74c0c6078")
+	)
+	(junction
+		(at 223.52 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "374ef471-6657-45b9-aafb-24b209a20fdd")
@@ -6887,7 +6899,7 @@
 		(uuid "3d7ce5de-7bac-44d3-82df-6659022b6d2a")
 	)
 	(junction
-		(at 226.06 189.23)
+		(at 242.57 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "436e617b-09e3-4b85-b7ad-70dcf98ff353")
@@ -6899,16 +6911,16 @@
 		(uuid "443ed279-76b6-49ed-88c8-7244a47c8f3d")
 	)
 	(junction
-		(at 205.74 248.92)
+		(at 198.12 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4d9db7a8-735e-46d7-aa5b-282bb20d257b")
+	)
+	(junction
+		(at 222.25 248.92)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "54f8b5ff-8506-446b-b534-7237cf1aaa13")
-	)
-	(junction
-		(at 195.58 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5e858ef5-4de7-4ac8-bd8f-f8ca2a36619d")
 	)
 	(junction
 		(at 66.04 143.51)
@@ -6923,16 +6935,22 @@
 		(uuid "6732f335-897a-40a2-b428-a24520ae0be5")
 	)
 	(junction
-		(at 207.01 196.85)
+		(at 223.52 196.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "683f60ca-111b-4dde-850d-7c3e7db5d1c9")
 	)
 	(junction
-		(at 213.36 189.23)
+		(at 229.87 189.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "732d31e3-d199-419a-b4a3-56f40562e06a")
+	)
+	(junction
+		(at 184.15 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "734cf960-1244-435e-b691-97000124bdde")
 	)
 	(junction
 		(at 133.35 50.8)
@@ -6989,16 +7007,10 @@
 		(uuid "c6720825-550a-4a93-a654-0515d7fa9fd5")
 	)
 	(junction
-		(at 109.22 196.85)
+		(at 147.32 196.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d051dd2e-2fda-4c59-8dbd-64ae04d17427")
-	)
-	(junction
-		(at 184.15 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d1881b2a-064c-40bd-aaee-2498d9360672")
 	)
 	(junction
 		(at 344.17 53.34)
@@ -7173,7 +7185,7 @@
 		(uuid "e2c7c3de-3c66-4a91-805f-aec908a15d39")
 	)
 	(no_connect
-		(at 219.71 210.82)
+		(at 236.22 210.82)
 		(uuid "eb932944-3736-4ee8-ace3-f1239a475a47")
 	)
 	(no_connect
@@ -7222,7 +7234,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 191.77) (xy 109.22 196.85)
+			(xy 147.32 191.77) (xy 147.32 196.85)
 		)
 		(stroke
 			(width 0)
@@ -7242,7 +7254,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 189.23) (xy 226.06 189.23)
+			(xy 229.87 189.23) (xy 242.57 189.23)
 		)
 		(stroke
 			(width 0)
@@ -7282,7 +7294,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 218.44) (xy 194.31 218.44)
+			(xy 199.39 218.44) (xy 210.82 218.44)
 		)
 		(stroke
 			(width 0)
@@ -7332,7 +7344,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 248.92) (xy 205.74 248.92)
+			(xy 224.79 248.92) (xy 222.25 248.92)
 		)
 		(stroke
 			(width 0)
@@ -7392,13 +7404,23 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 213.36) (xy 176.53 214.63)
+			(xy 193.04 213.36) (xy 193.04 214.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "155a0125-47fa-4ca9-b2c0-476ac79ff011")
+	)
+	(wire
+		(pts
+			(xy 99.06 199.39) (xy 99.06 198.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17bf83b7-9334-4798-ba79-e5018fb9acd1")
 	)
 	(wire
 		(pts
@@ -7512,7 +7534,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 196.85) (xy 125.73 196.85)
+			(xy 160.02 196.85) (xy 163.83 196.85)
 		)
 		(stroke
 			(width 0)
@@ -7532,7 +7554,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 248.92) (xy 205.74 250.19)
+			(xy 222.25 248.92) (xy 222.25 250.19)
 		)
 		(stroke
 			(width 0)
@@ -7572,7 +7594,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 223.52) (xy 231.14 223.52)
+			(xy 236.22 223.52) (xy 247.65 223.52)
 		)
 		(stroke
 			(width 0)
@@ -7592,7 +7614,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 238.76) (xy 189.23 240.03)
+			(xy 205.74 238.76) (xy 205.74 240.03)
 		)
 		(stroke
 			(width 0)
@@ -7609,6 +7631,16 @@
 			(type default)
 		)
 		(uuid "2c185852-a53e-4f6a-912c-5202b175caac")
+	)
+	(wire
+		(pts
+			(xy 201.93 133.35) (xy 203.2 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c9a888b-f6a3-4e7b-9bef-903c99eabe20")
 	)
 	(wire
 		(pts
@@ -7762,7 +7794,17 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 187.96) (xy 207.01 189.23)
+			(xy 86.36 189.23) (xy 99.06 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ef6a831-832f-49c7-8319-ea0f20dacc8c")
+	)
+	(wire
+		(pts
+			(xy 223.52 187.96) (xy 223.52 189.23)
 		)
 		(stroke
 			(width 0)
@@ -7782,7 +7824,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 191.77) (xy 125.73 191.77)
+			(xy 161.29 191.77) (xy 163.83 191.77)
 		)
 		(stroke
 			(width 0)
@@ -7802,7 +7844,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 189.23) (xy 238.76 190.5)
+			(xy 255.27 189.23) (xy 255.27 190.5)
 		)
 		(stroke
 			(width 0)
@@ -7842,7 +7884,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 218.44) (xy 130.81 218.44)
+			(xy 161.29 218.44) (xy 168.91 218.44)
 		)
 		(stroke
 			(width 0)
@@ -7972,17 +8014,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 133.35) (xy 195.58 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "52779d44-d226-4e8e-928f-e767aeb30ddb")
-	)
-	(wire
-		(pts
-			(xy 219.71 215.9) (xy 231.14 215.9)
+			(xy 236.22 215.9) (xy 247.65 215.9)
 		)
 		(stroke
 			(width 0)
@@ -7992,7 +8024,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 213.36) (xy 194.31 213.36)
+			(xy 193.04 213.36) (xy 210.82 213.36)
 		)
 		(stroke
 			(width 0)
@@ -8002,7 +8034,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 191.77) (xy 109.22 191.77)
+			(xy 151.13 191.77) (xy 147.32 191.77)
 		)
 		(stroke
 			(width 0)
@@ -8052,7 +8084,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 196.85) (xy 125.73 191.77)
+			(xy 163.83 196.85) (xy 163.83 191.77)
 		)
 		(stroke
 			(width 0)
@@ -8062,7 +8094,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 196.85) (xy 191.77 199.39)
+			(xy 208.28 196.85) (xy 208.28 199.39)
 		)
 		(stroke
 			(width 0)
@@ -8212,7 +8244,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 231.14) (xy 194.31 231.14)
+			(xy 199.39 231.14) (xy 210.82 231.14)
 		)
 		(stroke
 			(width 0)
@@ -8222,17 +8254,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 133.35) (xy 196.85 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "73e887e3-3a04-43c1-8209-487c400aaf57")
-	)
-	(wire
-		(pts
-			(xy 180.34 236.22) (xy 180.34 240.03)
+			(xy 196.85 236.22) (xy 196.85 240.03)
 		)
 		(stroke
 			(width 0)
@@ -8272,7 +8294,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 210.82) (xy 194.31 210.82)
+			(xy 208.28 210.82) (xy 210.82 210.82)
 		)
 		(stroke
 			(width 0)
@@ -8292,7 +8314,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 133.35) (xy 184.15 134.62)
+			(xy 198.12 133.35) (xy 198.12 134.62)
 		)
 		(stroke
 			(width 0)
@@ -8432,7 +8454,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 218.44) (xy 113.03 218.44)
+			(xy 147.32 218.44) (xy 151.13 218.44)
 		)
 		(stroke
 			(width 0)
@@ -8492,7 +8514,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 196.85) (xy 207.01 203.2)
+			(xy 223.52 196.85) (xy 223.52 203.2)
 		)
 		(stroke
 			(width 0)
@@ -8632,7 +8654,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 223.52) (xy 194.31 223.52)
+			(xy 199.39 223.52) (xy 210.82 223.52)
 		)
 		(stroke
 			(width 0)
@@ -8642,7 +8664,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 196.85) (xy 207.01 196.85)
+			(xy 208.28 196.85) (xy 223.52 196.85)
 		)
 		(stroke
 			(width 0)
@@ -8692,7 +8714,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 236.22) (xy 194.31 236.22)
+			(xy 196.85 236.22) (xy 210.82 236.22)
 		)
 		(stroke
 			(width 0)
@@ -8712,7 +8734,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 220.98) (xy 231.14 220.98)
+			(xy 236.22 220.98) (xy 247.65 220.98)
 		)
 		(stroke
 			(width 0)
@@ -8872,7 +8894,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 132.08) (xy 195.58 133.35)
+			(xy 201.93 130.81) (xy 201.93 133.35)
 		)
 		(stroke
 			(width 0)
@@ -8922,7 +8944,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 189.23) (xy 207.01 196.85)
+			(xy 223.52 189.23) (xy 223.52 196.85)
 		)
 		(stroke
 			(width 0)
@@ -8992,7 +9014,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 189.23) (xy 226.06 190.5)
+			(xy 242.57 189.23) (xy 242.57 190.5)
 		)
 		(stroke
 			(width 0)
@@ -9022,7 +9044,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 189.23) (xy 213.36 190.5)
+			(xy 229.87 189.23) (xy 229.87 190.5)
 		)
 		(stroke
 			(width 0)
@@ -9052,7 +9074,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 238.76) (xy 194.31 238.76)
+			(xy 205.74 238.76) (xy 210.82 238.76)
 		)
 		(stroke
 			(width 0)
@@ -9079,6 +9101,16 @@
 			(type default)
 		)
 		(uuid "c8c2137e-241e-4eb1-9c75-f0efcb50af03")
+	)
+	(wire
+		(pts
+			(xy 198.12 133.35) (xy 201.93 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8db3172-33c3-40ed-9633-a6bb23d09555")
 	)
 	(wire
 		(pts
@@ -9112,7 +9144,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 189.23) (xy 238.76 189.23)
+			(xy 242.57 189.23) (xy 255.27 189.23)
 		)
 		(stroke
 			(width 0)
@@ -9142,7 +9174,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 189.23) (xy 213.36 189.23)
+			(xy 223.52 189.23) (xy 229.87 189.23)
 		)
 		(stroke
 			(width 0)
@@ -9192,7 +9224,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 247.65) (xy 205.74 248.92)
+			(xy 222.25 247.65) (xy 222.25 248.92)
 		)
 		(stroke
 			(width 0)
@@ -9212,7 +9244,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 220.98) (xy 109.22 218.44)
+			(xy 147.32 220.98) (xy 147.32 218.44)
 		)
 		(stroke
 			(width 0)
@@ -9252,7 +9284,17 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 247.65) (xy 208.28 248.92)
+			(xy 86.36 199.39) (xy 99.06 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5b8e05c-b1a6-405f-a448-281c98a5c3f6")
+	)
+	(wire
+		(pts
+			(xy 224.79 247.65) (xy 224.79 248.92)
 		)
 		(stroke
 			(width 0)
@@ -9309,6 +9351,16 @@
 			(type default)
 		)
 		(uuid "d9a85bbb-7d62-4949-93c7-ef0dd90b7916")
+	)
+	(wire
+		(pts
+			(xy 99.06 189.23) (xy 99.06 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9f01034-8c32-45c5-b70c-4911857b71e7")
 	)
 	(wire
 		(pts
@@ -9372,6 +9424,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 133.35) (xy 184.15 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfb0b192-8a62-4c7b-ab7e-9e4c416a2ed3")
+	)
+	(wire
+		(pts
 			(xy 41.91 34.29) (xy 41.91 35.56)
 		)
 		(stroke
@@ -9402,6 +9464,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 133.35) (xy 198.12 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e66c9299-8237-472e-a9c8-84a41befd2b3")
+	)
+	(wire
+		(pts
 			(xy 243.84 36.83) (xy 248.92 36.83)
 		)
 		(stroke
@@ -9422,7 +9494,7 @@
 	)
 	(wire
 		(pts
-			(xy 219.71 218.44) (xy 231.14 218.44)
+			(xy 236.22 218.44) (xy 247.65 218.44)
 		)
 		(stroke
 			(width 0)
@@ -9442,7 +9514,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 226.06) (xy 194.31 226.06)
+			(xy 199.39 226.06) (xy 210.82 226.06)
 		)
 		(stroke
 			(width 0)
@@ -9462,7 +9534,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 196.85) (xy 109.22 196.85)
+			(xy 152.4 196.85) (xy 147.32 196.85)
 		)
 		(stroke
 			(width 0)
@@ -9492,7 +9564,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 191.77) (xy 134.62 191.77)
+			(xy 163.83 191.77) (xy 172.72 191.77)
 		)
 		(stroke
 			(width 0)
@@ -9592,7 +9664,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 207.01) (xy 191.77 210.82)
+			(xy 208.28 207.01) (xy 208.28 210.82)
 		)
 		(stroke
 			(width 0)
@@ -9612,7 +9684,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 228.6) (xy 194.31 228.6)
+			(xy 199.39 228.6) (xy 210.82 228.6)
 		)
 		(stroke
 			(width 0)
@@ -9642,7 +9714,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 196.85) (xy 109.22 199.39)
+			(xy 147.32 196.85) (xy 147.32 199.39)
 		)
 		(stroke
 			(width 0)
@@ -9671,7 +9743,7 @@
 		(uuid "0591d56d-d479-4d29-9f79-fbc0e275e61c")
 	)
 	(label "MOT1_IN2"
-		(at 182.88 226.06 0)
+		(at 199.39 226.06 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9731,7 +9803,7 @@
 		(uuid "168a9598-93d8-4b96-8e3e-9f525b874c1d")
 	)
 	(label "BOOT"
-		(at 130.81 218.44 180)
+		(at 168.91 218.44 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9881,7 +9953,7 @@
 		(uuid "4aaa73a9-56f0-48db-990f-027d1bc21dbf")
 	)
 	(label "MOT1_IN1"
-		(at 182.88 223.52 0)
+		(at 199.39 223.52 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9901,7 +9973,7 @@
 		(uuid "55b416e8-8377-4c8d-82fb-949644e34117")
 	)
 	(label "MOT2_IN1"
-		(at 182.88 228.6 0)
+		(at 199.39 228.6 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9921,7 +9993,7 @@
 		(uuid "63811434-273a-415b-b55d-8a445abfb741")
 	)
 	(label "MOT1_M2"
-		(at 231.14 218.44 180)
+		(at 247.65 218.44 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10131,7 +10203,7 @@
 		(uuid "c6c714cf-9fe9-4428-b627-d601c75f4208")
 	)
 	(label "MOT2_M2"
-		(at 231.14 223.52 180)
+		(at 247.65 223.52 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10151,7 +10223,7 @@
 		(uuid "cb9dea3a-e2a3-49f3-84b2-8fb650e41580")
 	)
 	(label "MOT2_IN2"
-		(at 182.88 231.14 0)
+		(at 199.39 231.14 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10211,7 +10283,7 @@
 		(uuid "da7aaa9d-a777-4c21-ac9b-96897c3b4809")
 	)
 	(label "RESET"
-		(at 134.62 191.77 180)
+		(at 172.72 191.77 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10221,7 +10293,7 @@
 		(uuid "e569eae8-5dee-4222-940a-4de0ecc8b890")
 	)
 	(label "SLEEP"
-		(at 182.88 218.44 0)
+		(at 199.39 218.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10251,7 +10323,7 @@
 		(uuid "f25260e8-e924-4b5c-b8b1-1d28dbf10420")
 	)
 	(label "MOT1_M1"
-		(at 231.14 215.9 180)
+		(at 247.65 215.9 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10261,7 +10333,7 @@
 		(uuid "f588f8ff-6359-4853-87cf-2dfaf2749521")
 	)
 	(label "MOT2_M1"
-		(at 231.14 220.98 180)
+		(at 247.65 220.98 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10272,7 +10344,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 196.85 133.35 270)
+		(at 203.2 133.35 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10281,7 +10353,7 @@
 		(dnp no)
 		(uuid "001059b3-2bd5-4da7-9dfc-37e0fd1e9db4")
 		(property "Reference" "#FLG03"
-			(at 198.755 133.35 0)
+			(at 205.105 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10290,7 +10362,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 199.644 133.35 90)
+			(at 205.994 133.35 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10299,7 +10371,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 196.85 133.35 0)
+			(at 203.2 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10308,7 +10380,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 196.85 133.35 0)
+			(at 203.2 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10317,7 +10389,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 196.85 133.35 0)
+			(at 203.2 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10346,7 +10418,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00f41317-b279-4ba7-b4de-63080bc56cab")
-		(property "Reference" "SW1"
+		(property "Reference" "SW3"
 			(at 181.61 109.728 0)
 			(effects
 				(font
@@ -10413,7 +10485,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "SW1")
+					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -10421,7 +10493,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 189.23 243.84 0)
+		(at 205.74 243.84 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10429,8 +10501,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "01b03e99-a31d-449a-8ab2-c3ce7eec04e4")
-		(property "Reference" "R19"
-			(at 187.706 242.57 0)
+		(property "Reference" "R14"
+			(at 204.216 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10439,7 +10511,7 @@
 			)
 		)
 		(property "Value" "300m"
-			(at 187.706 245.11 0)
+			(at 204.216 245.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10448,7 +10520,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 191.008 243.84 90)
+			(at 207.518 243.84 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10457,7 +10529,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 189.23 243.84 0)
+			(at 205.74 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10466,7 +10538,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 189.23 243.84 0)
+			(at 205.74 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10475,7 +10547,7 @@
 			)
 		)
 		(property "LCSC" "C22464904"
-			(at 189.23 243.84 0)
+			(at 205.74 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10492,7 +10564,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R19")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -10500,7 +10572,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 176.53 222.25 0)
+		(at 193.04 222.25 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10508,8 +10580,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "01f678f9-178f-4600-891a-9fedc46a4892")
-		(property "Reference" "#PWR065"
-			(at 176.53 228.6 0)
+		(property "Reference" "#PWR033"
+			(at 193.04 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10518,7 +10590,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 176.53 226.314 0)
+			(at 193.04 226.314 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10526,7 +10598,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 176.53 222.25 0)
+			(at 193.04 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10535,7 +10607,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 176.53 222.25 0)
+			(at 193.04 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10544,7 +10616,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 176.53 222.25 0)
+			(at 193.04 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10558,7 +10630,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR065")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -10573,7 +10645,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "035d46a5-e137-4a58-bb20-f8477fbd0ff5")
-		(property "Reference" "#PWR064"
+		(property "Reference" "#PWR065"
 			(at 368.3 68.58 0)
 			(effects
 				(font
@@ -10623,7 +10695,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR064")
+					(reference "#PWR065")
 					(unit 1)
 				)
 			)
@@ -10638,7 +10710,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "03b141c4-9450-4d53-b1d0-64bf556067cd")
-		(property "Reference" "C14"
+		(property "Reference" "C21"
 			(at 358.394 57.15 0)
 			(effects
 				(font
@@ -10701,7 +10773,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C14")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -10717,7 +10789,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0582389d-6221-46a7-9b79-975b3a55e5a4")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR057"
 			(at 332.74 115.57 0)
 			(effects
 				(font
@@ -10767,7 +10839,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR024")
+					(reference "#PWR057")
 					(unit 1)
 				)
 			)
@@ -10775,15 +10847,15 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 213.36 194.31 0)
+		(at 229.87 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "05ca05cf-098f-4fd9-bb49-dc473f77a5f2")
-		(property "Reference" "C18"
-			(at 216.154 193.04 0)
+		(property "Reference" "C14"
+			(at 232.664 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10792,7 +10864,7 @@
 			)
 		)
 		(property "Value" "0.1uF"
-			(at 216.154 195.58 0)
+			(at 232.664 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10801,7 +10873,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 214.3252 198.12 0)
+			(at 230.8352 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10810,7 +10882,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 213.36 194.31 0)
+			(at 229.87 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10819,7 +10891,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 213.36 194.31 0)
+			(at 229.87 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10828,7 +10900,7 @@
 			)
 		)
 		(property "LCSC" "C14663"
-			(at 213.36 194.31 0)
+			(at 229.87 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10845,7 +10917,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C18")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -10924,7 +10996,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "078f5384-daeb-4b60-bece-12b6cfedd438")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR047"
 			(at 256.54 52.07 0)
 			(effects
 				(font
@@ -10974,7 +11046,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR026")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -11052,7 +11124,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0bc18e10-ac66-4f13-acb6-8cadf94279e2")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR048"
 			(at 269.24 52.07 0)
 			(effects
 				(font
@@ -11102,7 +11174,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR030")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -11118,7 +11190,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0bfad387-978d-4ef6-90e1-d56ebfda047f")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR036"
 			(at 198.12 60.96 0)
 			(effects
 				(font
@@ -11168,7 +11240,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR039")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -11183,7 +11255,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0e724e02-5c16-4c0e-a400-e0605257f2ee")
-		(property "Reference" "C9"
+		(property "Reference" "C2"
 			(at 68.834 147.32 0)
 			(effects
 				(font
@@ -11246,7 +11318,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C9")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -11261,7 +11333,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0efbf416-0cff-46f8-bd65-c3d0728228f9")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR032"
 			(at 191.77 123.19 0)
 			(effects
 				(font
@@ -11311,7 +11383,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR044")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -11327,7 +11399,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "11dc4718-0813-4e2b-8b05-76c0161c2586")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR043"
 			(at 236.22 39.37 0)
 			(effects
 				(font
@@ -11377,7 +11449,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR016")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -11470,7 +11542,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "145e5ece-6858-411a-839c-ab9fe882e4d8")
-		(property "Reference" "C10"
+		(property "Reference" "C3"
 			(at 76.454 193.04 0)
 			(effects
 				(font
@@ -11533,7 +11605,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C10")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -11616,7 +11688,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1a4f0f39-c10f-404c-8b35-98093f3faaaf")
-		(property "Reference" "C1"
+		(property "Reference" "C16"
 			(at 241.046 40.64 0)
 			(effects
 				(font
@@ -11679,7 +11751,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C1")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -11695,7 +11767,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1a62016e-c222-4cf8-91af-f42f94578fa0")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR011"
 			(at 69.85 83.82 0)
 			(effects
 				(font
@@ -11745,7 +11817,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR07")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -11761,7 +11833,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1e25c76e-d2ee-42c9-8e85-b3b33d6d455a")
-		(property "Reference" "D5"
+		(property "Reference" "D2"
 			(at 105.41 138.43 0)
 			(effects
 				(font
@@ -11822,7 +11894,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "D5")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -11902,7 +11974,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1ed79700-e9c3-4644-8140-bc21691dc9bb")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR066"
 			(at 368.3 210.82 0)
 			(effects
 				(font
@@ -11952,7 +12024,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR031")
+					(reference "#PWR066")
 					(unit 1)
 				)
 			)
@@ -11960,7 +12032,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 195.58 132.08 0)
+		(at 201.93 130.81 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11968,8 +12040,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "284fde6b-167c-4d42-93f3-b1cacd2a884a")
-		(property "Reference" "#PWR045"
-			(at 195.58 135.89 0)
+		(property "Reference" "#PWR038"
+			(at 201.93 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11978,7 +12050,7 @@
 			)
 		)
 		(property "Value" "VSYS"
-			(at 195.58 128.016 0)
+			(at 201.93 126.746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11986,7 +12058,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 195.58 132.08 0)
+			(at 201.93 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11995,7 +12067,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 195.58 132.08 0)
+			(at 201.93 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12004,7 +12076,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 195.58 132.08 0)
+			(at 201.93 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12018,7 +12090,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR045")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -12026,15 +12098,15 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 207.01 187.96 0)
+		(at 223.52 187.96 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "298b51dd-177c-4234-8a66-36efd4523b31")
-		(property "Reference" "#PWR069"
-			(at 207.01 191.77 0)
+		(property "Reference" "#PWR041"
+			(at 223.52 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12043,7 +12115,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 207.01 183.896 0)
+			(at 223.52 183.896 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12051,7 +12123,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 207.01 187.96 0)
+			(at 223.52 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12060,7 +12132,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 207.01 187.96 0)
+			(at 223.52 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12069,7 +12141,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 207.01 187.96 0)
+			(at 223.52 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12083,7 +12155,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR069")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -12098,7 +12170,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2a60db4c-306a-4d30-9b7d-bf6571411802")
-		(property "Reference" "C5"
+		(property "Reference" "C10"
 			(at 190.5 46.736 90)
 			(effects
 				(font
@@ -12159,7 +12231,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C5")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -12174,7 +12246,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f8d224e-50db-45ee-b600-38e125aa7ae5")
-		(property "Reference" "R8"
+		(property "Reference" "R12"
 			(at 189.484 60.96 0)
 			(effects
 				(font
@@ -12237,7 +12309,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R8")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -12245,15 +12317,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 184.15 142.24 0)
+		(at 198.12 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "329cbb45-634d-4084-90d2-bf7dc08ededd")
-		(property "Reference" "#PWR043"
-			(at 184.15 148.59 0)
+		(property "Reference" "#PWR037"
+			(at 198.12 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12262,7 +12334,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 184.15 146.304 0)
+			(at 198.12 146.304 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12270,7 +12342,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 184.15 142.24 0)
+			(at 198.12 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12279,7 +12351,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 184.15 142.24 0)
+			(at 198.12 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12288,7 +12360,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 184.15 142.24 0)
+			(at 198.12 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12302,7 +12374,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR043")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -12317,7 +12389,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "36a35586-3e6c-4416-97d2-94fd42e87c79")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR059"
 			(at 335.28 231.14 0)
 			(effects
 				(font
@@ -12367,7 +12439,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR019")
+					(reference "#PWR059")
 					(unit 1)
 				)
 			)
@@ -12383,7 +12455,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3855db13-8562-450c-8f37-6f6bbedc3a24")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR021"
 			(at 146.05 44.45 0)
 			(effects
 				(font
@@ -12433,7 +12505,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR023")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -12448,7 +12520,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "388502a2-669a-4e78-af59-299747502e0a")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR063"
 			(at 359.41 128.27 0)
 			(effects
 				(font
@@ -12498,7 +12570,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR033")
+					(reference "#PWR063")
 					(unit 1)
 				)
 			)
@@ -12514,7 +12586,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3ab78786-2ac3-4956-9d29-654a8350f5ca")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR02"
 			(at 30.48 222.25 0)
 			(effects
 				(font
@@ -12564,7 +12636,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR047")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -12580,7 +12652,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3c5ce9a1-1585-4b90-bdf0-9dbe8084b37c")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR028"
 			(at 177.8 39.37 0)
 			(effects
 				(font
@@ -12630,7 +12702,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR034")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -12645,7 +12717,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3c914386-1303-4926-82c5-0e9bc5c1b782")
-		(property "Reference" "R2"
+		(property "Reference" "R6"
 			(at 114.554 49.53 0)
 			(effects
 				(font
@@ -12708,7 +12780,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R2")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -12723,7 +12795,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3cd5d3a9-0f48-4189-96d8-f080eb621d65")
-		(property "Reference" "C15"
+		(property "Reference" "C22"
 			(at 371.094 57.15 0)
 			(effects
 				(font
@@ -12786,7 +12858,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C15")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -12802,7 +12874,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3fb146d4-31bf-4d44-9e60-aafa53d4769d")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR027"
 			(at 162.56 77.47 0)
 			(effects
 				(font
@@ -12852,7 +12924,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR029")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -12868,7 +12940,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "405e0482-ca4e-408b-8505-a4b865efd843")
-		(property "Reference" "Q1"
+		(property "Reference" "Q3"
 			(at 172.72 137.16 90)
 			(effects
 				(font
@@ -12935,7 +13007,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "Q1")
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -12951,7 +13023,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "461eca69-f669-41bd-9496-79e8c8a7a03f")
-		(property "Reference" "R4"
+		(property "Reference" "R9"
 			(at 138.176 71.12 0)
 			(effects
 				(font
@@ -13014,7 +13086,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R4")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -13030,7 +13102,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "47150d52-3cc4-4a7b-9f02-a51920d5f31b")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR052"
 			(at 290.83 39.37 0)
 			(effects
 				(font
@@ -13080,7 +13152,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR050")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -13096,7 +13168,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4bb7c63b-d6bb-4da7-abc7-d32f6897be47")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR054"
 			(at 309.88 52.07 0)
 			(effects
 				(font
@@ -13146,7 +13218,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR056")
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -13162,7 +13234,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4c865f7a-fbce-4343-8e0a-c982de1ae8fd")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR055"
 			(at 318.77 128.27 0)
 			(effects
 				(font
@@ -13212,7 +13284,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR015")
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -13227,7 +13299,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4dc92f6d-6d70-4f1e-9899-279a17f76051")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR045"
 			(at 243.84 52.07 0)
 			(effects
 				(font
@@ -13277,7 +13349,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR021")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -13292,7 +13364,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5243498d-5282-4424-9e77-9bcb438b2831")
-		(property "Reference" "R10"
+		(property "Reference" "R8"
 			(at 118.364 137.16 0)
 			(effects
 				(font
@@ -13355,7 +13427,86 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R10")
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 99.06 194.31 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "52bac37d-02de-40fd-9d9d-a68bb36d8e0f")
+		(property "Reference" "C5"
+			(at 101.854 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100uF"
+			(at 101.854 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+			(at 98.0948 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 99.06 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 99.06 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15008"
+			(at 99.06 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e8151454-2eef-4c06-919b-94e0ab873b3f")
+		)
+		(pin "1"
+			(uuid "b667978a-e6ca-4612-9b68-7003d4e1cea0")
+		)
+		(instances
+			(project "Raster_Bot"
+				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -13371,7 +13522,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5477620d-4559-4b46-a042-8a644f4134e3")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR034"
 			(at 195.58 44.45 0)
 			(effects
 				(font
@@ -13421,7 +13572,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR035")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -13436,7 +13587,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "551e4191-2720-43f8-8bb8-ab717f14a266")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR016"
 			(at 116.84 116.84 0)
 			(effects
 				(font
@@ -13486,7 +13637,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR041")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -13501,7 +13652,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "55bc2cb5-878c-4c26-9a74-83387056b67e")
-		(property "Reference" "R3"
+		(property "Reference" "R15"
 			(at 336.804 210.82 0)
 			(effects
 				(font
@@ -13564,7 +13715,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R3")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -13572,15 +13723,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 226.06 198.12 0)
+		(at 242.57 198.12 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "5665cf5d-f073-4e3c-8e5c-fc9819a5ae81")
-		(property "Reference" "#PWR071"
-			(at 226.06 204.47 0)
+		(property "Reference" "#PWR044"
+			(at 242.57 204.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13589,7 +13740,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.06 202.184 0)
+			(at 242.57 202.184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13597,7 +13748,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 226.06 198.12 0)
+			(at 242.57 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13606,7 +13757,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 226.06 198.12 0)
+			(at 242.57 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13615,7 +13766,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 226.06 198.12 0)
+			(at 242.57 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13629,7 +13780,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR071")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -13644,7 +13795,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5b7eaa80-bb84-40ab-bdb3-76a9d2e1e99f")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR06"
 			(at 54.61 158.75 0)
 			(effects
 				(font
@@ -13694,7 +13845,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR049")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -13709,7 +13860,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "60651aa1-c433-4705-ae9b-ad09a48eca8b")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR051"
 			(at 287.02 120.65 0)
 			(effects
 				(font
@@ -13759,7 +13910,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR012")
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -13775,7 +13926,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "65d832a1-45ad-4714-bba1-c0d7ad3d19bb")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR012"
 			(at 86.36 207.01 0)
 			(effects
 				(font
@@ -13825,7 +13976,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR057")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -13840,7 +13991,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "692cfae5-993e-44bc-b6d3-f12a7a91aa73")
-		(property "Reference" "C3"
+		(property "Reference" "C18"
 			(at 272.034 40.64 0)
 			(effects
 				(font
@@ -13903,7 +14054,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C3")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -13911,15 +14062,15 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 184.15 138.43 0)
+		(at 198.12 138.43 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "6afc9b40-cfd6-4427-a3cd-a65c6e610c7f")
-		(property "Reference" "C6"
-			(at 186.944 137.16 0)
+		(property "Reference" "C12"
+			(at 200.914 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13928,7 +14079,7 @@
 			)
 		)
 		(property "Value" "22uF"
-			(at 186.944 139.7 0)
+			(at 200.914 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13937,7 +14088,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 185.1152 142.24 0)
+			(at 199.0852 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13946,7 +14097,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 184.15 138.43 0)
+			(at 198.12 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13955,7 +14106,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 184.15 138.43 0)
+			(at 198.12 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13964,7 +14115,7 @@
 			)
 		)
 		(property "LCSC" "C45783"
-			(at 184.15 138.43 0)
+			(at 198.12 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13981,7 +14132,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C6")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -13989,7 +14140,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 109.22 199.39 0)
+		(at 147.32 199.39 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -13997,8 +14148,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "751cf4c2-44ff-4d31-a06e-80c83cf2d67f")
-		(property "Reference" "#PWR059"
-			(at 109.22 205.74 0)
+		(property "Reference" "#PWR023"
+			(at 147.32 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14007,7 +14158,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 109.22 203.454 0)
+			(at 147.32 203.454 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14015,7 +14166,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 109.22 199.39 0)
+			(at 147.32 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14024,7 +14175,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 199.39 0)
+			(at 147.32 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14033,7 +14184,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 109.22 199.39 0)
+			(at 147.32 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14047,7 +14198,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR059")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -14063,7 +14214,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "76dcbf4a-4509-4391-a342-7e7b789aec8d")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR020"
 			(at 140.97 60.96 0)
 			(effects
 				(font
@@ -14113,7 +14264,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR022")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -14121,15 +14272,15 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
-		(at 238.76 194.31 0)
+		(at 255.27 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "784428c2-fcc3-4741-b790-310baa22873c")
-		(property "Reference" "C20"
-			(at 241.554 193.04 0)
+		(property "Reference" "C17"
+			(at 258.064 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14138,7 +14289,7 @@
 			)
 		)
 		(property "Value" "470uF"
-			(at 241.554 195.58 0)
+			(at 258.064 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14147,7 +14298,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x7.7"
-			(at 239.7252 198.12 0)
+			(at 256.2352 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14156,7 +14307,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 238.76 194.31 0)
+			(at 255.27 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14165,7 +14316,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor"
-			(at 238.76 194.31 0)
+			(at 255.27 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14174,7 +14325,7 @@
 			)
 		)
 		(property "LCSC" "C344072"
-			(at 238.76 194.31 0)
+			(at 255.27 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14191,7 +14342,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C20")
+					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -14206,7 +14357,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7892a9ae-c3a5-4858-b761-a748382bf88c")
-		(property "Reference" "R7"
+		(property "Reference" "R19"
 			(at 369.824 210.82 0)
 			(effects
 				(font
@@ -14269,7 +14420,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R7")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -14284,7 +14435,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "790d30a5-2e14-4cbf-bd5f-b0aec182951e")
-		(property "Reference" "U4"
+		(property "Reference" "U5"
 			(at 317.246 60.198 0)
 			(effects
 				(font
@@ -14361,7 +14512,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "U4")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -14455,7 +14606,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "83c827ce-0f1e-4123-8ad1-d73db629cd40")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR058"
 			(at 335.28 210.82 0)
 			(effects
 				(font
@@ -14505,7 +14656,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR03")
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -14520,7 +14671,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "83d4fc56-9fcc-4364-99c8-a138688f479a")
-		(property "Reference" "U3"
+		(property "Reference" "U1"
 			(at 73.66 262.636 0)
 			(effects
 				(font
@@ -14772,7 +14923,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "U3")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -14780,15 +14931,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 180.34 247.65 0)
+		(at 196.85 247.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "83dccc7f-be57-4bcc-959e-da979477f42d")
-		(property "Reference" "#PWR066"
-			(at 180.34 254 0)
+		(property "Reference" "#PWR035"
+			(at 196.85 254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14797,7 +14948,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 180.34 251.714 0)
+			(at 196.85 251.714 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14805,7 +14956,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 180.34 247.65 0)
+			(at 196.85 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14814,7 +14965,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 180.34 247.65 0)
+			(at 196.85 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14823,7 +14974,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 180.34 247.65 0)
+			(at 196.85 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14837,7 +14988,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR066")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -14852,7 +15003,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "85dd131d-7056-4014-a13a-461c7ad97c7b")
-		(property "Reference" "J6"
+		(property "Reference" "J5"
 			(at 341.376 101.346 0)
 			(effects
 				(font
@@ -14930,7 +15081,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "J6")
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -15003,15 +15154,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 189.23 247.65 0)
+		(at 205.74 247.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "8badf885-40b5-4598-9bf3-82a218d3c603")
-		(property "Reference" "#PWR067"
-			(at 189.23 254 0)
+		(property "Reference" "#PWR039"
+			(at 205.74 254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15020,7 +15171,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 189.23 251.714 0)
+			(at 205.74 251.714 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15028,7 +15179,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 189.23 247.65 0)
+			(at 205.74 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15037,7 +15188,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 189.23 247.65 0)
+			(at 205.74 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15046,7 +15197,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 189.23 247.65 0)
+			(at 205.74 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15060,7 +15211,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR067")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -15075,7 +15226,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8bb73974-bc3c-4e39-85c4-c0aee1ce46ef")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR056"
 			(at 326.39 72.39 0)
 			(effects
 				(font
@@ -15125,7 +15276,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR058")
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -15133,7 +15284,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 180.34 243.84 0)
+		(at 196.85 243.84 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15141,8 +15292,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8c8c2157-0946-4a8f-8694-019320671243")
-		(property "Reference" "R18"
-			(at 178.816 242.57 0)
+		(property "Reference" "R13"
+			(at 195.326 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15151,7 +15302,7 @@
 			)
 		)
 		(property "Value" "300m"
-			(at 178.816 245.11 0)
+			(at 195.326 245.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15160,7 +15311,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 182.118 243.84 90)
+			(at 198.628 243.84 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15169,7 +15320,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 180.34 243.84 0)
+			(at 196.85 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15178,7 +15329,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 180.34 243.84 0)
+			(at 196.85 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15187,7 +15338,7 @@
 			)
 		)
 		(property "LCSC" "C22464904"
-			(at 180.34 243.84 0)
+			(at 196.85 243.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15204,7 +15355,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R18")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -15212,7 +15363,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 118.11 196.85 270)
+		(at 156.21 196.85 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15220,8 +15371,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8dfa8755-02dc-4034-ac35-814d2acb0432")
-		(property "Reference" "C13"
-			(at 118.11 200.914 90)
+		(property "Reference" "C7"
+			(at 156.21 200.914 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15229,7 +15380,7 @@
 			)
 		)
 		(property "Value" "0.1uF"
-			(at 118.11 203.454 90)
+			(at 156.21 203.454 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15237,7 +15388,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 114.3 195.8848 0)
+			(at 152.4 195.8848 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15246,7 +15397,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 118.11 196.85 0)
+			(at 156.21 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15255,7 +15406,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 118.11 196.85 0)
+			(at 156.21 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15264,7 +15415,7 @@
 			)
 		)
 		(property "LCSC" "C14663"
-			(at 118.11 196.85 90)
+			(at 156.21 196.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15281,7 +15432,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C13")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -15297,7 +15448,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8eb7003a-a9bd-491e-8d74-f003a9a6996f")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR025"
 			(at 152.4 135.89 0)
 			(effects
 				(font
@@ -15347,7 +15498,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR040")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -15362,7 +15513,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f8ee9e0-54ef-4406-bdac-0d271618de8e")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR017"
 			(at 116.84 138.43 0)
 			(effects
 				(font
@@ -15412,7 +15563,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR042")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -15428,7 +15579,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "91272e4a-6534-4a08-bc42-32caa4c7c5af")
-		(property "Reference" "C11"
+		(property "Reference" "C20"
 			(at 307.086 40.64 0)
 			(effects
 				(font
@@ -15491,7 +15642,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C11")
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -15507,7 +15658,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "91ed03cf-4573-48c9-be57-e008fcdcd987")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR09"
 			(at 64.77 269.24 0)
 			(effects
 				(font
@@ -15557,7 +15708,72 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR055")
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 184.15 142.24 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9320ccb4-43d3-4e3c-9aae-7a87eef1d8ef")
+		(property "Reference" "#PWR030"
+			(at 184.15 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 184.15 146.304 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.15 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 184.15 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 184.15 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ea4a9cc3-9e19-432c-9879-3f36f10859c1")
+		)
+		(instances
+			(project "Raster_Bot"
+				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -15573,7 +15789,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9554e1e7-7c6a-4dfa-aadc-47861f128d72")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR029"
 			(at 182.88 55.88 0)
 			(effects
 				(font
@@ -15623,7 +15839,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR038")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -15631,15 +15847,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 205.74 250.19 0)
+		(at 222.25 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "98478546-9f9b-4c61-bace-db2e3acd670e")
-		(property "Reference" "#PWR068"
-			(at 205.74 256.54 0)
+		(property "Reference" "#PWR040"
+			(at 222.25 256.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15648,7 +15864,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 205.74 254.254 0)
+			(at 222.25 254.254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15656,7 +15872,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 250.19 0)
+			(at 222.25 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15665,7 +15881,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 250.19 0)
+			(at 222.25 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15674,7 +15890,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 205.74 250.19 0)
+			(at 222.25 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15688,7 +15904,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR068")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -15703,7 +15919,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "984e2031-f557-4b59-9df9-829f502e5f55")
-		(property "Reference" "C7"
+		(property "Reference" "C1"
 			(at 27.686 210.82 0)
 			(effects
 				(font
@@ -15766,7 +15982,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C7")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -15852,7 +16068,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 109.22 220.98 0)
+		(at 147.32 220.98 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15860,8 +16076,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9e508088-724d-42b0-b9b5-da36ce9cf493")
-		(property "Reference" "#PWR060"
-			(at 109.22 227.33 0)
+		(property "Reference" "#PWR024"
+			(at 147.32 227.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15870,7 +16086,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 109.22 225.044 0)
+			(at 147.32 225.044 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15878,7 +16094,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 109.22 220.98 0)
+			(at 147.32 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15887,7 +16103,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 220.98 0)
+			(at 147.32 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15896,7 +16112,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 109.22 220.98 0)
+			(at 147.32 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15910,7 +16126,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR060")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -15990,7 +16206,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a1537e16-f623-49fc-84da-73ade0ead82b")
-		(property "Reference" "R6"
+		(property "Reference" "R18"
 			(at 353.314 210.82 0)
 			(effects
 				(font
@@ -16053,7 +16269,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R6")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -16061,7 +16277,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 176.53 218.44 0)
+		(at 193.04 218.44 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -16069,8 +16285,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a3eb3566-03bd-452f-b814-38c1f2476a17")
-		(property "Reference" "C16"
-			(at 173.736 217.17 0)
+		(property "Reference" "C11"
+			(at 190.246 217.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16079,7 +16295,7 @@
 			)
 		)
 		(property "Value" "2.2uF"
-			(at 173.736 219.71 0)
+			(at 190.246 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16088,7 +16304,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 175.5648 222.25 0)
+			(at 192.0748 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16097,7 +16313,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 176.53 218.44 0)
+			(at 193.04 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16106,7 +16322,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 176.53 218.44 0)
+			(at 193.04 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16115,7 +16331,7 @@
 			)
 		)
 		(property "LCSC" "C23630"
-			(at 176.53 218.44 0)
+			(at 193.04 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16132,7 +16348,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C16")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -16147,7 +16363,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a4e8aa3c-7c01-41a2-b859-8ba6742a8490")
-		(property "Reference" "C2"
+		(property "Reference" "C6"
 			(at 153.67 30.226 90)
 			(effects
 				(font
@@ -16208,7 +16424,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C2")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -16224,7 +16440,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a85e0c27-e65f-428e-8b4f-09f74a3eebcd")
-		(property "Reference" "#PWR063"
+		(property "Reference" "#PWR064"
 			(at 361.95 55.88 0)
 			(effects
 				(font
@@ -16274,7 +16490,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR063")
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -16290,7 +16506,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a972af49-0f0e-4513-a5af-cead6b49ab67")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR01"
 			(at 26.67 135.89 0)
 			(effects
 				(font
@@ -16340,7 +16556,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR046")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -16355,7 +16571,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ab291697-f9b6-46dd-a92b-415a098ebd4d")
-		(property "Reference" "R1"
+		(property "Reference" "R5"
 			(at 104.394 49.53 0)
 			(effects
 				(font
@@ -16418,7 +16634,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R1")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -16554,7 +16770,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "afa72c87-8cf7-4cf8-bdea-c0965213fad7")
-		(property "Reference" "R15"
+		(property "Reference" "R4"
 			(at 56.134 147.32 0)
 			(effects
 				(font
@@ -16617,7 +16833,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R15")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -16633,7 +16849,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b30a6eaa-8549-46ca-9389-b82abb9a60e0")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR05"
 			(at 54.61 115.57 0)
 			(effects
 				(font
@@ -16683,7 +16899,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR01")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -16691,15 +16907,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 198.12 0)
+		(at 255.27 198.12 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "b45278e2-e7c5-4763-ab97-7cc00ea76f50")
-		(property "Reference" "#PWR02"
-			(at 238.76 204.47 0)
+		(property "Reference" "#PWR046"
+			(at 255.27 204.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16708,7 +16924,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 238.76 202.184 0)
+			(at 255.27 202.184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16716,7 +16932,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.76 198.12 0)
+			(at 255.27 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16725,7 +16941,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 198.12 0)
+			(at 255.27 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16734,7 +16950,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 238.76 198.12 0)
+			(at 255.27 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16748,7 +16964,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR02")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -16764,7 +16980,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b4c22df8-f228-4e45-9607-43c0ec0c4648")
-		(property "Reference" "R5"
+		(property "Reference" "R10"
 			(at 145.796 71.12 0)
 			(effects
 				(font
@@ -16827,7 +17043,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R5")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -16843,7 +17059,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b6a3971c-4294-4b47-9d7c-96d008dabbfe")
-		(property "Reference" "R12"
+		(property "Reference" "R1"
 			(at 28.956 200.66 0)
 			(effects
 				(font
@@ -16906,7 +17122,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R12")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -16922,7 +17138,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b7055461-2f76-4af4-8353-7e644ebe61b7")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR031"
 			(at 187.96 72.39 0)
 			(effects
 				(font
@@ -16972,7 +17188,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR037")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -17104,15 +17320,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 213.36 198.12 0)
+		(at 229.87 198.12 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "b8b9312c-839d-45fa-9911-d13223744fac")
-		(property "Reference" "#PWR070"
-			(at 213.36 204.47 0)
+		(property "Reference" "#PWR042"
+			(at 229.87 204.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17121,7 +17337,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 213.36 202.184 0)
+			(at 229.87 202.184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17129,7 +17345,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 213.36 198.12 0)
+			(at 229.87 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17138,7 +17354,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 213.36 198.12 0)
+			(at 229.87 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17147,7 +17363,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 213.36 198.12 0)
+			(at 229.87 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17161,7 +17377,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR070")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -17176,7 +17392,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ba546c1f-445b-4f14-bd83-4458af3d9c20")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR049"
 			(at 274.32 39.37 0)
 			(effects
 				(font
@@ -17226,7 +17442,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR032")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -17241,7 +17457,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "baf8f13b-7b6b-4ae6-b87b-fb155425966b")
-		(property "Reference" "D3"
+		(property "Reference" "D5"
 			(at 371.094 219.964 90)
 			(effects
 				(font
@@ -17313,7 +17529,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "D3")
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -17321,15 +17537,15 @@
 	)
 	(symbol
 		(lib_id "Raster_Bot:DRV8833PWPR")
-		(at 207.01 223.52 0)
+		(at 223.52 223.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "bb3b5e76-c3ce-45ef-a397-c3de386df28c")
-		(property "Reference" "U5"
-			(at 212.852 246.634 0)
+		(property "Reference" "U3"
+			(at 229.362 246.634 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17338,7 +17554,7 @@
 			)
 		)
 		(property "Value" "DRV8833PWPR"
-			(at 213.106 249.174 0)
+			(at 229.616 249.174 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17347,7 +17563,7 @@
 			)
 		)
 		(property "Footprint" "Raster_Bot:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm_ThermalVias"
-			(at 212.09 238.76 0)
+			(at 228.6 238.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17357,7 +17573,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/drv8833.pdf"
-			(at 212.852 254.254 0)
+			(at 229.362 254.254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17367,7 +17583,7 @@
 			)
 		)
 		(property "Description" "Dual H-Bridge Motor Driver, HTSSOP-16"
-			(at 212.852 251.714 0)
+			(at 229.362 251.714 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17377,7 +17593,7 @@
 			)
 		)
 		(property "LCSC" "C50506"
-			(at 207.01 223.52 0)
+			(at 223.52 223.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17439,7 +17655,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "U5")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -17454,7 +17670,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c30778c7-32cc-4b79-9db2-12c7b12760fb")
-		(property "Reference" "R14"
+		(property "Reference" "R3"
 			(at 56.134 137.16 0)
 			(effects
 				(font
@@ -17517,7 +17733,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R14")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -17532,7 +17748,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c6e783d4-5c83-4616-9190-9a4ca7bd12c7")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR07"
 			(at 64.77 128.27 0)
 			(effects
 				(font
@@ -17582,7 +17798,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR052")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -17669,7 +17885,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 118.11 218.44 0)
+		(at 156.21 218.44 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17677,8 +17893,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c9496145-e7af-4ee9-859e-f0148faef61c")
-		(property "Reference" "SW3"
-			(at 118.11 210.82 0)
+		(property "Reference" "SW2"
+			(at 156.21 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17686,7 +17902,7 @@
 			)
 		)
 		(property "Value" "SW_BOOT"
-			(at 118.11 213.36 0)
+			(at 156.21 213.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17694,7 +17910,7 @@
 			)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
-			(at 118.11 213.36 0)
+			(at 156.21 213.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17703,7 +17919,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 118.11 213.36 0)
+			(at 156.21 213.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17712,7 +17928,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 118.11 218.44 0)
+			(at 156.21 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17721,7 +17937,7 @@
 			)
 		)
 		(property "LCSC" "C720477"
-			(at 118.11 218.44 0)
+			(at 156.21 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17738,7 +17954,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "SW3")
+					(reference "SW2")
 					(unit 1)
 				)
 			)
@@ -17753,7 +17969,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cb2f5fdc-c62a-4764-97c0-742666911151")
-		(property "Reference" "#PWR061"
+		(property "Reference" "#PWR060"
 			(at 344.17 78.74 0)
 			(effects
 				(font
@@ -17803,7 +18019,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR061")
+					(reference "#PWR060")
 					(unit 1)
 				)
 			)
@@ -17894,7 +18110,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cb793b5d-c60f-47db-96cd-3470e85b4b15")
-		(property "Reference" "U1"
+		(property "Reference" "U4"
 			(at 252.73 31.242 0)
 			(effects
 				(font
@@ -17958,7 +18174,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "U1")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -17966,7 +18182,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 191.77 203.2 0)
+		(at 208.28 203.2 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -17974,8 +18190,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cba08e2e-cd81-4fb8-9e14-0a8c0a58f4e9")
-		(property "Reference" "C17"
-			(at 188.976 201.93 0)
+		(property "Reference" "C13"
+			(at 205.486 201.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17984,7 +18200,7 @@
 			)
 		)
 		(property "Value" "0.01uF"
-			(at 188.976 204.47 0)
+			(at 205.486 204.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17993,7 +18209,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 190.8048 207.01 0)
+			(at 207.3148 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18002,7 +18218,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 191.77 203.2 0)
+			(at 208.28 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18011,7 +18227,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 191.77 203.2 0)
+			(at 208.28 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18020,7 +18236,7 @@
 			)
 		)
 		(property "LCSC" "C57112"
-			(at 191.77 203.2 0)
+			(at 208.28 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18037,7 +18253,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C17")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -18052,7 +18268,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cd05ea1d-bee5-4618-b4a2-f5b42611bea3")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR022"
 			(at 147.32 82.55 0)
 			(effects
 				(font
@@ -18102,7 +18318,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR025")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -18110,7 +18326,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 118.11 191.77 0)
+		(at 156.21 191.77 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18118,8 +18334,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cecb61b6-95a2-4e61-a330-ec88c4a1a716")
-		(property "Reference" "SW2"
-			(at 118.11 184.15 0)
+		(property "Reference" "SW1"
+			(at 156.21 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18127,7 +18343,7 @@
 			)
 		)
 		(property "Value" "SW_RESET"
-			(at 118.11 186.69 0)
+			(at 156.21 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18135,7 +18351,7 @@
 			)
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_SPST_TS-1088-xR020"
-			(at 118.11 186.69 0)
+			(at 156.21 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18144,7 +18360,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 118.11 186.69 0)
+			(at 156.21 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18153,7 +18369,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 118.11 191.77 0)
+			(at 156.21 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18162,7 +18378,7 @@
 			)
 		)
 		(property "LCSC" "C720477"
-			(at 118.11 191.77 0)
+			(at 156.21 191.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18179,7 +18395,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "SW2")
+					(reference "SW1")
 					(unit 1)
 				)
 			)
@@ -18195,7 +18411,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cf94ee22-3f19-4302-8889-89584d7f0d24")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR015"
 			(at 113.03 60.96 0)
 			(effects
 				(font
@@ -18245,7 +18461,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR014")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -18328,7 +18544,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d343aa53-c5d4-4d2e-80dc-ba56e7e25943")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR053"
 			(at 297.18 52.07 0)
 			(effects
 				(font
@@ -18378,7 +18594,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR051")
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -18394,7 +18610,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d8487a93-4827-493c-9625-6c736170f1b0")
-		(property "Reference" "D4"
+		(property "Reference" "D1"
 			(at 105.41 116.84 0)
 			(effects
 				(font
@@ -18455,7 +18671,7 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "D4")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -18534,7 +18750,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d9d9c35a-78db-46a4-b308-a696a5cf2238")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR067"
 			(at 373.38 115.57 0)
 			(effects
 				(font
@@ -18584,7 +18800,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR036")
+					(reference "#PWR067")
 					(unit 1)
 				)
 			)
@@ -18600,7 +18816,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ddeb196c-b285-4e90-a554-d602dc153d61")
-		(property "Reference" "C8"
+		(property "Reference" "C19"
 			(at 294.386 40.64 0)
 			(effects
 				(font
@@ -18663,7 +18879,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C8")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -18679,7 +18895,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "de6ba303-80aa-4763-a1c2-c2b413917df6")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR018"
 			(at 133.35 58.42 0)
 			(effects
 				(font
@@ -18729,7 +18945,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR017")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -18744,7 +18960,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e27f7666-82a4-448b-9973-6f39a493def5")
-		(property "Reference" "D1"
+		(property "Reference" "D3"
 			(at 338.074 219.964 90)
 			(effects
 				(font
@@ -18816,7 +19032,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "D1")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -18831,7 +19047,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e4287d56-e9b9-4c22-8000-b9e855ed6bd0")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR010"
 			(at 66.04 158.75 0)
 			(effects
 				(font
@@ -18881,7 +19097,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR053")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -18990,7 +19206,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e62ce322-3cc2-4225-b500-58179704fa4e")
-		(property "Reference" "Q3"
+		(property "Reference" "Q2"
 			(at 54.61 124.46 90)
 			(effects
 				(font
@@ -19057,7 +19273,85 @@
 		(instances
 			(project ""
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "Q3")
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 184.15 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e7710f50-4f09-43c1-9473-d7dd86c368c0")
+		(property "Reference" "C8"
+			(at 186.944 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470uF"
+			(at 186.944 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x7.7"
+			(at 185.1152 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 184.15 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 184.15 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C344072"
+			(at 184.15 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "25d0a913-226d-4adb-97a1-a7f8d1a4aad3")
+		)
+		(pin "2"
+			(uuid "8d801c8f-c0e9-4cd1-8815-f3c0ab7aa5bd")
+		)
+		(instances
+			(project "Raster_Bot"
+				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -19072,7 +19366,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e7f02939-fb1d-4cce-a93e-71ffcbe86b5a")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR050"
 			(at 287.02 110.49 0)
 			(effects
 				(font
@@ -19122,7 +19416,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR011")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -19138,7 +19432,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e8636712-caaa-4419-aef0-0d68a54cdb4d")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR04"
 			(at 41.91 45.72 0)
 			(effects
 				(font
@@ -19188,7 +19482,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR09")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -19203,7 +19497,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e8864b0c-a059-4cb3-be23-c8f25ab7ac99")
-		(property "Reference" "D2"
+		(property "Reference" "D4"
 			(at 354.584 219.964 90)
 			(effects
 				(font
@@ -19275,7 +19569,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "D2")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -19290,7 +19584,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e8c46624-fa24-4e82-ab94-85af5c413cd1")
-		(property "Reference" "R13"
+		(property "Reference" "R2"
 			(at 38.1 117.856 90)
 			(effects
 				(font
@@ -19351,7 +19645,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R13")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -19367,7 +19661,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e9176d07-26b0-4c38-8b79-f704859e201a")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR03"
 			(at 41.91 38.1 0)
 			(effects
 				(font
@@ -19417,7 +19711,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR08")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -19432,7 +19726,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e988b0fd-3b07-4008-af26-a96706d6762b")
-		(property "Reference" "C4"
+		(property "Reference" "C9"
 			(at 187.96 30.226 90)
 			(effects
 				(font
@@ -19493,7 +19787,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C4")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -19501,15 +19795,15 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 226.06 194.31 0)
+		(at 242.57 194.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "eab3cfd6-1f13-4b24-919d-2a4caf94a473")
-		(property "Reference" "C19"
-			(at 228.854 193.04 0)
+		(property "Reference" "C15"
+			(at 245.364 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19518,7 +19812,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 228.854 195.58 0)
+			(at 245.364 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19527,7 +19821,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 227.0252 198.12 0)
+			(at 243.5352 198.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19536,7 +19830,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 226.06 194.31 0)
+			(at 242.57 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19545,7 +19839,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 226.06 194.31 0)
+			(at 242.57 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19554,7 +19848,7 @@
 			)
 		)
 		(property "LCSC" "C15850"
-			(at 226.06 194.31 0)
+			(at 242.57 194.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19571,7 +19865,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C19")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -19586,7 +19880,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eb0cd61f-57e3-4e88-b1ce-cb72870f89d7")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR019"
 			(at 139.7 82.55 0)
 			(effects
 				(font
@@ -19636,7 +19930,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR020")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -19651,7 +19945,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f13cde45-dfa6-4e81-a2a3-7721e6eb7c2b")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR026"
 			(at 162.56 39.37 0)
 			(effects
 				(font
@@ -19701,7 +19995,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR028")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -19716,7 +20010,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f1b5588b-7136-4f6f-a84e-fe3c30279120")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR08"
 			(at 64.77 191.77 0)
 			(effects
 				(font
@@ -19766,7 +20060,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR054")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -19782,7 +20076,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f33458e1-4f2f-4b8b-a83e-09c1b6a489ec")
-		(property "Reference" "C12"
+		(property "Reference" "C4"
 			(at 89.154 193.04 0)
 			(effects
 				(font
@@ -19845,7 +20139,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "C12")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -19861,7 +20155,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f64f71ef-fbec-42cf-b155-2ce97396bff6")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR061"
 			(at 351.79 210.82 0)
 			(effects
 				(font
@@ -19911,7 +20205,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR027")
+					(reference "#PWR061")
 					(unit 1)
 				)
 			)
@@ -20056,7 +20350,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fa220961-94c4-44ae-8846-7b2139d2431a")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR014"
 			(at 102.87 60.96 0)
 			(effects
 				(font
@@ -20106,7 +20400,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "#PWR010")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -20122,7 +20416,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ff515172-c0bb-4dcb-a057-86edc81886ae")
-		(property "Reference" "Q2"
+		(property "Reference" "Q1"
 			(at 44.45 137.16 90)
 			(effects
 				(font
@@ -20189,7 +20483,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "Q2")
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -20204,7 +20498,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ff5937ad-f625-4732-90f6-8c520533e41e")
-		(property "Reference" "R9"
+		(property "Reference" "R7"
 			(at 118.364 115.57 0)
 			(effects
 				(font
@@ -20267,7 +20561,7 @@
 		(instances
 			(project "Raster_Bot"
 				(path "/68fd25bc-da1d-4d9a-9340-0ded04d59660"
-					(reference "R9")
+					(reference "R7")
 					(unit 1)
 				)
 			)
