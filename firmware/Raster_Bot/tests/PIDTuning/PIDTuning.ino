@@ -134,29 +134,28 @@ void loop() {
     if (millis() - lastPrintMs >= 100) {
         lastPrintMs = millis();
 
-        // Get the motor status
-        MotorStatus m = bot.drive.getMotorStatus();
+        DriveStatus s = bot.drive.getStatus();
 
         // Update TFT with live RPM values
 
         // Left RPM — green when within 10% of target, red otherwise
         bot.display.fillRect(0, 166, 240, 32, ILI9341_BLACK);
-        bot.display.setTextColor(abs(m.leftRPM - TARGET_RPM) < TARGET_RPM * 0.1f ? ILI9341_GREEN : ILI9341_RED);
-        printCentered(m.leftRPM, 1, 166, 4);
+        bot.display.setTextColor(abs(s.leftRPM - TARGET_RPM) < TARGET_RPM * 0.1f ? ILI9341_GREEN : ILI9341_RED);
+        printCentered(s.leftRPM, 1, 166, 4);
 
         // Right RPM
         bot.display.fillRect(0, 243, 240, 32, ILI9341_BLACK);
-        bot.display.setTextColor(abs(m.rightRPM - TARGET_RPM) < TARGET_RPM * 0.1f ? ILI9341_GREEN : ILI9341_RED);
-        printCentered(m.rightRPM, 1, 243, 4);
+        bot.display.setTextColor(abs(s.rightRPM - TARGET_RPM) < TARGET_RPM * 0.1f ? ILI9341_GREEN : ILI9341_RED);
+        printCentered(s.rightRPM, 1, 243, 4);
 
         // Print the motor status in the plot mode
         if (PLOT_MODE) {
             Serial.print("Target:");
             Serial.print(TARGET_RPM, 1);
             Serial.print(" L_RPM:");
-            Serial.print(m.leftRPM, 1);
+            Serial.print(s.leftRPM, 1);
             Serial.print(" R_RPM:");
-            Serial.println(m.rightRPM, 1);
+            Serial.println(s.rightRPM, 1);
 
         // Print the motor status in the serial monitor mode
         } else {
@@ -165,13 +164,13 @@ void loop() {
             Serial.print("s  Target: ");
             Serial.print(TARGET_RPM, 1);
             Serial.print("  L RPM: ");
-            Serial.print(m.leftRPM, 1);
+            Serial.print(s.leftRPM, 1);
             Serial.print("  L PWM: ");
-            Serial.print(m.leftPWM, 0);
+            Serial.print(s.leftPWM, 0);
             Serial.print("  R RPM: ");
-            Serial.print(m.rightRPM, 1);
+            Serial.print(s.rightRPM, 1);
             Serial.print("  R PWM: ");
-            Serial.println(m.rightPWM, 0);
+            Serial.println(s.rightPWM, 0);
         }
     }
 

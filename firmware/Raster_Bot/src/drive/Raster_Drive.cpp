@@ -104,17 +104,12 @@ bool Raster_Drive::isMoving() const {
     return _moving;
 }
 
-MotorStatus Raster_Drive::getMotorStatus() const {
+DriveStatus Raster_Drive::getStatus() const {
     return {
         _leftController.currentRPM,
         _leftController.currentPWM,
         _rightController.currentRPM,
-        _rightController.currentPWM
-    };
-}
-
-EncoderStatus Raster_Drive::getEncoderStatus() const {
-    return {
+        _rightController.currentPWM,
         _leftController.getEncoderCount(),
         _rightController.getEncoderCount()
     };

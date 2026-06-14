@@ -5,16 +5,11 @@
 #include "../definitions/robot_definitions.h"
 #include "Raster_Motor_Controller.h"
 
-// Per-wheel motor telemetry (transient — zeroed on stop)
-struct MotorStatus {
+struct DriveStatus {
     float leftRPM;
     float leftPWM;
     float rightRPM;
     float rightPWM;
-};
-
-// Per-wheel encoder counts (cumulative since last move start — persists after stop)
-struct EncoderStatus {
     int64_t leftCount;
     int64_t rightCount;
 };
@@ -31,8 +26,7 @@ public:
     void stop();
     void update();
     bool isMoving() const;
-    MotorStatus getMotorStatus() const;
-    EncoderStatus getEncoderStatus() const;
+    DriveStatus getStatus() const;
 
 private:
     // Private members

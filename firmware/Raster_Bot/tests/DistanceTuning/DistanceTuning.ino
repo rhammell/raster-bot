@@ -66,13 +66,11 @@ void loop() {
     if (millis() - lastPrintMs >= 100) {
         lastPrintMs = millis();
 
-        // Read current motor and encoder state
-        MotorStatus m = bot.drive.getMotorStatus();
-        EncoderStatus e = bot.drive.getEncoderStatus();
+        DriveStatus s = bot.drive.getStatus();
 
-        int64_t avgTicks = (abs(e.leftCount) + abs(e.rightCount)) / 2;
+        int64_t avgTicks = (abs(s.leftCount) + abs(s.rightCount)) / 2;
         float distanceTraveled = (float)avgTicks / TICKS_PER_CM;
-        float avgRPM = (m.leftRPM + m.rightRPM) / 2.0f;
+        float avgRPM = (s.leftRPM + s.rightRPM) / 2.0f;
         float speed_cm_s = (avgRPM * WHEEL_CIRCUMFERENCE_CM) / 60.0f;
 
         // Serial telemetry
@@ -81,15 +79,15 @@ void loop() {
         Serial.print(" cm | Spd: ");
         Serial.print(speed_cm_s, 2);
         Serial.print(" cm/s | L Enc: ");
-        Serial.print((long)e.leftCount);
+        Serial.print((long)s.leftCount);
         Serial.print(" R Enc: ");
-        Serial.print((long)e.rightCount);
+        Serial.print((long)s.rightCount);
         Serial.print(" Diff: ");
-        Serial.print((long)(e.leftCount - e.rightCount));
+        Serial.print((long)(s.leftCount - s.rightCount));
         Serial.print(" | L RPM: ");
-        Serial.print(m.leftRPM, 1);
+        Serial.print(s.leftRPM, 1);
         Serial.print(" R RPM: ");
-        Serial.println(m.rightRPM, 1);
+        Serial.println(s.rightRPM, 1);
 
         if (stopped) {
             Serial.print("Final distance: ");

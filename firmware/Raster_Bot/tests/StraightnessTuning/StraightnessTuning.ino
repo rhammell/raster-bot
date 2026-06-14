@@ -68,10 +68,8 @@ void loop() {
     if (millis() - lastPrintMs >= 100) {
         lastPrintMs = millis();
 
-        // Read current motor and encoder state
-        MotorStatus m = bot.drive.getMotorStatus();
-        EncoderStatus e = bot.drive.getEncoderStatus();
-        int64_t diff = e.leftCount - e.rightCount;
+        DriveStatus s = bot.drive.getStatus();
+        int64_t diff = s.leftCount - s.rightCount;
 
         // Display diff in large text, green when near zero, red when drifting
         bot.display.fillRect(4, 70, 232, 60, ILI9341_BLACK);
@@ -86,13 +84,13 @@ void loop() {
         bot.display.setTextColor(ILI9341_WHITE);
         bot.display.setCursor(4, 150);
         bot.display.print("L: ");
-        bot.display.print((long)e.leftCount);
+        bot.display.print((long)s.leftCount);
         bot.display.setCursor(4, 172);
         bot.display.print("R: ");
-        bot.display.print((long)e.rightCount);
+        bot.display.print((long)s.rightCount);
 
         // Display the average speed
-        float avgRPM = (m.leftRPM + m.rightRPM) / 2.0f;
+        float avgRPM = (s.leftRPM + s.rightRPM) / 2.0f;
         float speed_cm_s = (avgRPM * WHEEL_CIRCUMFERENCE_CM) / 60.0f;
         bot.display.setCursor(4, 194);
         bot.display.print("Speed: ");
@@ -105,13 +103,13 @@ void loop() {
         Serial.print("s  Diff: ");
         Serial.print((long)diff);
         Serial.print("  L Enc: ");
-        Serial.print((long)e.leftCount);
+        Serial.print((long)s.leftCount);
         Serial.print("  R Enc: ");
-        Serial.print((long)e.rightCount);
+        Serial.print((long)s.rightCount);
         Serial.print("  L RPM: ");
-        Serial.print(m.leftRPM, 1);
+        Serial.print(s.leftRPM, 1);
         Serial.print("  R RPM: ");
-        Serial.println(m.rightRPM, 1);
+        Serial.println(s.rightRPM, 1);
     }
 
     // Run the drive control loop
