@@ -29,8 +29,10 @@ void Raster_PID::setSetpoint(float setpoint) {
 }
 
 float Raster_PID::compute(float measurement, float dt) {
+    // Check if the time delta is valid (i.e. not zero)
     if (dt <= 0.0f) return 0.0f;
 
+    // Calculate the error between the setpoint and the measurement
     float error = _setpoint - measurement;
 
     // Proportional term

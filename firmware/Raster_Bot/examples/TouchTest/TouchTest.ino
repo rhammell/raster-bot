@@ -9,39 +9,38 @@
 
 #include <Raster_Bot.h>
 
+// Raster Bot instance
 Raster_Bot bot;
 
 void setup() {
-  // Bring up serial logging and initialize hardware.
+  // Initialize serial communication
   Serial.begin(115200);
-  Serial.println("Raster_Bot Touch Test");
+  Serial.println("Raster Bot Touch Test");
 
-  // Initialize the bot (display, touchscreen, etc.)
+  // Initialize the bot 
   if (!bot.begin()) {
-    Serial.println("Failed to initialize Raster_Bot!");
+    Serial.println("Failed to initialize Raster Bot!");
     while (1);
   }
+  Serial.println("Raster Bot initialized successfully");
 
-  Serial.println("Raster_Bot initialized successfully");
-
+  // Show the splash screen
   bot.display.showSplash();
 
   // Set screen rotation to portrait
   bot.display.setRotation(0);
 
   // Draw the fixed header text.
-  bot.display.setCursor(10, 10);
-  bot.display.setTextColor(ILI9341_WHITE);
+  bot.display.setTextColor(ILI9341_CYAN);
   bot.display.setTextSize(2);
+  bot.display.setCursor(10, 10);
+  bot.display.println("Touch Test");
+  bot.display.setTextColor(ILI9341_WHITE);
+  bot.display.setTextSize(1);
+  bot.display.setCursor(10, 30);
   bot.display.println("Raster Bot");
 
-  bot.display.setTextSize(1);
-  bot.display.setCursor(10, 35);
-  bot.display.setTextColor(ILI9341_CYAN);
-  bot.display.println("Touch Test");
-
   // Draw centered instruction text.
-  // "Touch to draw!" = 14 chars * 12px (size 2) = 168px wide, 16px tall
   int16_t textW = 14 * 12;
   int16_t textH = 16;
   int16_t textX = (bot.display.width() - textW) / 2;
@@ -55,6 +54,7 @@ void setup() {
 void loop() {
   // Poll touch and draw where the finger lands.
   if (bot.display.touched()) {
+    // Get the touch point
     TS_Point p = bot.display.getTouchPoint();
 
     // Draw a small circle where the user touches

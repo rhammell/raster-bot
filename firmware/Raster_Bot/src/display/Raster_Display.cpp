@@ -1,20 +1,17 @@
 #include "Raster_Display.h"
 #include "splash_logo.h"
 
-// =============================================================================
-// Raster_Display Implementation
-// =============================================================================
-
+// Constructor
 Raster_Display::Raster_Display()
     : Adafruit_ILI9341(&_spiBus, TFT_DC, TFT_CS, TFT_RST) {
 }
 
 bool Raster_Display::begin() {
-    // Start SPI bus with explicit pins
+    // Initialize TFT SPI bus
     Serial.println("[Display] Starting SPI bus...");
     _spiBus.begin(TFT_CLK, TFT_MISO, TFT_MOSI, TFT_CS);
 
-    // Start I2C bus for touchscreen
+    // Initialize Touchscreen I2C bus
     Serial.println("[Display] Starting I2C bus...");
     _i2cBus.begin(TOUCH_SDA, TOUCH_SCL);
 
@@ -24,7 +21,7 @@ bool Raster_Display::begin() {
     setRotation(TFT_DEFAULT_ROTATION);
     fillScreen(TFT_DEFAULT_BG_COLOR);
 
-    // Initialize backlight
+    // Initialize TFT backlight
     Serial.println("[Display] Initializing backlight...");
     pinMode(TFT_LITE, OUTPUT);
     setBrightness(TFT_DEFAULT_BRIGHTNESS);
@@ -78,19 +75,22 @@ void Raster_Display::showSplash() {
 }
 
 void Raster_Display::setBrightness(uint8_t brightness) {
+    // Set TFT backlight brightness
     analogWrite(TFT_LITE, brightness);
 }
 
-// Check if screen is currently being touched
 bool Raster_Display::touched() {
+    // Check if touchscreen is being touched
     return _ts.touched();
 }
 
 // Get the mapped touch point based on screen rotation
 TS_Point Raster_Display::getTouchPoint() {
+    // Get the touch point from the touchscreen
     TS_Point p = _ts.getPoint();
     int16_t x, y;
 
+    // Map the touch point to the screen based on the screen rotation
     switch (getRotation()) {
         case 0:
             x = width() - p.x;
@@ -114,5 +114,6 @@ TS_Point Raster_Display::getTouchPoint() {
             break;
     }
 
+    // Return the mapped touch point
     return TS_Point(x, y, p.z);
 }

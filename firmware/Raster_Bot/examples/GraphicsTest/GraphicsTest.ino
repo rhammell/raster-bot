@@ -10,8 +10,6 @@
 
 #include <Raster_Bot.h>
 
-Raster_Bot bot;
-
 // Bouncing ball arena (inside the border)
 #define ARENA_BORDER_X  5
 #define ARENA_BORDER_Y  190
@@ -24,34 +22,39 @@ Raster_Bot bot;
 #define ARENA_W  (ARENA_BORDER_W - 2)
 #define ARENA_H  (ARENA_BORDER_H - 2)
 
+// Ball properties
 #define BALL_RADIUS  6
 #define BALL_COLOR   ILI9341_YELLOW
 
+// Ball position and direction
 int ballX, ballY;
 int ballDX = 2;
 int ballDY = 3;
 
-void setup() {
-  // Bring up serial logging and initialize board hardware.
-  Serial.begin(115200);
-  Serial.println("Raster_Bot Graphics Test");
+// Raster Bot instance
+Raster_Bot bot;
 
-  // Initialize the bot (display, touchscreen, etc.)
+void setup() {
+  // Initialize serial communication
+  Serial.begin(115200);
+  Serial.println("Raster Bot Graphics Test");
+
+  // Initialize the bot
   if (!bot.begin()) {
-    Serial.println("Failed to initialize Raster_Bot!");
+    Serial.println("Failed to initialize Raster Bot!");
     while (1);
   }
-
-  Serial.println("Raster_Bot initialized successfully");
-
-  bot.display.showSplash();
-
-  // Draw all fixed UI and demo shapes.
-  drawTestScreen();
+  Serial.println("Raster Bot initialized successfully");
 
   // Initialize ball position to center of arena
   ballX = ARENA_X + ARENA_W / 2;
   ballY = ARENA_Y + ARENA_H / 2;
+
+  // Show the splash screen
+  bot.display.showSplash();
+
+  // Draw all fixed UI and demo shapes.
+  drawTestScreen();
 }
 
 void loop() {
@@ -65,15 +68,14 @@ void drawTestScreen() {
   bot.display.fillScreen(ILI9341_BLACK);
 
   // Draw title text
-  bot.display.setCursor(10, 10);
-  bot.display.setTextColor(ILI9341_WHITE);
-  bot.display.setTextSize(2);
-  bot.display.println("Raster Bot");
-
-  bot.display.setTextSize(1);
-  bot.display.setCursor(10, 35);
   bot.display.setTextColor(ILI9341_CYAN);
+  bot.display.setTextSize(2);
+  bot.display.setCursor(10, 10);
   bot.display.println("Graphics Test");
+  bot.display.setTextColor(ILI9341_WHITE);
+  bot.display.setTextSize(1);
+  bot.display.setCursor(10, 30);
+  bot.display.println("Raster Bot");
 
   // Draw rectangle
   bot.display.drawRect(10, 60, 65, 60, ILI9341_RED);
@@ -117,6 +119,7 @@ void bounceBall() {
   int minY = ARENA_Y + BALL_RADIUS;
   int maxY = ARENA_Y + ARENA_H - 1 - BALL_RADIUS;
 
+  // Update ball position and direction
   if (ballX <= minX) {
     ballX = minX;
     ballDX = abs(ballDX);

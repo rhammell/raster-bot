@@ -1,0 +1,180 @@
+/*
+ * PIDTuning - PID gain tuning for Raster_Bot library
+ *
+ * Prerequisite: Set STRAIGHT_KP to 0 and disable ramping before
+ * tuning so the PID responds to a clean step input with no other
+ * control loops active.
+ *
+ * Use this sketch to tune the PID speed controller gains (PID_KP,
+ * PID_KI, PID_KD) defined in robot_definitions.h. Each change
+ * requires recompiling and uploading.
+ *
+ * The sketch commands a constant speed and prints the measured RPM
+ * so you can observe how the controller responds.
+ *
+ * Output modes (set PLOT_MODE below):
+ *   0 = Human-readable Serial Monitor output
+ *   1 = Arduino Serial Plotter output (Target, L_RPM, R_RPM)
+ *
+ * Screen: 240x320 (Portrait, Rotation 0)
+ *
+ * --- Quick PID Tuning Guide ---
+ *
+ * 1. Set PID_KI = 0 and start with a small PID_KP (e.g. 2.0) in
+ *    robot_definitions.h. Compile, upload, and open Serial Monitor.
+ *
+ * 2. Watch how the reported RPM approaches the target.
+ *    - Too slow to reach target: increase KP.
+ *    - Oscillates around target or overshoots: decrease KP.
+ *    Repeat until RPM rises quickly without oscillating. A small
+ *    steady-state error (offset from target) is expected with KP alone.
+ *
+ * 3. Add a small PID_KI (e.g. 1.0) to eliminate the steady-state error.
+ *    - RPM still settles below target: increase KI.
+ *    - RPM overshoots then slowly settles, or oscillates: decrease KI.
+ *
+ * 4. Good result: RPM reaches and holds the target with no sustained
+ *    oscillation and no visible overshoot. Convergence within a few
+ *    seconds is acceptable — ramping will eliminate the large step
+ *    response in normal operation.
+ */
+
+#include <Raster_Bot.h>
+
+// Raster Bot instance
+Raster_Bot bot;
+
+// Drive speed and target RPM
+const float DRIVE_SPEED_CM_S = 6.0f;
+const float TARGET_RPM = (DRIVE_SPEED_CM_S * 60.0f) / WHEEL_CIRCUMFERENCE_CM;
+
+// Plot mode
+// 0 = Serial Monitor, 1 = Serial Plotter
+const int   PLOT_MODE = 0;  
+
+// Center a float value on the 240px-wide display
+void printCentered(float value, int decimals, int y, int textSize) {
+    char buf[16];
+    dtostrf(value, 0, decimals, buf);
+    bot.display.setTextSize(textSize);
+    int w = strlen(buf) * 6 * textSize;
+    bot.display.setCursor((240 - w) / 2, y);
+    bot.display.print(buf);
+}
+
+void setup() {
+    // Initialize serial communication
+    Serial.begin(115200);
+    Serial.println("Raster Bot PID Tuning");
+
+    // Initialize the bot
+    if (!bot.begin()) {
+        Serial.println("Failed to initialize Raster Bot!");
+        while (1);
+    }
+    Serial.println("Raster Bot initialized successfully");
+
+    // Print the target RPM
+    Serial.print("Target RPM: ");
+    Serial.println(TARGET_RPM, 1);
+
+    // Draw static TFT layout (240px wide)
+    bot.display.fillScreen(ILI9341_BLACK);
+
+    bot.display.setTextColor(ILI9341_CYAN);
+    bot.display.setTextSize(2);
+    bot.display.setCursor(10, 6);
+    bot.display.print("PID Tuning");
+    bot.display.setTextColor(ILI9341_WHITE);
+    bot.display.setTextSize(1);
+    bot.display.setCursor(10, 26);
+    bot.display.print("Raster Bot");
+
+    bot.display.setTextColor(ILI9341_DARKGREY);
+    bot.display.setTextSize(2);
+    bot.display.setCursor(54, 69);
+    bot.display.print("Target RPM:");
+    bot.display.setCursor(84, 146);
+    bot.display.print("L RPM:");
+    bot.display.setCursor(84, 223);
+    bot.display.print("R RPM:");
+
+    // Show target RPM (static)
+    bot.display.setTextColor(ILI9341_WHITE);
+    printCentered(TARGET_RPM, 1, 89, 4);
+
+    // Placeholders for RPM values
+    bot.display.setTextColor(ILI9341_DARKGREY);
+    bot.display.setTextSize(4);
+    bot.display.setCursor(108, 166);
+    bot.display.print("-");
+    bot.display.setCursor(108, 243);
+    bot.display.print("-");
+
+    // Countdown before driving
+    for (int i = 5; i > 0; i--) {
+        bot.display.fillRect(0, 304, 240, 16, ILI9341_BLACK);
+        bot.display.setTextSize(1);
+        bot.display.setTextColor(ILI9341_DARKGREY);
+        bot.display.setCursor(4, 308);
+        bot.display.print("Driving in ");
+        bot.display.print(i);
+        bot.display.print("...");
+        delay(1000);
+    }
+    bot.display.fillRect(0, 304, 240, 16, ILI9341_BLACK);
+
+    // Drive forward at the target speed
+    bot.drive.straight(DRIVE_SPEED_CM_S);
+}
+
+void loop() {
+    // Print the motor status every 100 milliseconds
+    static uint32_t lastPrintMs = 0;
+    if (millis() - lastPrintMs >= 100) {
+        lastPrintMs = millis();
+
+        // Get the motor status
+        MotorStatus m = bot.drive.getMotorStatus();
+
+        // Update TFT with live RPM values
+
+        // Left RPM — green when within 10% of target, red otherwise
+        bot.display.fillRect(0, 166, 240, 32, ILI9341_BLACK);
+        bot.display.setTextColor(abs(m.leftRPM - TARGET_RPM) < TARGET_RPM * 0.1f ? ILI9341_GREEN : ILI9341_RED);
+        printCentered(m.leftRPM, 1, 166, 4);
+
+        // Right RPM
+        bot.display.fillRect(0, 243, 240, 32, ILI9341_BLACK);
+        bot.display.setTextColor(abs(m.rightRPM - TARGET_RPM) < TARGET_RPM * 0.1f ? ILI9341_GREEN : ILI9341_RED);
+        printCentered(m.rightRPM, 1, 243, 4);
+
+        // Print the motor status in the plot mode
+        if (PLOT_MODE) {
+            Serial.print("Target:");
+            Serial.print(TARGET_RPM, 1);
+            Serial.print(" L_RPM:");
+            Serial.print(m.leftRPM, 1);
+            Serial.print(" R_RPM:");
+            Serial.println(m.rightRPM, 1);
+
+        // Print the motor status in the serial monitor mode
+        } else {
+            Serial.print("T: ");
+            Serial.print(millis() / 1000.0, 1);
+            Serial.print("s  Target: ");
+            Serial.print(TARGET_RPM, 1);
+            Serial.print("  L RPM: ");
+            Serial.print(m.leftRPM, 1);
+            Serial.print("  L PWM: ");
+            Serial.print(m.leftPWM, 0);
+            Serial.print("  R RPM: ");
+            Serial.print(m.rightRPM, 1);
+            Serial.print("  R PWM: ");
+            Serial.println(m.rightPWM, 0);
+        }
+    }
+
+    // Update the drive subsystem
+    bot.drive.update();
+}

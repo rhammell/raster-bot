@@ -2,10 +2,10 @@
 
 #include <Arduino.h>
 #include <driver/pulse_cnt.h>
-#include "config.h"
+#include "../definitions/robot_definitions.h"
 
 // Hardware quadrature encoder using the ESP32 PCNT peripheral.
-// Supports X2 or X4 decoding based on ENCODER_MODE in config.h.
+// Supports X2 or X4 decoding based on ENCODER_MODE in robot_definitions.h.
 class Raster_Encoder {
 public:
     Raster_Encoder() = default;

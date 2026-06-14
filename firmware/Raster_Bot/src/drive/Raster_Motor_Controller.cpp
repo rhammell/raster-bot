@@ -20,6 +20,7 @@ bool Raster_Motor_Controller::begin(const MotorControllerConfig& config) {
 }
 
 void Raster_Motor_Controller::setRPM(float rpm) {
+    // Set the PID setpoint to the target RPM
     pid.setSetpoint(rpm);
 }
 
@@ -39,12 +40,18 @@ void Raster_Motor_Controller::update(float dt) {
 }
 
 void Raster_Motor_Controller::stop() {
+    // PID state is intentionally not reset here; reset() handles
+    // that at the start of the next move
     setRPM(0);
-    pid.reset();
+    motor.stop();
+    currentRPM = 0.0f;
+    currentPWM = 0.0f;
 }
 
 void Raster_Motor_Controller::reset() {
     pid.reset();
     encoder.clearCount();
     _lastEncoderCount = 0;
+    currentRPM = 0.0f;
+    currentPWM = 0.0f;
 }
