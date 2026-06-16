@@ -82,17 +82,14 @@ void Raster_Drive::update() {
     float dt = elapsed / 1e6f;
 
     // Compute a proportional correction from the encoder tick difference
-    // between left and right wheels to keep the robot driving straight
-    // float tickError = (float)(_leftController.getEncoderCount()
-    //                         - _rightController.getEncoderCount());
-    // float correction = STRAIGHT_KP * tickError;
-    // _leftController.setRPM(_targetRPM - correction);
-    // _rightController.setRPM(_targetRPM + correction);
-
-    // Straightness correction disabled while testing - drive both wheels
-    // at the raw target RPM
-    _leftController.setRPM(_targetRPM);
-    _rightController.setRPM(_targetRPM);
+    // between left and right wheels to keep the robot driving straight.
+    // With STRAIGHT_KP = 0 the correction is zero and both wheels run at
+    // the raw target RPM (used to isolate the PID during tuning).
+    float tickError = (float)(_leftController.getEncoderCount()
+                            - _rightController.getEncoderCount());
+    float correction = STRAIGHT_KP * tickError;
+    _leftController.setRPM(_targetRPM - correction);
+    _rightController.setRPM(_targetRPM + correction);
 
     // Run the PID controllers to compute and apply PWM outputs
     _leftController.update(dt);
@@ -105,11 +102,12 @@ bool Raster_Drive::isMoving() const {
 }
 
 DriveStatus Raster_Drive::getStatus() const {
+    // Return the current status of the drive
     return {
-        _leftController.currentRPM,
-        _leftController.currentPWM,
-        _rightController.currentRPM,
-        _rightController.currentPWM,
+        _leftController.getRPM(),
+        _leftController.getPWM(),
+        _rightController.getRPM(),
+        _rightController.getPWM(),
         _leftController.getEncoderCount(),
         _rightController.getEncoderCount()
     };

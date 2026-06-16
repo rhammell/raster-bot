@@ -32,11 +32,11 @@ void Raster_Motor_Controller::update(float dt) {
 
     // Compute the current RPM
     float revolutions = (float)delta / ENCODER_TICKS_PER_REV;
-    currentRPM = (revolutions / dt) * 60.0f;
+    _currentRPM = (revolutions / dt) * 60.0f;
 
     // Run PID and apply output to motor
-    currentPWM = pid.compute(currentRPM, dt);
-    motor.setPWM((int)currentPWM);
+    _currentPWM = pid.compute(_currentRPM, dt);
+    motor.setPWM((int)_currentPWM);
 }
 
 void Raster_Motor_Controller::stop() {
@@ -44,14 +44,14 @@ void Raster_Motor_Controller::stop() {
     // that at the start of the next move
     setRPM(0);
     motor.stop();
-    currentRPM = 0.0f;
-    currentPWM = 0.0f;
+    _currentRPM = 0.0f;
+    _currentPWM = 0.0f;
 }
 
 void Raster_Motor_Controller::reset() {
     pid.reset();
     encoder.clearCount();
     _lastEncoderCount = 0;
-    currentRPM = 0.0f;
-    currentPWM = 0.0f;
+    _currentRPM = 0.0f;
+    _currentPWM = 0.0f;
 }

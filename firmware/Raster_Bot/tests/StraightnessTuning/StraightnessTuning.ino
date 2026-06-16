@@ -66,9 +66,13 @@ void loop() {
     // Update the TFT and serial output at 10 Hz
     static uint32_t lastPrintMs = 0;
     if (millis() - lastPrintMs >= 100) {
+        // Update the last print time
         lastPrintMs = millis();
 
+        // Get the drive status
         DriveStatus s = bot.drive.getStatus();
+
+        // Calculate the difference between the left and right encoder counts
         int64_t diff = s.leftCount - s.rightCount;
 
         // Display diff in large text, green when near zero, red when drifting

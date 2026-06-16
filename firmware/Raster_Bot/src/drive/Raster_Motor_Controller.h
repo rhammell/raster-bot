@@ -31,16 +31,18 @@ public:
     void update(float dt);
     void stop();   // Stops the motor; does NOT clear PID/encoder state - call reset() before reusing
     void reset();
-    int64_t getEncoderCount() const { return encoder.getCount(); }
 
-    // Public members
-    Raster_Motor   motor;
-    Raster_Encoder encoder;
-    Raster_PID     pid;
-    float          currentRPM = 0.0f;
-    float          currentPWM = 0.0f;
+    // Telemetry accessors
+    float   getRPM() const { return _currentRPM; }
+    float   getPWM() const { return _currentPWM; }
+    int64_t getEncoderCount() const { return encoder.getCount(); }
 
 private:
     // Private members
-    int64_t  _lastEncoderCount = 0;
+    Raster_Motor   motor;
+    Raster_Encoder encoder;
+    Raster_PID     pid;
+    float          _currentRPM = 0.0f;
+    float          _currentPWM = 0.0f;
+    int64_t        _lastEncoderCount = 0;
 };
