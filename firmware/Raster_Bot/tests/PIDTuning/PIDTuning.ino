@@ -45,8 +45,11 @@
 Raster_Bot bot;
 
 // Drive speed and target RPM
-const float DRIVE_SPEED_CM_S = 6.0f;
-const float TARGET_RPM = (DRIVE_SPEED_CM_S * 60.0f) / WHEEL_CIRCUMFERENCE_CM;
+// Clamp to MAX_SPEED_CM_S so the displayed target matches the setpoint
+// straight() actually commands (it constrains speed to this limit)
+const float DRIVE_SPEED_CM_S = 12.0f;
+const float CLAMPED_SPEED_CM_S = constrain(DRIVE_SPEED_CM_S, -MAX_SPEED_CM_S, MAX_SPEED_CM_S);
+const float TARGET_RPM = (CLAMPED_SPEED_CM_S * 60.0f) / WHEEL_CIRCUMFERENCE_CM;
 
 // Plot mode
 // 0 = Serial Monitor, 1 = Serial Plotter
@@ -58,6 +61,16 @@ void printCentered(float value, int decimals, int y, int textSize) {
     dtostrf(value, 0, decimals, buf);
     bot.display.setTextSize(textSize);
     int w = strlen(buf) * 6 * textSize;
+    bot.display.setCursor((240 - w) / 2, y);
+    bot.display.print(buf);
+}
+
+// Center a "PWM <value>" readout (size 2) on the 240px-wide display
+void printPWM(float pwm, int y) {
+    char buf[16];
+    snprintf(buf, sizeof(buf), "PWM %d", (int)pwm);
+    bot.display.setTextSize(2);
+    int w = strlen(buf) * 6 * 2;
     bot.display.setCursor((240 - w) / 2, y);
     bot.display.print(buf);
 }
@@ -81,6 +94,7 @@ void setup() {
     // Draw static TFT layout (240px wide)
     bot.display.fillScreen(ILI9341_BLACK);
 
+    // Draw the title text
     bot.display.setTextColor(ILI9341_CYAN);
     bot.display.setTextSize(2);
     bot.display.setCursor(10, 6);
@@ -90,25 +104,26 @@ void setup() {
     bot.display.setCursor(10, 26);
     bot.display.print("Raster Bot");
 
+    // Draw the static labels
     bot.display.setTextColor(ILI9341_DARKGREY);
     bot.display.setTextSize(2);
-    bot.display.setCursor(54, 69);
+    bot.display.setCursor(54, 58);
     bot.display.print("Target RPM:");
-    bot.display.setCursor(84, 146);
+    bot.display.setCursor(84, 128);
     bot.display.print("L RPM:");
-    bot.display.setCursor(84, 223);
+    bot.display.setCursor(84, 214);
     bot.display.print("R RPM:");
 
     // Show target RPM (static)
     bot.display.setTextColor(ILI9341_WHITE);
-    printCentered(TARGET_RPM, 1, 89, 4);
+    printCentered(TARGET_RPM, 1, 78, 4);
 
-    // Placeholders for RPM values
+    // Placeholders for RPM and PWM values
     bot.display.setTextColor(ILI9341_DARKGREY);
     bot.display.setTextSize(4);
-    bot.display.setCursor(108, 166);
+    bot.display.setCursor(108, 148);
     bot.display.print("-");
-    bot.display.setCursor(108, 243);
+    bot.display.setCursor(108, 234);
     bot.display.print("-");
 
     // Countdown before driving
@@ -132,21 +147,27 @@ void loop() {
     // Print the motor status every 100 milliseconds
     static uint32_t lastPrintMs = 0;
     if (millis() - lastPrintMs >= 100) {
+        // Update the last print time
         lastPrintMs = millis();
 
+        // Get the drive status
         DriveStatus s = bot.drive.getStatus();
 
-        // Update TFT with live RPM values
-
         // Left RPM — green when within 10% of target, red otherwise
-        bot.display.fillRect(0, 166, 240, 32, ILI9341_BLACK);
+        bot.display.fillRect(0, 148, 240, 32, ILI9341_BLACK);
         bot.display.setTextColor(abs(s.leftRPM - TARGET_RPM) < TARGET_RPM * 0.1f ? ILI9341_GREEN : ILI9341_RED);
-        printCentered(s.leftRPM, 1, 166, 4);
+        printCentered(s.leftRPM, 1, 148, 4);
+        bot.display.fillRect(0, 184, 240, 16, ILI9341_BLACK);
+        bot.display.setTextColor(ILI9341_YELLOW);
+        printPWM(s.leftPWM, 184);
 
         // Right RPM
-        bot.display.fillRect(0, 243, 240, 32, ILI9341_BLACK);
+        bot.display.fillRect(0, 234, 240, 32, ILI9341_BLACK);
         bot.display.setTextColor(abs(s.rightRPM - TARGET_RPM) < TARGET_RPM * 0.1f ? ILI9341_GREEN : ILI9341_RED);
-        printCentered(s.rightRPM, 1, 243, 4);
+        printCentered(s.rightRPM, 1, 234, 4);
+        bot.display.fillRect(0, 270, 240, 16, ILI9341_BLACK);
+        bot.display.setTextColor(ILI9341_YELLOW);
+        printPWM(s.rightPWM, 270);
 
         // Print the motor status in the plot mode
         if (PLOT_MODE) {
