@@ -30,9 +30,11 @@ void Raster_Motor_Controller::update(float dt) {
     int64_t delta = count - _lastEncoderCount;
     _lastEncoderCount = count;
 
-    // Compute the current RPM
+    // Compute the raw RPM, then smooth it with an exponential moving
+    // average to suppress encoder quantization noise (worst at low speed)
     float revolutions = (float)delta / ENCODER_TICKS_PER_REV;
-    _currentRPM = (revolutions / dt) * 60.0f;
+    float rawRPM = (revolutions / dt) * 60.0f;
+    _currentRPM = RPM_FILTER_ALPHA * rawRPM + (1.0f - RPM_FILTER_ALPHA) * _currentRPM;
 
     // Run PID and apply output to motor
     _currentPWM = pid.compute(_currentRPM, dt);

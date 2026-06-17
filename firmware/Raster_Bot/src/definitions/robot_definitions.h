@@ -21,7 +21,7 @@
 #define TICKS_PER_CM            (ENCODER_TICKS_PER_REV / WHEEL_CIRCUMFERENCE_CM)
 
 // Drive speed limits
-#define MAX_SPEED_CM_S          10.0f
+#define MAX_SPEED_CM_S          30.0f
 
 // Straightness correction (tuned with tests/StraightnessTuning)
 #define STRAIGHT_KP             0.0f
@@ -44,12 +44,17 @@
 // PID speed controller gains (tuned with tests/PIDTuning)
 #define PID_KP          6.0f
 #define PID_KI          2.0f
-#define PID_KD          0.0f    // Not used; derivative amplifies encoder quantization noise
+#define PID_KD          0.0f  
 
 // PID output limits and loop rate
 #define PID_OUTPUT_MIN  -255.0f
 #define PID_OUTPUT_MAX   255.0f
 #define DRIVE_UPDATE_INTERVAL_US  20000  // 20ms = 50Hz
+
+// Measured-RPM smoothing (exponential moving average)
+// Higher alpha = less smoothing/lag; lower alpha = more smoothing/lag.
+//Changing alpha alters the loop dynamics and requires re-running PID tuning.
+#define RPM_FILTER_ALPHA  0.33f  
 
 // Display and touchscreen settings
 #define TFT_DEFAULT_ROTATION   0
