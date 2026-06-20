@@ -12,6 +12,8 @@
 
 #include <math.h>
 
+#include "build_config.h"
+
 // Battery voltage divider ratio (Vbat = Vadc * ratio)
 #define VBAT_DIV_RATIO      2.0f
 
@@ -27,12 +29,19 @@
 #define STRAIGHT_KP             0.0f
 
 // Acceleration and deceleration (tuned with tests/DistanceTuning)
-#define MAX_ACCEL_RPM_S         30.0f
+// MAX_ACCEL_RPM_S limits how fast the commanded RPM slews toward the target.
+// Set to 0 to disable ramping (commanded RPM jumps straight to target).
+// 250 RPM/s == Alvik's 5 RPM per 20ms control tick.
+#define MAX_ACCEL_RPM_S         250.0f
 #define DECEL_DISTANCE_CM       3.0f
 #define MIN_SPEED_CM_S          0.5f
 
 // Motor gear ratio
-#define MOTOR_GEAR_RATIO 100.37   
+#if MOTOR_150
+#define MOTOR_GEAR_RATIO 150.0
+#else
+#define MOTOR_GEAR_RATIO 100.37
+#endif
 
 // Motor encoder settings
 // ENCODER_MODE: 4 for X4 quadrature (both edges, both channels)
