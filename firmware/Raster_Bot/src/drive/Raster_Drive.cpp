@@ -51,6 +51,7 @@ void Raster_Drive::straight(float speed_cm_s) {
     if (!_moving) {
         _leftController.reset();
         _rightController.reset();
+        _commandedRPM = 0;
         _lastUpdateTime = micros(); // see if ths is necessar
         _moving = true;
     }
@@ -59,6 +60,7 @@ void Raster_Drive::straight(float speed_cm_s) {
 void Raster_Drive::stop() {
     // Immediately stop both motors and go idle
     _targetRPM = 0;
+    _commandedRPM = 0;
     _moving = false;
     _leftController.stop();
     _rightController.stop();
@@ -81,15 +83,26 @@ void Raster_Drive::update() {
     // Convert the elapsed time to seconds
     float dt = elapsed / 1e6f;
 
+    // Ramp the commanded RPM toward the target at the acceleration limit.
+    // MAX_ACCEL_RPM_S <= 0 disables ramping (snap straight to target).
+    float maxDelta = MAX_ACCEL_RPM_S * dt;
+    if (maxDelta <= 0.0f) {
+        _commandedRPM = _targetRPM;
+    } else {
+        _commandedRPM += constrain(_targetRPM - _commandedRPM, -maxDelta, maxDelta);
+    }
+
     // Compute a proportional correction from the encoder tick difference
     // between left and right wheels to keep the robot driving straight.
     // With STRAIGHT_KP = 0 the correction is zero and both wheels run at
-    // the raw target RPM (used to isolate the PID during tuning).
+    // the ramped command RPM (used to isolate the PID during tuning).
+    // The correction is applied on top of the ramped command so it stays
+    // full-bandwidth (it is not itself slewed by the ramp).
     float tickError = (float)(_leftController.getEncoderCount()
                             - _rightController.getEncoderCount());
     float correction = STRAIGHT_KP * tickError;
-    _leftController.setRPM(_targetRPM - correction);
-    _rightController.setRPM(_targetRPM + correction);
+    _leftController.setRPM(_commandedRPM - correction);
+    _rightController.setRPM(_commandedRPM + correction);
 
     // Run the PID controllers to compute and apply PWM outputs
     _leftController.update(dt);

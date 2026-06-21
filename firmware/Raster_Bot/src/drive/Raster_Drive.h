@@ -34,5 +34,6 @@ private:
     Raster_Motor_Controller _rightController;
     bool     _moving = false;
     float    _targetRPM = 0;
+    float    _commandedRPM = 0;   // ramped value actually sent to the wheels
     uint32_t _lastUpdateTime = 0;
 };
