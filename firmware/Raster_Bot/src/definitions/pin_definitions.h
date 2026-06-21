@@ -50,10 +50,10 @@
 #if MOTOR_150
 
 // 150:1 gearmotors (TODO: verify, the gearbox changes default shaft direction)
-#define MOT_LEFT_FLIP       false  // Swap PWM pins so +PWM = forward
-#define MOT_LEFT_ENC_FLIP   false  // Swap encoder pins so +PWM = +count
-#define MOT_RIGHT_FLIP       true   // Swap PWM pins so +PWM = forward
-#define MOT_RIGHT_ENC_FLIP   true  // Swap encoder pins so +PWM = +count
+#define MOT_LEFT_FLIP        true  // Swap PWM pins so +PWM = forward
+#define MOT_LEFT_ENC_FLIP    true  // Swap encoder pins so +PWM = +count
+#define MOT_RIGHT_FLIP      false   // Swap PWM pins so +PWM = forward
+#define MOT_RIGHT_ENC_FLIP  false  // Swap encoder pins so +PWM = +count
 
 #else
 
