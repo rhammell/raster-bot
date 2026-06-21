@@ -1,11 +1,12 @@
 /*
  * PIDTuning - PID gain tuning for Raster_Bot library
  *
- * Prerequisite: Set STRAIGHT_KP to 0 and disable ramping before
- * tuning so the PID responds to a clean step input with no other
- * control loops active. Leave RPM_FILTER_ALPHA at its normal value
- * (do NOT zero it) - the RPM filter is a passive part of the system
- * the PID must be tuned against, not a competing control loop.
+ * Prerequisite: Set STRAIGHT_KP to 0 and MAX_ACCEL_RPM_S to 0 (which
+ * disables ramping) before tuning, so the PID responds to a clean step
+ * input with no other control loops active. Leave RPM_FILTER_ALPHA at
+ * its normal value (do NOT zero it) - the RPM filter is a passive part
+ * of the system the PID must be tuned against, not a competing control
+ * loop.
  *
  * Use this sketch to tune the PID speed controller gains (PID_KP,
  * PID_KI, PID_KD) defined in robot_definitions.h. Each change
