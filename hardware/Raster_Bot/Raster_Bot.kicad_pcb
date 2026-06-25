@@ -22321,7 +22321,7 @@
 		(end 70 46.4)
 		(stroke
 			(width 0.0381)
-			(type default)
+			(type solid)
 		)
 		(layer "Edge.Cuts")
 		(uuid "edfc333e-f9a2-4e78-ae50-5adc13ffd55a")
