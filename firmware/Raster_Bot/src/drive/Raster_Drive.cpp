@@ -141,8 +141,8 @@ DriveTelemetry Raster_Drive::getTelemetry() const {
     };
 }
 
-float Raster_Drive::getDistanceCm() const {
-    // Return the cumulative straight-line distance driven since power-on
+float Raster_Drive::getDistance() const {
+    // Return the cumulative straight-line distance, in cm, driven since power-on
     return _distanceCm;
 }
 

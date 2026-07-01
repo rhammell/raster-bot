@@ -28,9 +28,9 @@ public:
     bool isMoving() const;
     DriveTelemetry getTelemetry() const;
 
-    // Cumulative straight-line distance (cm) driven since power-on. Grows for
-    // both forward and backward motion; pure in-place spins do not add to it.
-    float getDistanceCm() const;
+    // Cumulative straight-line distance, in cm, driven since power-on. Grows
+    // for both forward and backward motion; pure in-place spins do not add to it.
+    float getDistance() const;
     void resetDistance();
 
 private:

@@ -134,7 +134,7 @@ from `loop()` to run the control loop.
 | `void update()` | Runs the drive control loop; call as often as possible. |
 | `bool isMoving()` | `true` while a drive command is active. |
 | `DriveTelemetry getTelemetry()` | Returns current motor telemetry. |
-| `float getDistanceCm()` | Returns cumulative straight-line distance driven since power-on. |
+| `float getDistance()` | Returns cumulative straight-line distance, in cm, driven since power-on. |
 | `void resetDistance()` | Resets the cumulative drive distance to zero. |
 
 `DriveTelemetry` contains: `leftRPM`, `leftPWM`, `rightRPM`, `rightPWM`,
