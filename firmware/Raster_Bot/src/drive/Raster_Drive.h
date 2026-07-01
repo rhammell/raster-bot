@@ -5,7 +5,7 @@
 #include "../definitions/robot_definitions.h"
 #include "Raster_Motor_Controller.h"
 
-struct DriveStatus {
+struct DriveTelemetry {
     float leftRPM;
     float leftPWM;
     float rightRPM;
@@ -26,7 +26,12 @@ public:
     void stop();
     void update();
     bool isMoving() const;
-    DriveStatus getStatus() const;
+    DriveTelemetry getTelemetry() const;
+
+    // Cumulative straight-line distance (cm) driven since power-on. Grows for
+    // both forward and backward motion; pure in-place spins do not add to it.
+    float getDistanceCm() const;
+    void resetDistance();
 
 private:
     // Private members
@@ -36,4 +41,10 @@ private:
     float    _targetRPM = 0;
     float    _commandedRPM = 0;   // ramped value actually sent to the wheels
     uint32_t _lastUpdateTime = 0;
+
+    // Odometry: accumulated centerline distance plus the encoder counts from
+    // the previous update() used to compute each tick's delta.
+    float    _distanceCm = 0.0f;
+    int64_t  _lastLeftCount = 0;
+    int64_t  _lastRightCount = 0;
 };

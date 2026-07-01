@@ -153,8 +153,8 @@ void loop() {
         // Update the last print time
         lastPrintMs = millis();
 
-        // Get the drive status
-        DriveStatus s = bot.drive.getStatus();
+        // Get the drive telemetry
+        DriveTelemetry s = bot.drive.getTelemetry();
 
         // Left RPM — green when within 10% of target, red otherwise
         bot.display.fillRect(0, 148, 240, 32, ILI9341_BLACK);

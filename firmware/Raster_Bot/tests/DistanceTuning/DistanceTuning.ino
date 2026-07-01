@@ -66,7 +66,7 @@ void loop() {
     if (millis() - lastPrintMs >= 100) {
         lastPrintMs = millis();
 
-        DriveStatus s = bot.drive.getStatus();
+        DriveTelemetry s = bot.drive.getTelemetry();
 
         int64_t avgTicks = (abs(s.leftCount) + abs(s.rightCount)) / 2;
         float distanceTraveled = (float)avgTicks / TICKS_PER_CM;

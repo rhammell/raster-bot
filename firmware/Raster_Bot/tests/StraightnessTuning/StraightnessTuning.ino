@@ -69,8 +69,8 @@ void loop() {
         // Update the last print time
         lastPrintMs = millis();
 
-        // Get the drive status
-        DriveStatus s = bot.drive.getStatus();
+        // Get the drive telemetry
+        DriveTelemetry s = bot.drive.getTelemetry();
 
         // Calculate the difference between the left and right encoder counts
         int64_t diff = s.leftCount - s.rightCount;

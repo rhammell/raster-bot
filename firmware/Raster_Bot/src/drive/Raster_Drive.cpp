@@ -52,6 +52,10 @@ void Raster_Drive::straight(float speed_cm_s) {
         _leftController.reset();
         _rightController.reset();
         _commandedRPM = 0;
+        // Encoder counts were just cleared, so realign the odometry delta
+        // trackers. The cumulative distance is intentionally left untouched.
+        _lastLeftCount = 0;
+        _lastRightCount = 0;
         _lastUpdateTime = micros(); // see if ths is necessar
         _moving = true;
     }
@@ -82,6 +86,17 @@ void Raster_Drive::update() {
 
     // Convert the elapsed time to seconds
     float dt = elapsed / 1e6f;
+
+    // Accumulate odometry from the centerline (average) wheel displacement.
+    // Forward and backward motion both grow the total (abs), while an in-place
+    // spin has equal-and-opposite wheel deltas that cancel and add nothing.
+    int64_t leftCount = _leftController.getEncoderCount();
+    int64_t rightCount = _rightController.getEncoderCount();
+    float centerTicks = ((leftCount - _lastLeftCount)
+                       + (rightCount - _lastRightCount)) / 2.0f;
+    _distanceCm += fabsf(centerTicks) / TICKS_PER_CM;
+    _lastLeftCount = leftCount;
+    _lastRightCount = rightCount;
 
     // Ramp the commanded RPM toward the target at the acceleration limit.
     // MAX_ACCEL_RPM_S <= 0 disables ramping (snap straight to target).
@@ -114,8 +129,8 @@ bool Raster_Drive::isMoving() const {
     return _moving;
 }
 
-DriveStatus Raster_Drive::getStatus() const {
-    // Return the current status of the drive
+DriveTelemetry Raster_Drive::getTelemetry() const {
+    // Return the current motor telemetry for both sides of the drive
     return {
         _leftController.getRPM(),
         _leftController.getPWM(),
@@ -124,5 +139,15 @@ DriveStatus Raster_Drive::getStatus() const {
         _leftController.getEncoderCount(),
         _rightController.getEncoderCount()
     };
+}
+
+float Raster_Drive::getDistanceCm() const {
+    // Return the cumulative straight-line distance driven since power-on
+    return _distanceCm;
+}
+
+void Raster_Drive::resetDistance() {
+    // Zero the odometer; does not affect motor/encoder state
+    _distanceCm = 0.0f;
 }
 
