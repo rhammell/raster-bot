@@ -5,14 +5,13 @@
 #include "Raster_Encoder.h"
 #include "Raster_PID.h"
 
-// Bundles all configuration needed to initialize a motor controller.
+// Per-side wiring for a motor controller. Behavioral tuning (PID gains,
+// encoder mode) is read from robot_definitions.h inside begin(), not passed here.
 struct MotorControllerConfig {
     uint8_t in1Pin, in2Pin;
     bool    motorFlip;
     uint8_t encAPin, encBPin;
     bool    encFlip;
-    float   kp, ki, kd;
-    float   pidOutputMin, pidOutputMax;
 };
 
 // Coordinates a single motor/encoder pair with PID speed control.

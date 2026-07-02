@@ -2,10 +2,13 @@
 
 #include <Arduino.h>
 #include <driver/pulse_cnt.h>
-#include "../definitions/robot_definitions.h"
+
+// Quadrature decoding mode: X2 (one channel, both edges) or X4 (both
+// channels, both edges).
+enum class EncoderMode { X2, X4 };
 
 // Hardware quadrature encoder using the ESP32 PCNT peripheral.
-// Supports X2 or X4 decoding based on ENCODER_MODE in robot_definitions.h.
+// Decoding mode (X2 or X4) is selected per instance via begin().
 class Raster_Encoder {
 public:
     Raster_Encoder() = default;
@@ -14,7 +17,8 @@ public:
     Raster_Encoder(const Raster_Encoder&) = delete;
     Raster_Encoder& operator=(const Raster_Encoder&) = delete;
 
-    bool begin(uint8_t pinA, uint8_t pinB, bool flip = false);
+    bool begin(uint8_t pinA, uint8_t pinB, bool flip = false,
+               EncoderMode mode = EncoderMode::X4);
     int64_t getCount() const;
     void clearCount();
 

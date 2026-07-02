@@ -1,4 +1,5 @@
 #include "Raster_Motor_Controller.h"
+#include "../definitions/robot_definitions.h"
 
 // =============================================================================
 // Raster_Motor_Controller Implementation
@@ -8,13 +9,14 @@ bool Raster_Motor_Controller::begin(const MotorControllerConfig& config) {
     // Initialize H-bridge PWM outputs (motorFlip swaps pins so +PWM = forward)
     motor.begin(config.in1Pin, config.in2Pin, config.motorFlip);
 
-    // Initialize quadrature encoder via PCNT hardware (encFlip swaps pins so +PWM = +count)
-    if (!encoder.begin(config.encAPin, config.encBPin, config.encFlip)) {
+    // Initialize quadrature encoder via PCNT hardware 
+    EncoderMode mode = (ENCODER_MODE == 4) ? EncoderMode::X4 : EncoderMode::X2;
+    if (!encoder.begin(config.encAPin, config.encBPin, config.encFlip, mode)) {
         return false;
     }
 
-    // Initialize PID speed controller
-    pid.begin(config.kp, config.ki, config.kd, config.pidOutputMin, config.pidOutputMax);
+    // Initialize PID speed controller with the shared, tuned gains
+    pid.begin(PID_KP, PID_KI, PID_KD, PID_OUTPUT_MIN, PID_OUTPUT_MAX);
 
     return true;
 }

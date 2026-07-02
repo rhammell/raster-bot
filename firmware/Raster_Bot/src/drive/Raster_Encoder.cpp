@@ -4,7 +4,7 @@
 // Raster_Encoder Implementation
 // =============================================================================
 
-bool Raster_Encoder::begin(uint8_t pinA, uint8_t pinB, bool flip) {
+bool Raster_Encoder::begin(uint8_t pinA, uint8_t pinB, bool flip, EncoderMode mode) {
     // If the encoder is already attached, return false
     if (_attached) return false;
 
@@ -65,7 +65,7 @@ bool Raster_Encoder::begin(uint8_t pinA, uint8_t pinB, bool flip) {
     }
 
     // If X4 quadrature mode, set up Channel B
-    if (ENCODER_MODE == 4) {
+    if (mode == EncoderMode::X4) {
         // Channel B: watches pinB edges, pinA level for direction
         pcnt_chan_config_t chan_b_config = {
             .edge_gpio_num = pinB,

@@ -36,11 +36,11 @@ bool Raster_Drive::begin() {
 bool Raster_Drive::initController(Raster_Motor_Controller& controller,
                                   uint8_t in1Pin, uint8_t in2Pin, bool motorFlip,
                                   uint8_t encAPin, uint8_t encBPin, bool encFlip) {
-    // Wiring differs per side; the PID gains and output limits are shared.
+    // Config carries only per-side wiring; PID gains and encoder mode are
+    // read from robot_definitions.h inside the controller's begin().
     MotorControllerConfig config = {
         in1Pin, in2Pin, motorFlip,
-        encAPin, encBPin, encFlip,
-        PID_KP, PID_KI, PID_KD, PID_OUTPUT_MIN, PID_OUTPUT_MAX
+        encAPin, encBPin, encFlip
     };
     return controller.begin(config);
 }
@@ -52,7 +52,7 @@ void Raster_Drive::straight(float speed_cm_s) {
 
 void Raster_Drive::spin(float speed_cm_s) {
     // Wheels drive equal-and-opposite so the robot rotates in place about its
-    // center. speed_cm_s is the tangential (rim) speed of each wheel; positive
+    // center. speed_cm_s is the tangential speed of each wheel; positive
     // spins clockwise (left wheel forward, right wheel backward).
     startMove(speed_cm_s, DriveMode::Spin);
 }
