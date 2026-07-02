@@ -39,6 +39,12 @@ private:
     // or Spin (wheels equal-and-opposite, rotate in place).
     enum class DriveMode { Idle, Straight, Spin };
 
+    // Initializes one motor controller with the shared PID gains and the given
+    // wiring. Returns false on failure.
+    bool initController(Raster_Motor_Controller& controller,
+                        uint8_t in1Pin, uint8_t in2Pin, bool motorFlip,
+                        uint8_t encAPin, uint8_t encBPin, bool encFlip);
+
     // Shared start-of-move logic for straight() and spin(). mode selects
     // whether the wheels run together (translate) or opposite (rotate).
     void startMove(float speed_cm_s, DriveMode mode);

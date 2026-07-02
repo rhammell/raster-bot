@@ -12,12 +12,9 @@ bool Raster_Drive::begin() {
 
     // Initialize left motor controller (motor, encoder, PID)
     Serial.println("[Drive] Initializing left motor controller...");
-    MotorControllerConfig leftConfig = {
-        MOT_LEFT_IN1, MOT_LEFT_IN2, MOT_LEFT_FLIP,
-        MOT_LEFT_ENC_A, MOT_LEFT_ENC_B, MOT_LEFT_ENC_FLIP,
-        PID_KP, PID_KI, PID_KD, PID_OUTPUT_MIN, PID_OUTPUT_MAX
-    };
-    if (!_leftController.begin(leftConfig)) {
+    if (!initController(_leftController,
+                        MOT_LEFT_IN1, MOT_LEFT_IN2, MOT_LEFT_FLIP,
+                        MOT_LEFT_ENC_A, MOT_LEFT_ENC_B, MOT_LEFT_ENC_FLIP)) {
         Serial.println("[Drive] Left motor controller init FAILED");
         return false;
     }
@@ -25,18 +22,27 @@ bool Raster_Drive::begin() {
 
     // Initialize right motor controller (motor, encoder, PID)
     Serial.println("[Drive] Initializing right motor controller...");
-    MotorControllerConfig rightConfig = {
-        MOT_RIGHT_IN1, MOT_RIGHT_IN2, MOT_RIGHT_FLIP,
-        MOT_RIGHT_ENC_A, MOT_RIGHT_ENC_B, MOT_RIGHT_ENC_FLIP,
-        PID_KP, PID_KI, PID_KD, PID_OUTPUT_MIN, PID_OUTPUT_MAX
-    };
-    if (!_rightController.begin(rightConfig)) {
+    if (!initController(_rightController,
+                        MOT_RIGHT_IN1, MOT_RIGHT_IN2, MOT_RIGHT_FLIP,
+                        MOT_RIGHT_ENC_A, MOT_RIGHT_ENC_B, MOT_RIGHT_ENC_FLIP)) {
         Serial.println("[Drive] Right motor controller init FAILED");
         return false;
     }
     Serial.println("[Drive] Right motor controller init OK");
 
     return true;
+}
+
+bool Raster_Drive::initController(Raster_Motor_Controller& controller,
+                                  uint8_t in1Pin, uint8_t in2Pin, bool motorFlip,
+                                  uint8_t encAPin, uint8_t encBPin, bool encFlip) {
+    // Wiring differs per side; the PID gains and output limits are shared.
+    MotorControllerConfig config = {
+        in1Pin, in2Pin, motorFlip,
+        encAPin, encBPin, encFlip,
+        PID_KP, PID_KI, PID_KD, PID_OUTPUT_MIN, PID_OUTPUT_MAX
+    };
+    return controller.begin(config);
 }
 
 void Raster_Drive::straight(float speed_cm_s) {
