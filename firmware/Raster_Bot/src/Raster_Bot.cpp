@@ -11,7 +11,10 @@ bool Raster_Bot::begin() {
 
     // Initialize battery voltage and charger status monitoring
     Serial.println("[Bot] Initializing battery...");
-    battery.begin();
+    if (!battery.begin()) {
+        Serial.println("[Bot] Battery init FAILED");
+        return false;
+    }
     Serial.println("[Bot] Battery init OK");
 
     // Initialize motors, encoders, and drive controller

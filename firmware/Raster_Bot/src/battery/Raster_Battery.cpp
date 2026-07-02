@@ -4,9 +4,10 @@
 // Raster_Battery Implementation
 // =============================================================================
 
-void Raster_Battery::begin() {
+bool Raster_Battery::begin() {
     pinMode(CHG, INPUT);
     pinMode(PGOOD, INPUT);
+    return true;
 }
 
 float Raster_Battery::voltage() {

@@ -11,7 +11,7 @@ public:
     Raster_Battery() = default;
 
     // Public methods
-    void begin();
+    bool begin();
 
     // Public members
     float voltage();           // Battery voltage in volts
