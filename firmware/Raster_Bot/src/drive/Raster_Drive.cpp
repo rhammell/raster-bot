@@ -41,17 +41,17 @@ bool Raster_Drive::begin() {
 
 void Raster_Drive::straight(float speed_cm_s) {
     // Both wheels drive the same direction (translate)
-    startMove(speed_cm_s, false);
+    startMove(speed_cm_s, DriveMode::Straight);
 }
 
 void Raster_Drive::spin(float speed_cm_s) {
     // Wheels drive equal-and-opposite so the robot rotates in place about its
     // center. speed_cm_s is the tangential (rim) speed of each wheel; positive
     // spins clockwise (left wheel forward, right wheel backward).
-    startMove(speed_cm_s, true);
+    startMove(speed_cm_s, DriveMode::Spin);
 }
 
-void Raster_Drive::startMove(float speed_cm_s, bool spinning) {
+void Raster_Drive::startMove(float speed_cm_s, DriveMode mode) {
     // Constrain the speed to the maximum speed
     speed_cm_s = constrain(speed_cm_s, -MAX_SPEED_CM_S, MAX_SPEED_CM_S);
 
@@ -59,12 +59,9 @@ void Raster_Drive::startMove(float speed_cm_s, bool spinning) {
     // forward wheel speed; for a spin it is each wheel's tangential speed.
     _targetRPM = (speed_cm_s * 60.0f) / WHEEL_CIRCUMFERENCE_CM;
 
-    // Selects the wheel pattern applied in update()
-    _spinning = spinning;
-
     // If starting from a stop, reset controllers (PID state and encoder
     // counts) so the balance correction starts from zero
-    if (!_moving) {
+    if (_mode == DriveMode::Idle) {
         _leftController.reset();
         _rightController.reset();
         _commandedRPM = 0;
@@ -73,23 +70,24 @@ void Raster_Drive::startMove(float speed_cm_s, bool spinning) {
         _lastLeftCount = 0;
         _lastRightCount = 0;
         _lastUpdateTime = micros();
-        _moving = true;
     }
+
+    // Selects the wheel pattern applied in update()
+    _mode = mode;
 }
 
 void Raster_Drive::stop() {
     // Immediately stop both motors and go idle
     _targetRPM = 0;
     _commandedRPM = 0;
-    _moving = false;
-    _spinning = false;
+    _mode = DriveMode::Idle;
     _leftController.stop();
     _rightController.stop();
 }
 
 void Raster_Drive::update() {
     // Nothing to do while idle
-    if (!_moving) return;
+    if (_mode == DriveMode::Idle) return;
 
     // Get the current time and the elapsed time
     uint32_t now = micros();
@@ -109,7 +107,7 @@ void Raster_Drive::update() {
     // total. Always refresh baselines so a spin->straight delta stays correct.
     int64_t leftCount = _leftController.getEncoderCount();
     int64_t rightCount = _rightController.getEncoderCount();
-    if (!_spinning) {
+    if (_mode != DriveMode::Spin) {
         float centerTicks = ((leftCount - _lastLeftCount)
                            + (rightCount - _lastRightCount)) / 2.0f;
         _distanceCm += fabsf(centerTicks) / TICKS_PER_CM;
@@ -127,9 +125,8 @@ void Raster_Drive::update() {
     }
 
     // Proportional wheel-sync correction, applied on top of the ramped command
-    // (not slewed by the ramp). WHEEL_SYNC_KP = 0 disables it. Reuses the counts
-    // read above for odometry.
-    if (_spinning) {
+    // (not slewed by the ramp). WHEEL_SYNC_KP = 0 disables it. 
+    if (_mode == DriveMode::Spin) {
         // Spin: wheels run opposite, so counts should sum to 0 (+ = clockwise).
         float tickError = (float)(leftCount + rightCount);
         float correction = WHEEL_SYNC_KP * tickError;
@@ -150,7 +147,7 @@ void Raster_Drive::update() {
 
 bool Raster_Drive::isMoving() const {
     // Return true if the drive is moving, false otherwise
-    return _moving;
+    return _mode != DriveMode::Idle;
 }
 
 DriveTelemetry Raster_Drive::getTelemetry() const {

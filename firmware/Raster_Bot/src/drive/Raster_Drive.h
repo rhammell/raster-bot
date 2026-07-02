@@ -35,15 +35,18 @@ public:
     void resetDistance();
 
 private:
-    // Shared start-of-move logic for straight() and spin(). spinning selects
+    // Drive motion state: Idle (stopped), Straight (wheels together, translate),
+    // or Spin (wheels equal-and-opposite, rotate in place).
+    enum class DriveMode { Idle, Straight, Spin };
+
+    // Shared start-of-move logic for straight() and spin(). mode selects
     // whether the wheels run together (translate) or opposite (rotate).
-    void startMove(float speed_cm_s, bool spinning);
+    void startMove(float speed_cm_s, DriveMode mode);
 
     // Private members
     Raster_Motor_Controller _leftController;
     Raster_Motor_Controller _rightController;
-    bool     _moving = false;
-    bool     _spinning = false;   // true = wheels run opposite (in-place spin)
+    DriveMode _mode = DriveMode::Idle;
     float    _targetRPM = 0;
     float    _commandedRPM = 0;   // ramped value actually sent to the wheels
     uint32_t _lastUpdateTime = 0;
