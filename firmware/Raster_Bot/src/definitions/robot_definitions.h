@@ -23,22 +23,24 @@
 #define TICKS_PER_CM            (ENCODER_TICKS_PER_REV / WHEEL_CIRCUMFERENCE_CM)
 
 // Drive speed limits
-#define MAX_SPEED_CM_S          30.0f
+#define MAX_SPEED_CM_S          12.0f
 
-// Straightness correction (tuned with tests/StraightnessTuning)
-#define STRAIGHT_KP             0.0f
+// Wheel-sync correction gain (tuned with tests/WheelSyncTuning). Keeps the
+// left/right wheels balanced: matched counts when driving straight, and
+// equal-and-opposite counts when spinning in place.
+#define WHEEL_SYNC_KP           0.0f
 
 // Acceleration and deceleration (tuned with tests/DistanceTuning)
 // MAX_ACCEL_RPM_S limits how fast the commanded RPM slews toward the target.
 // Set to 0 to disable ramping (commanded RPM jumps straight to target).
 // 250 RPM/s == Alvik's 5 RPM per 20ms control tick.
-#define MAX_ACCEL_RPM_S         250.0f
+#define MAX_ACCEL_RPM_S         0.0f
 #define DECEL_DISTANCE_CM       3.0f
 #define MIN_SPEED_CM_S          0.5f
 
 // Motor gear ratio
 #if MOTOR_150
-#define MOTOR_GEAR_RATIO 150.0
+#define MOTOR_GEAR_RATIO 150.58
 #else
 #define MOTOR_GEAR_RATIO 100.37
 #endif

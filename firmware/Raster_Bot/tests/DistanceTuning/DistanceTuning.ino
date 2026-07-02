@@ -1,8 +1,8 @@
 /*
  * DistanceTuning - Distance and deceleration tuning for Raster_Bot library
  *
- * Prerequisite: PID and straightness tuning must be completed
- * first (see PIDTuning, StraightnessTuning).
+ * Prerequisite: PID and wheel-sync tuning must be completed
+ * first (see PIDTuning, WheelSyncTuning).
  *
  * Use this sketch to tune the deceleration profile for distance-
  * bounded moves. The relevant parameters are defined in

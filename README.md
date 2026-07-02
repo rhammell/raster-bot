@@ -42,7 +42,7 @@ The firmware lives in `firmware/Raster_Bot/`, structured as an Arduino library:
 | `src/battery/` | `Raster_Battery` — battery voltage and charger-status monitoring. |
 | `src/drive/` | Differential drive stack: `Raster_Motor`, `Raster_Encoder`, `Raster_PID`, `Raster_Motor_Controller`, and `Raster_Drive`. |
 | `examples/` | Standalone feature demos: `BatteryTest`, `GraphicsTest`, `TouchTest`. |
-| `tests/` | Tuning sketches: `PIDTuning`, `StraightnessTuning`, `DistanceTuning`. |
+| `tests/` | Tuning sketches: `PIDTuning`, `WheelSyncTuning`, `DistanceTuning`. |
 | `library.properties` | Arduino library metadata and dependencies. |
 
 **Dependencies** (install via the Arduino Library Manager): Adafruit GFX

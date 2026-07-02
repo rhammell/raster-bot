@@ -1,21 +1,25 @@
 /*
- * StraightnessTuning - Straightness correction tuning for Raster_Bot library
+ * WheelSyncTuning - Wheel-sync correction tuning for Raster_Bot library
  *
  * Prerequisite: PID tuning must be completed first (see PIDTuning).
  * Disable ramping so the bot runs at a constant RPM.
  *
- * Use this sketch to tune the straightness correction gain
- * (STRAIGHT_KP) defined in robot_definitions.h. Each change
- * requires recompiling and uploading.
+ * Use this sketch to tune the single wheel-sync correction gain
+ * (WHEEL_SYNC_KP) defined in robot_definitions.h. The same gain
+ * balances both a straight (wheels together) and a spin (wheels
+ * opposite), so this sketch can exercise either one. Set SPIN_MODE
+ * below to pick which, then recompile and upload for each test.
  *
- * The sketch drives the bot forward and monitors the encoder tick
- * difference (diff) between the left and right wheels. The diff is
- * displayed on the TFT for untethered floor testing, turning green
- * when near zero and red when drifting.
+ * Both modes monitor the balance "diff" between the wheels: for a
+ * straight it is (L - R) and should stay near zero as the counts
+ * track together; for a spin it is (L + R) and should stay near zero
+ * as the counts grow equal-and-opposite. The diff is shown large on
+ * the TFT for untethered floor testing, green near zero and red when
+ * drifting.
  *
- * If the diff drifts steadily in one direction, STRAIGHT_KP is too
+ * If the diff drifts steadily in one direction, WHEEL_SYNC_KP is too
  * low and the correction is not strong enough to keep the wheels
- * matched. If the diff oscillates rapidly around zero, STRAIGHT_KP
+ * matched. If the diff oscillates rapidly around zero, WHEEL_SYNC_KP
  * is too high and the correction is overcorrecting. A good result
  * is a diff that stays near zero with no sustained drift or
  * oscillation.
@@ -25,13 +29,18 @@
 
 #include <Raster_Bot.h>
 
+// Tuning options: set SPIN_MODE to false to tune a straight, true to tune a
+// spin. DRIVE_SPEED_CM_S is the wheel speed used for either move.
+constexpr bool  SPIN_MODE       = false;
+constexpr float DRIVE_SPEED_CM_S = 6.0f;
+
 // Raster Bot instance
 Raster_Bot bot;
 
 void setup() {
     // Initialize serial communication
     Serial.begin(115200);
-    Serial.println("Raster Bot Straightness Tuning");
+    Serial.println("Raster Bot Wheel Sync Tuning");
 
     // Initialize the bot
     if (!bot.begin()) {
@@ -45,13 +54,17 @@ void setup() {
     bot.display.setTextColor(ILI9341_CYAN);
     bot.display.setTextSize(2);
     bot.display.setCursor(4, 6);
-    bot.display.print("Straightness Tuning");
+    bot.display.print(SPIN_MODE ? "Spin Tuning" : "Straight Tuning");
     bot.display.setTextColor(ILI9341_DARKGREY);
     bot.display.setCursor(4, 36);
-    bot.display.print("Diff:");
+    bot.display.print(SPIN_MODE ? "Diff (L+R):" : "Diff (L-R):");
 
-    // Start driving forward
-    bot.drive.straight(6.0);
+    // Start the move being tuned
+    if (SPIN_MODE) {
+        bot.drive.spin(DRIVE_SPEED_CM_S);
+    } else {
+        bot.drive.straight(DRIVE_SPEED_CM_S);
+    }
 }
 
 void loop() {
@@ -72,8 +85,10 @@ void loop() {
         // Get the drive telemetry
         DriveTelemetry s = bot.drive.getTelemetry();
 
-        // Calculate the difference between the left and right encoder counts
-        int64_t diff = s.leftCount - s.rightCount;
+        // Balance error to drive toward zero. Straight wheels track together
+        // (L - R); spin wheels run equal-and-opposite (L + R).
+        int64_t diff = SPIN_MODE ? (s.leftCount + s.rightCount)
+                                 : (s.leftCount - s.rightCount);
 
         // Display diff in large text, green when near zero, red when drifting
         bot.display.fillRect(4, 70, 232, 60, ILI9341_BLACK);
@@ -93,8 +108,9 @@ void loop() {
         bot.display.print("R: ");
         bot.display.print((long)s.rightCount);
 
-        // Display the average speed
-        float avgRPM = (s.leftRPM + s.rightRPM) / 2.0f;
+        // Display the average wheel speed. Use magnitudes so a spin (wheels
+        // opposite) reports each wheel's tangential speed instead of ~0.
+        float avgRPM = (fabsf(s.leftRPM) + fabsf(s.rightRPM)) / 2.0f;
         float speed_cm_s = (avgRPM * WHEEL_CIRCUMFERENCE_CM) / 60.0f;
         bot.display.setCursor(4, 194);
         bot.display.print("Speed: ");

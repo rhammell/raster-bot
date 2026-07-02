@@ -1,7 +1,7 @@
 /*
  * PIDTuning - PID gain tuning for Raster_Bot library
  *
- * Prerequisite: Set STRAIGHT_KP to 0 and MAX_ACCEL_RPM_S to 0 (which
+ * Prerequisite: Set WHEEL_SYNC_KP to 0 and MAX_ACCEL_RPM_S to 0 (which
  * disables ramping) before tuning, so the PID responds to a clean step
  * input with no other control loops active. Leave RPM_FILTER_ALPHA at
  * its normal value (do NOT zero it) - the RPM filter is a passive part

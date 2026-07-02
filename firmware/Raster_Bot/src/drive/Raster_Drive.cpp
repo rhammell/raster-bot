@@ -40,14 +40,30 @@ bool Raster_Drive::begin() {
 }
 
 void Raster_Drive::straight(float speed_cm_s) {
+    // Both wheels drive the same direction (translate)
+    startMove(speed_cm_s, false);
+}
+
+void Raster_Drive::spin(float speed_cm_s) {
+    // Wheels drive equal-and-opposite so the robot rotates in place about its
+    // center. speed_cm_s is the tangential (rim) speed of each wheel; positive
+    // spins clockwise (left wheel forward, right wheel backward).
+    startMove(speed_cm_s, true);
+}
+
+void Raster_Drive::startMove(float speed_cm_s, bool spinning) {
     // Constrain the speed to the maximum speed
     speed_cm_s = constrain(speed_cm_s, -MAX_SPEED_CM_S, MAX_SPEED_CM_S);
 
-    // Convert the speed to target RPM
+    // Convert the speed to target RPM (signed). For a straight this is the
+    // forward wheel speed; for a spin it is each wheel's tangential speed.
     _targetRPM = (speed_cm_s * 60.0f) / WHEEL_CIRCUMFERENCE_CM;
 
+    // Selects the wheel pattern applied in update()
+    _spinning = spinning;
+
     // If starting from a stop, reset controllers (PID state and encoder
-    // counts) so the straightness correction starts from zero
+    // counts) so the balance correction starts from zero
     if (!_moving) {
         _leftController.reset();
         _rightController.reset();
@@ -56,7 +72,7 @@ void Raster_Drive::straight(float speed_cm_s) {
         // trackers. The cumulative distance is intentionally left untouched.
         _lastLeftCount = 0;
         _lastRightCount = 0;
-        _lastUpdateTime = micros(); // see if ths is necessar
+        _lastUpdateTime = micros();
         _moving = true;
     }
 }
@@ -66,6 +82,7 @@ void Raster_Drive::stop() {
     _targetRPM = 0;
     _commandedRPM = 0;
     _moving = false;
+    _spinning = false;
     _leftController.stop();
     _rightController.stop();
 }
@@ -88,13 +105,15 @@ void Raster_Drive::update() {
     float dt = elapsed / 1e6f;
 
     // Accumulate odometry from the centerline (average) wheel displacement.
-    // Forward and backward motion both grow the total (abs), while an in-place
-    // spin has equal-and-opposite wheel deltas that cancel and add nothing.
+    // Skip spins: their residual doesn't cancel under abs and would drift the
+    // total. Always refresh baselines so a spin->straight delta stays correct.
     int64_t leftCount = _leftController.getEncoderCount();
     int64_t rightCount = _rightController.getEncoderCount();
-    float centerTicks = ((leftCount - _lastLeftCount)
-                       + (rightCount - _lastRightCount)) / 2.0f;
-    _distanceCm += fabsf(centerTicks) / TICKS_PER_CM;
+    if (!_spinning) {
+        float centerTicks = ((leftCount - _lastLeftCount)
+                           + (rightCount - _lastRightCount)) / 2.0f;
+        _distanceCm += fabsf(centerTicks) / TICKS_PER_CM;
+    }
     _lastLeftCount = leftCount;
     _lastRightCount = rightCount;
 
@@ -107,17 +126,22 @@ void Raster_Drive::update() {
         _commandedRPM += constrain(_targetRPM - _commandedRPM, -maxDelta, maxDelta);
     }
 
-    // Compute a proportional correction from the encoder tick difference
-    // between left and right wheels to keep the robot driving straight.
-    // With STRAIGHT_KP = 0 the correction is zero and both wheels run at
-    // the ramped command RPM (used to isolate the PID during tuning).
-    // The correction is applied on top of the ramped command so it stays
-    // full-bandwidth (it is not itself slewed by the ramp).
-    float tickError = (float)(_leftController.getEncoderCount()
-                            - _rightController.getEncoderCount());
-    float correction = STRAIGHT_KP * tickError;
-    _leftController.setRPM(_commandedRPM - correction);
-    _rightController.setRPM(_commandedRPM + correction);
+    // Proportional wheel-sync correction, applied on top of the ramped command
+    // (not slewed by the ramp). WHEEL_SYNC_KP = 0 disables it. Reuses the counts
+    // read above for odometry.
+    if (_spinning) {
+        // Spin: wheels run opposite, so counts should sum to 0 (+ = clockwise).
+        float tickError = (float)(leftCount + rightCount);
+        float correction = WHEEL_SYNC_KP * tickError;
+        _leftController.setRPM(_commandedRPM - correction);
+        _rightController.setRPM(-_commandedRPM - correction);
+    } else {
+        // Straight: wheels run together, so counts should stay matched (diff 0).
+        float tickError = (float)(leftCount - rightCount);
+        float correction = WHEEL_SYNC_KP * tickError;
+        _leftController.setRPM(_commandedRPM - correction);
+        _rightController.setRPM(_commandedRPM + correction);
+    }
 
     // Run the PID controllers to compute and apply PWM outputs
     _leftController.update(dt);

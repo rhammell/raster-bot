@@ -23,6 +23,7 @@ public:
     // Public methods
     bool begin();
     void straight(float speed_cm_s);
+    void spin(float speed_cm_s);
     void stop();
     void update();
     bool isMoving() const;
@@ -34,10 +35,15 @@ public:
     void resetDistance();
 
 private:
+    // Shared start-of-move logic for straight() and spin(). spinning selects
+    // whether the wheels run together (translate) or opposite (rotate).
+    void startMove(float speed_cm_s, bool spinning);
+
     // Private members
     Raster_Motor_Controller _leftController;
     Raster_Motor_Controller _rightController;
     bool     _moving = false;
+    bool     _spinning = false;   // true = wheels run opposite (in-place spin)
     float    _targetRPM = 0;
     float    _commandedRPM = 0;   // ramped value actually sent to the wheels
     uint32_t _lastUpdateTime = 0;
