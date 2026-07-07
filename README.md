@@ -37,7 +37,7 @@ The firmware lives in `firmware/Raster_Bot/`, structured as an Arduino library:
 | Path | Description |
 | --- | --- |
 | `src/Raster_Bot.h` / `.cpp` | Top-level `Raster_Bot` class that ties the subsystems together. |
-| `src/definitions/` | Compile-time configuration: `pin_definitions.h` (wiring), `robot_definitions.h` (tuning/behavior), and `build_config.h` (build-variant flags). |
+| `src/definitions/` | Compile-time configuration: `pin_definitions.h` (wiring) and `robot_definitions.h` (tuning/behavior). |
 | `src/display/` | `Raster_Display` — TFT, capacitive touch, and backlight control (plus the splash logo). |
 | `src/battery/` | `Raster_Battery` — battery voltage and charger-status monitoring. |
 | `src/drive/` | Differential drive stack: `Raster_Motor`, `Raster_Encoder`, `Raster_PID`, `Raster_Motor_Controller`, and `Raster_Drive`. |

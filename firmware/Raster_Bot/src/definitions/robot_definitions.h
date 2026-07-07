@@ -12,8 +12,6 @@
 
 #include <math.h>
 
-#include "build_config.h"
-
 // Battery voltage divider ratio (Vbat = Vadc * ratio)
 #define VBAT_DIV_RATIO      2.0f
 
@@ -38,12 +36,8 @@
 #define DECEL_DISTANCE_CM       3.0f
 #define MIN_SPEED_CM_S          0.5f
 
-// Motor gear ratio
-#if MOTOR_150
+// Motor gear ratio (150:1 gearmotors)
 #define MOTOR_GEAR_RATIO 150.58
-#else
-#define MOTOR_GEAR_RATIO 100.37
-#endif
 
 // Motor encoder settings
 // ENCODER_MODE: 4 for X4 quadrature (both edges, both channels)
