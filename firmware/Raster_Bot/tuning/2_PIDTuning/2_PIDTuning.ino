@@ -1,12 +1,20 @@
 /*
- * PIDTuning - PID gain tuning for Raster_Bot library
+ * 2_PIDTuning - PID gain tuning for Raster_Bot library
  *
- * Prerequisite: Set WHEEL_SYNC_KP to 0 and MAX_ACCEL_RPM_S to 0 (which
- * disables ramping) before tuning, so the PID responds to a clean step
- * input with no other control loops active. Leave RPM_FILTER_ALPHA at
- * its normal value (do NOT zero it) - the RPM filter is a passive part
- * of the system the PID must be tuned against, not a competing control
- * loop.
+ * Run this AFTER 1_FeedforwardTuning. The recommended order is: characterize the
+ * velocity feedforward first (tuning/1_FeedforwardTuning), enable it, then tune
+ * the PID on top of it here. With feedforward supplying the bulk of the holding
+ * PWM, the PID only has to trim the small residual, so the gains (especially
+ * KI) stay low and the loop is well behaved.
+ *
+ * Prerequisites before tuning:
+ *   - PID_FEEDFORWARD_ENABLE = 1 with a PID_FF table from 1_FeedforwardTuning
+ *     (or set it to 0 to tune pure PID with no feedforward).
+ *   - WHEEL_SYNC_KP = 0 and MAX_ACCEL_RPM_S = 0 (ramping off), so the PID
+ *     responds to a clean step input with no other control loops active.
+ *   - Leave RPM_FILTER_ALPHA at its normal value (do NOT zero it) - the RPM
+ *     filter is a passive part of the system the PID must be tuned against,
+ *     not a competing control loop.
  *
  * Use this sketch to tune the PID speed controller gains (PID_KP,
  * PID_KI, PID_KD) defined in robot_definitions.h. Each change
@@ -31,15 +39,23 @@
  *    - Oscillates around target or overshoots: decrease KP.
  *    Repeat until RPM rises quickly without oscillating. A small
  *    steady-state error (offset from target) is expected with KP alone.
+ *    (With feedforward enabled the wheel starts near target, so the P
+ *    response is small - that is expected.)
  *
  * 3. Add a small PID_KI (e.g. 1.0) to eliminate the steady-state error.
  *    - RPM still settles below target: increase KI.
  *    - RPM overshoots then slowly settles, or oscillates: decrease KI.
+ *    With feedforward doing most of the work, KI can stay low - it only
+ *    trims the residual the feedforward leaves behind.
  *
  * 4. Good result: RPM reaches and holds the target with no sustained
  *    oscillation and no visible overshoot. Convergence within a few
  *    seconds is acceptable — ramping will eliminate the large step
  *    response in normal operation.
+ *
+ * 5. Sanity-check the tune at several speeds across your range (set
+ *    DRIVE_SPEED_CM_S below), since the motor is nonlinear. When done,
+ *    re-enable MAX_ACCEL_RPM_S (see tuning/4_DistanceTuning) for smooth launches.
  */
 
 #include <Raster_Bot.h>
@@ -50,7 +66,7 @@ Raster_Bot bot;
 // Drive speed and target RPM
 // Clamp to MAX_SPEED_CM_S so the displayed target matches the setpoint
 // straight() actually commands (it constrains speed to this limit)
-const float DRIVE_SPEED_CM_S = 12.0f;
+const float DRIVE_SPEED_CM_S = 8.0f;
 const float CLAMPED_SPEED_CM_S = constrain(DRIVE_SPEED_CM_S, -MAX_SPEED_CM_S, MAX_SPEED_CM_S);
 const float TARGET_RPM = (CLAMPED_SPEED_CM_S * 60.0f) / WHEEL_CIRCUMFERENCE_CM;
 
@@ -158,7 +174,7 @@ void loop() {
 
         // Left RPM — green when within 10% of target, red otherwise
         bot.display.fillRect(0, 148, 240, 32, ILI9341_BLACK);
-        bot.display.setTextColor(abs(s.leftRPM - TARGET_RPM) < TARGET_RPM * 0.1f ? ILI9341_GREEN : ILI9341_RED);
+        bot.display.setTextColor(abs(s.leftRPM - TARGET_RPM) < TARGET_RPM * 0.05f ? ILI9341_GREEN : ILI9341_RED);
         printCentered(s.leftRPM, 1, 148, 4);
         bot.display.fillRect(0, 184, 240, 16, ILI9341_BLACK);
         bot.display.setTextColor(ILI9341_YELLOW);
@@ -166,7 +182,7 @@ void loop() {
 
         // Right RPM
         bot.display.fillRect(0, 234, 240, 32, ILI9341_BLACK);
-        bot.display.setTextColor(abs(s.rightRPM - TARGET_RPM) < TARGET_RPM * 0.1f ? ILI9341_GREEN : ILI9341_RED);
+        bot.display.setTextColor(abs(s.rightRPM - TARGET_RPM) < TARGET_RPM * 0.05f ? ILI9341_GREEN : ILI9341_RED);
         printCentered(s.rightRPM, 1, 234, 4);
         bot.display.fillRect(0, 270, 240, 16, ILI9341_BLACK);
         bot.display.setTextColor(ILI9341_YELLOW);

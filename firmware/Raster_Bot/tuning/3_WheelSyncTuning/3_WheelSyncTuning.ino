@@ -1,7 +1,7 @@
 /*
- * WheelSyncTuning - Wheel-sync correction tuning for Raster_Bot library
+ * 3_WheelSyncTuning - Wheel-sync correction tuning for Raster_Bot library
  *
- * Prerequisite: PID tuning must be completed first (see PIDTuning).
+ * Prerequisite: PID tuning must be completed first (see 2_PIDTuning).
  * Disable ramping so the bot runs at a constant RPM.
  *
  * Use this sketch to tune the single wheel-sync correction gain

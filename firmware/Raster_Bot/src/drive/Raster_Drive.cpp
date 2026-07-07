@@ -151,6 +151,20 @@ void Raster_Drive::update() {
     _rightController.update(dt);
 }
 
+void Raster_Drive::updateOpenLoop(int pwm) {
+    // Rate-limit to the normal control interval so each RPM sample integrates
+    // the same encoder window the closed-loop path uses.
+    uint32_t now = micros();
+    uint32_t elapsed = now - _lastUpdateTime;
+    if (elapsed < DRIVE_UPDATE_INTERVAL_US) return;
+    _lastUpdateTime = now;
+
+    // Drive both wheels at the same raw PWM, bypassing PID/feedforward/ramp
+    float dt = elapsed / 1e6f;
+    _leftController.updateOpenLoop(dt, pwm);
+    _rightController.updateOpenLoop(dt, pwm);
+}
+
 bool Raster_Drive::isMoving() const {
     // Return true if the drive is moving, false otherwise
     return _mode != DriveMode::Idle;

@@ -28,7 +28,7 @@ void Raster_PID::setSetpoint(float setpoint) {
     _setpoint = setpoint;
 }
 
-float Raster_PID::compute(float measurement, float dt) {
+float Raster_PID::compute(float measurement, float dt, float feedforward) {
     // Check if the time delta is valid (i.e. not zero)
     if (dt <= 0.0f) return 0.0f;
 
@@ -38,18 +38,22 @@ float Raster_PID::compute(float measurement, float dt) {
     // Proportional term
     float pTerm = _kp * error;
 
-    // Integral term with anti-windup clamping
+    // Integral term with anti-windup clamping. The clamp is taken against the
+    // output headroom the feedforward leaves behind, so the integral only trims
+    // the residual and cannot wind up into PWM the feedforward already provides.
     _integral += error * dt;
-    _integral = constrain(_integral, _outputMin / (_ki != 0.0f ? _ki : 1.0f),
-                                     _outputMax / (_ki != 0.0f ? _ki : 1.0f));
+    if (_ki != 0.0f) {
+        _integral = constrain(_integral, (_outputMin - feedforward) / _ki,
+                                         (_outputMax - feedforward) / _ki);
+    }
     float iTerm = _ki * _integral;
 
     // Derivative term (on error)
     float dTerm = _kd * (error - _prevError) / dt;
     _prevError = error;
 
-    // Sum and clamp output
-    float output = pTerm + iTerm + dTerm;
+    // Sum feedforward with the PID terms and clamp output
+    float output = feedforward + pTerm + iTerm + dTerm;
     output = constrain(output, _outputMin, _outputMax);
 
     return output;

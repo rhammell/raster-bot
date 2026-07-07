@@ -22,11 +22,40 @@ bool Raster_Motor_Controller::begin(const MotorControllerConfig& config) {
 }
 
 void Raster_Motor_Controller::setRPM(float rpm) {
-    // Set the PID setpoint to the target RPM
+    // Store the target for the feedforward and set the PID setpoint
+    _targetRPM = rpm;
     pid.setSetpoint(rpm);
 }
 
-void Raster_Motor_Controller::update(float dt) {
+float Raster_Motor_Controller::feedforward(float rpm) const {
+#if PID_FEEDFORWARD_ENABLE
+    // Interpolate the holding-PWM lookup table on |rpm|, clamping at the ends
+    float mag = fabsf(rpm);
+    float pwm;
+    if (mag <= PID_FF_RPM[0]) {
+        pwm = PID_FF_PWM[0];
+    } else if (mag >= PID_FF_RPM[PID_FF_POINTS - 1]) {
+        pwm = PID_FF_PWM[PID_FF_POINTS - 1];
+    } else {
+        pwm = PID_FF_PWM[PID_FF_POINTS - 1];
+        for (int i = 1; i < PID_FF_POINTS; i++) {
+            if (mag <= PID_FF_RPM[i]) {
+                float span = PID_FF_RPM[i] - PID_FF_RPM[i - 1];
+                float t = (span > 0.0f) ? (mag - PID_FF_RPM[i - 1]) / span : 0.0f;
+                pwm = PID_FF_PWM[i - 1] + t * (PID_FF_PWM[i] - PID_FF_PWM[i - 1]);
+                break;
+            }
+        }
+    }
+    // Apply the target's direction (0 stays 0)
+    return (rpm < 0.0f) ? -pwm : pwm;
+#else
+    (void)rpm;
+    return 0.0f;
+#endif
+}
+
+void Raster_Motor_Controller::measureRPM(float dt) {
     // Get the current encoder count and the delta
     int64_t count = encoder.getCount();
     int64_t delta = count - _lastEncoderCount;
@@ -37,10 +66,24 @@ void Raster_Motor_Controller::update(float dt) {
     float revolutions = (float)delta / ENCODER_TICKS_PER_REV;
     float rawRPM = (revolutions / dt) * 60.0f;
     _currentRPM = RPM_FILTER_ALPHA * rawRPM + (1.0f - RPM_FILTER_ALPHA) * _currentRPM;
+}
 
-    // Run PID and apply output to motor
-    _currentPWM = pid.compute(_currentRPM, dt);
+void Raster_Motor_Controller::update(float dt) {
+    // Refresh the filtered RPM measurement
+    measureRPM(dt);
+
+    // Run PID (with velocity feedforward from the target) and apply to motor
+    _currentPWM = pid.compute(_currentRPM, dt, feedforward(_targetRPM));
     motor.setPWM((int)_currentPWM);
+}
+
+void Raster_Motor_Controller::updateOpenLoop(float dt, int pwm) {
+    // Refresh the filtered RPM measurement, then drive the raw PWM directly.
+    // The PID and feedforward are bypassed so the logged RPM reflects only the
+    // motor's open-loop response to this PWM. Characterization use only.
+    measureRPM(dt);
+    _currentPWM = (float)pwm;
+    motor.setPWM(pwm);
 }
 
 void Raster_Motor_Controller::stop() {
