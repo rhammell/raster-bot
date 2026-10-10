@@ -268,7 +268,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "v0.7"
     },
     "layer_pairs": [
       {
@@ -771,7 +771,7 @@
       {
         "filename": "Raster_Bot.kicad_sch",
         "name": "Raster_Bot",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "68fd25bc-da1d-4d9a-9340-0ded04d59660"
       }
     ],
     "used_designators": "",
@@ -780,7 +780,7 @@
   "sheets": [
     [
       "68fd25bc-da1d-4d9a-9340-0ded04d59660",
-      "Root"
+      "Raster_Bot"
     ]
   ],
   "text_variables": {},
