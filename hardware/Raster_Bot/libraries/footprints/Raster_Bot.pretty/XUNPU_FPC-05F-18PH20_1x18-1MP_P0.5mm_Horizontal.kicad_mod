@@ -246,7 +246,7 @@
 		(uuid "2dc8d6e8-d227-4e4d-83d3-49093d8292a9")
 	)
 	(embedded_fonts no)
-	(model "${KICAD9_3DMODEL_DIR}/Connector_FFC-FPC.3dshapes/TE_1-1734839-8_1x18-1MP_P0.5mm_Horizontal.step"
+	(model "${KIPRJMOD}/libraries/3d/XUNPU_FPC-05F-18PH20_1x18-1MP_P0.5mm_Horizontal.step"
 		(offset
 			(xyz 0 0 0)
 		)

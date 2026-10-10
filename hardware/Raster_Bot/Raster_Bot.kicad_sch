@@ -10434,7 +10434,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPDT_Shouhan_MSK12C02"
+		(property "Footprint" "Raster_Bot:SW_SPDT_Shouhan_MSK12C02"
 			(at 181.61 118.11 0)
 			(effects
 				(font
@@ -11481,7 +11481,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_Coilcraft_XxL4030"
+		(property "Footprint" "Raster_Bot:L_Coilcraft_XxL4030"
 			(at 332.74 36.83 0)
 			(effects
 				(font
